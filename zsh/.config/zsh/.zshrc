@@ -83,11 +83,31 @@ bindkey '\e[1;5D' backward-word
 # autoload edit-command-line; zle -N edit-command-line
 
 # TODO Remove these
-setxkbmap -option caps:escape
+# setxkbmap -option caps:escape
 
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+# # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
 export PATH=$PATH:~/.fzf/bin/
-export PATH=$PATH:~/node-v17.3.0-linux-x64/bin
+# export PATH=$PATH:~/node-v17.3.0-linux-x64/bin
+
+LS_COLORS=$LS_COLORS:'ow=34;33'
+export LS_COLORS
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/gou/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/gou/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/gou/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/gou/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
