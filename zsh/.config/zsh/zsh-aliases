@@ -9,6 +9,9 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
+# better find
+alias fd='fdfind'
+
 # confirm before overwriting something
 alias cp="cp -i"
 alias mv='mv -i'
@@ -34,3 +37,4 @@ alias m="git checkout master"
 alias s="git checkout stable"
 
 alias ls='ls --color=auto'
+alias ll='ls -l'
