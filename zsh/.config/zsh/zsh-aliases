@@ -37,10 +37,7 @@ alias m="git checkout master"
 alias s="git checkout stable"
 
 alias ls='ls --color=auto'
-<<<<<<< HEAD
 
 alias brave="sh /opt/brave.com/brave/brave-browser"
 
-=======
 alias ll='ls -l'
->>>>>>> 0698f4016b2adf2edbdf32219238d7160a0191a4
