@@ -108,6 +108,10 @@ return packer.startup(function(use)
   ----------------------
   -- Hristo's plugins --
   ----------------------
+  use 'mfussenegger/nvim-dap'
+  use 'mfussenegger/nvim-dap-python'
+  use 'kana/vim-textobj-user'
+  use 'bps/vim-textobj-python'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

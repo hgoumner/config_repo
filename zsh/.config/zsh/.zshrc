@@ -90,7 +90,7 @@ bindkey '\e[1;5D' backward-word
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
 export PATH=$PATH:~/.fzf/bin/
-# export PATH=$PATH:~/node-v17.3.0-linux-x64/bin
+export PATH=$PATH:~/node-v17.3.0-linux-x64/bin
 
 LS_COLORS=$LS_COLORS:'ow=34;33'
 export LS_COLORS

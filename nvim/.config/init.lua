@@ -10,4 +10,5 @@ require("user.gitsigns")
 require("user.nvim-tree")
 require("user.bufferline")
 require("user.comment")
+require("user.nvim-dap")
 
