@@ -101,6 +101,9 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
 
+  -- terminal
+  use "akinsho/toggleterm.nvim"
+
   --buffer_line
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
