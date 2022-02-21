@@ -65,9 +65,12 @@ zsh_add_plugin "romkatv/powerlevel10k"
 # -------- Key-bindings -------- 
 # ------------------------------
 
-# # Key-bindings
+# Key-bindings
 bindkey '\e[1;5C' forward-word
 bindkey '\e[1;5D' backward-word
+
+# caps remap to escape
+setxkbmap -option caps:escape
 
 # -----------------------
 # -------- Theme -------- 
