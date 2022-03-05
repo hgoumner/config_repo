@@ -9,6 +9,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+[[ ! -f "$ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme" ]] || source "$ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme"
+
+# if [[ ! -e ~/powerlevel10k ]]; then
+#   git -C ~ clone --quiet --depth=1 https://github.com/romkatv/powerlevel10k.git
+# fi
+#
+# source ~/.config/zsh/.p10k.zsh
+# return
+
 # ------------------------------
 # -------- ZSH settings --------
 # ------------------------------
