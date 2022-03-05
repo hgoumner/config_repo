@@ -4,3 +4,15 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 export PATH="$HOME/.local/bin":$PATH
 export MANWIDTH=999
+
+# ----------------------------------
+# -------- Export variables -------- 
+# ----------------------------------
+
+# ls command color fix
+LS_COLORS=$LS_COLORS:'ow=34;33'
+export LS_COLORS
+
+# FZF and nodejs
+export PATH=$PATH:~/.fzf/bin/
+export PATH=$PATH:~/node-v17.3.0-linux-x64/bin

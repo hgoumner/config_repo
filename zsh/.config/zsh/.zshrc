@@ -1,7 +1,5 @@
-#!/bin/sh
-
 # -----------------------
-# -------- Theme -------- 
+# -------- Theme --------
 # -----------------------
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
@@ -12,11 +10,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # ------------------------------
-# -------- ZSH settings -------- 
+# -------- ZSH settings --------
 # ------------------------------
 
 # set zsh directory and history options
-export ZDOTDIR=$HOME/.config/zsh
+# export ZDOTDIR=$HOME/.config/zsh
 HISTFILE=~/.zsh_history
 setopt appendhistory
 
@@ -41,7 +39,7 @@ _comp_options+=(globdots)		# Include hidden files.
 autoload -Uz colors && colors
 
 # --------------------------------
-# -------- External files -------- 
+# -------- External files --------
 # --------------------------------
 
 # Useful Functions
@@ -53,16 +51,16 @@ zsh_add_file "zsh-vim-mode"
 zsh_add_file "zsh-aliases"
 
 # Plugins
+zsh_add_plugin "romkatv/powerlevel10k"
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "hlissner/zsh-autopair"
-zsh_add_plugin "romkatv/powerlevel10k"
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # ------------------------------
-# -------- Key-bindings -------- 
+# -------- Key-bindings --------
 # ------------------------------
 
 # Key-bindings
@@ -72,25 +70,9 @@ bindkey '\e[1;5D' backward-word
 # caps remap to escape
 setxkbmap -option caps:escape
 
-# -----------------------
-# -------- Theme -------- 
-# -----------------------
-
-# # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
-
-# ----------------------------------
-# -------- Export variables -------- 
-# ----------------------------------
-
-# ls command color fix
-LS_COLORS=$LS_COLORS:'ow=34;33'
-export LS_COLORS
-
-# FZF and nodejs
-export PATH=$PATH:~/.fzf/bin/
-export PATH=$PATH:~/node-v17.3.0-linux-x64/bin
+# ------------------------------
+# ------------ Conda -----------
+# ------------------------------
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -106,3 +88,12 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# -----------------------
+# -------- Theme --------
+# -----------------------
+
+# # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
