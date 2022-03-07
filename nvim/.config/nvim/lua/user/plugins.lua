@@ -113,6 +113,7 @@ return packer.startup(function(use)
   ----------------------
   use 'mfussenegger/nvim-dap'
   use 'mfussenegger/nvim-dap-python'
+  use 'theHamsta/nvim-dap-virtual-text'
   use 'kana/vim-textobj-user'
   use 'bps/vim-textobj-python'
 

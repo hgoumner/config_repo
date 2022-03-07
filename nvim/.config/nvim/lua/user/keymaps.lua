@@ -70,7 +70,17 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+-- TELESCOPE
 -- keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown())<cr>", opts)
 keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opts)
+
+-- NVIM-DAP
+keymap("n", "<leader>db", "lua require('dap').toggle_breakpoint()<CR>", opts)
+keymap("n", "<leader>do", "lua require('dap').step_out()<CR>", opts)
+keymap("n", "<leader>di", "lua require('dap').step_into()<CR>", opts)
+keymap("n", "<leader>dv", "lua require('dap').step_over()<CR>", opts)
+keymap("n", "<leader>dd", "lua require('dap').continue()<CR>", opts)
+keymap("n", "<leader>dr", "lua require('dap').repl_open({}, 'vsplit')<CR>", opts)
+
