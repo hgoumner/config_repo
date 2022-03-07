@@ -1,7 +1,7 @@
-local status_ok, nvim-dap = pcall(require, "nvim-dap")
-if not status_ok then
-  return
-end
+--local status_ok, nvim-dap = pcall(require, "nvim-dap")
+--if not status_ok then
+--  return
+--end
 
 require('dap-python').setup('~/.virtualenv/debugpy/bin/python')
 

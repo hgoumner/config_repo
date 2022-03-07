@@ -52,7 +52,7 @@ return packer.startup(function(use)
   -- use "morhetz/gruvbox"
   -- use 'sainnhe/gruvbox-material'
   use "lunarvim/darkplus.nvim"
-  use "vim-airline/vim-airline"
+  --use "vim-airline/vim-airline"
   use {
     'goolord/alpha-nvim',
     requires = { 'kyazdani42/nvim-web-devicons' },

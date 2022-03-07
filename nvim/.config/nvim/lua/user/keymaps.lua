@@ -77,10 +77,10 @@ keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opts)
 
 -- NVIM-DAP
-keymap("n", "<leader>db", "lua require('dap').toggle_breakpoint()<CR>", opts)
-keymap("n", "<leader>do", "lua require('dap').step_out()<CR>", opts)
-keymap("n", "<leader>di", "lua require('dap').step_into()<CR>", opts)
-keymap("n", "<leader>dv", "lua require('dap').step_over()<CR>", opts)
-keymap("n", "<leader>dd", "lua require('dap').continue()<CR>", opts)
-keymap("n", "<leader>dr", "lua require('dap').repl_open({}, 'vsplit')<CR>", opts)
+keymap("n", "<leader>db", ":lua require('dap').toggle_breakpoint()<CR>", opts)
+keymap("n", "<leader>do", ":lua require('dap').step_out()<CR>", opts)
+keymap("n", "<leader>di", ":lua require('dap').step_into()<CR>", opts)
+keymap("n", "<leader>dv", ":lua require('dap').step_over()<CR>", opts)
+keymap("n", "<leader>dd", ":lua require('dap').continue()<CR>", opts)
+keymap("n", "<leader>dr", ":lua require('dap').repl_open({}, 'vsplit')<CR>", opts)
 
