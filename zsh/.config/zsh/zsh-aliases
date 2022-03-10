@@ -34,8 +34,7 @@ alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
 alias m="git checkout master"
 alias s="git checkout stable"
 
-alias ls='ls --color=auto'
+alias ls='logo-ls'
 
 alias brave="sh /opt/brave.com/brave/brave-browser"
 
-alias ll='ls -l'
