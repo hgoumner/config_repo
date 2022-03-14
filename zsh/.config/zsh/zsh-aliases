@@ -38,3 +38,4 @@ alias ls='logo-ls'
 
 alias brave="sh /opt/brave.com/brave/brave-browser"
 
+alias fzfp='fzf --preview "bat --style=numbers --color=always {}"'
