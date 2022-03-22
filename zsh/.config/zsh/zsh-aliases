@@ -1,19 +1,31 @@
 #!/bin/sh
 
-alias sz='source ~/.zshrc'
+# alias sz='source ~/.zshrc'
 
-alias j='z'
-alias f='zi'
-alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
-alias nvimrc='nvim ~/.config/nvim/'
+# alias j='z'
+# alias f='zi'
+# alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
+# alias nvimrc='nvim ~/.config/nvim/'
+#
 
-# Colorize grep output (good for log files)
+# -----------------------------------------------
+# ------------------ Searching ------------------
+# -----------------------------------------------
+
+# grep
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-# better find
+# find
 # alias fd='fdfind'
+
+# fzf
+alias fzfp='fzf --preview "bat --style=numbers --color=always {}"'
+
+# -----------------------------------------------
+# -----------------------------------------------
+# -----------------------------------------------
 
 # easier to read disk
 alias df='df -h'     # human-readable sizes
@@ -31,11 +43,16 @@ alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
 # receive the key of a developer
 alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
 
+# -----------------------------------------------
+# -----------------------------------------------
+# -----------------------------------------------
 alias m="git checkout master"
 alias s="git checkout stable"
+
+# -----------------------------------------------
+# -----------------------------------------------
+# -----------------------------------------------
 
 alias ls='logo-ls'
 
 alias brave="sh /opt/brave.com/brave/brave-browser"
-
-alias fzfp='fzf --preview "bat --style=numbers --color=always {}"'
