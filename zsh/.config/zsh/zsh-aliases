@@ -1,12 +1,6 @@
 #!/bin/sh
 
-# alias sz='source ~/.zshrc'
-
-# alias j='z'
-# alias f='zi'
 # alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
-# alias nvimrc='nvim ~/.config/nvim/'
-#
 
 # -----------------------------------------------
 # ------------------ Searching ------------------
@@ -24,7 +18,7 @@ alias fgrep='fgrep --color=auto'
 alias fzfp='fzf --preview "bat --style=numbers --color=always {}"'
 
 # -----------------------------------------------
-# -----------------------------------------------
+# ------------------- System --------------------
 # -----------------------------------------------
 
 # easier to read disk
@@ -44,12 +38,41 @@ alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
 alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
 
 # -----------------------------------------------
+# --------------- Applications ------------------
 # -----------------------------------------------
-# -----------------------------------------------
-alias m="git checkout master"
-alias s="git checkout stable"
+
+###################################
+# git
+###################################
+
+alias ga='git add --verbose'
+alias gaa='git add --all'
+alias gb='git branch'
+alias gc='git commit'
+alias gcm='git commit -m'
+alias gcon='git config --list'
+alias gch='git checkout'
+alias gd='git diff'
+alias gf='git fetch'
+alias gp='git push origin $(current_branch)'
+alias gpl='git pull origin $(current_branch)'
+alias gl='git log'
+alias gm='git merge'
+alias gr='git reset --hard'
+alias gst='git status'
+alias gsh='git stash'
+
+alias lg='lazygit'
+
+###################################
+# listing
+###################################
 
 alias lss='logo-ls'
 alias ls='lsd'
+
+###################################
+# other
+###################################
 
 alias brave="sh /opt/brave.com/brave/brave-browser"
