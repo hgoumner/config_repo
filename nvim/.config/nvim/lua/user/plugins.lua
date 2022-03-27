@@ -40,59 +40,65 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
-  -- My plugins here
-  use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+
+  -----------------------
+  -- Necessary plugins --
+  -----------------------
+
+  use "wbthomason/packer.nvim"                      -- Have packer manage itself
+  use "nvim-lua/popup.nvim"                         -- An implementation of the Popup API from vim in Neovim
+  use "nvim-lua/plenary.nvim"                       -- Useful lua functions used ny lots of plugins
+
+  -- Telescope
+  use "nvim-telescope/telescope.nvim"               -- Used for multiple features
+  -- use 'nvim-telescope/telescope-media-files.nvim'   -- Add on for media files
+
+  -- TreeSitter
+  use {                                             -- Powerful parser, required by other plugins
+      "nvim-treesitter/nvim-treesitter",
+      run = ":TSUpdate",
+  }
+  -- use "p00f/nvim-ts-rainbow"                     -- Optional addons
+  -- use "nvim-treesitter/playground"
 
   ----------------------
   -- Hristo's plugins --
   ----------------------
 
-  -- use "morhetz/gruvbox"
-  -- use 'sainnhe/gruvbox-material'
+  -- Colorscheme and appearance
   use "lunarvim/darkplus.nvim"
   use "vim-airline/vim-airline"
   use {
     'goolord/alpha-nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
-    config = function ()
-        require'alpha'.setup(require'alpha.themes.startify'.config)
-    end
+    requires = { 'kyazdani42/nvim-web-devicons' }
   }
-  -- use "mhinz/vim-startify"
-  -- use "tpope/vim-commentary"
-  use "numToStr/Comment.nvim" -- Easily comment stuff
+
+  --buffer_line
+  use "akinsho/bufferline.nvim"
+  use "moll/vim-bbye"
+
+  -- Productivity
+  ----------------------------------------------------------------------------------------
+
+  use "numToStr/Comment.nvim"                       -- Easily comment stuff
   use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   -- completion
-  use "hrsh7th/nvim-cmp" -- The completion plugin
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "hrsh7th/nvim-cmp"                            -- The completion plugin
+  use "hrsh7th/cmp-buffer"                          -- buffer completions
+  use "hrsh7th/cmp-path"                            -- path completions
+  use "hrsh7th/cmp-cmdline"                         -- cmdline completions
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
+  use "saadparwaiz1/cmp_luasnip"                    -- snippet completions
 
-  -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  -- -- snippets
+  -- use "L3MON4D3/LuaSnip"                            -- snippet engine
+  -- use "rafamadriz/friendly-snippets"                -- a bunch of snippets to use
 
   -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-
-  -- Telescope
-  use "nvim-telescope/telescope.nvim"
-  use 'nvim-telescope/telescope-media-files.nvim'
-
-  -- TreeSitter
-  use {
-      "nvim-treesitter/nvim-treesitter",
-      run = ":TSUpdate",
-  }
-  use "p00f/nvim-ts-rainbow"
-  use "nvim-treesitter/playground"
+  use "neovim/nvim-lspconfig"                       -- enable LSP
+  use "williamboman/nvim-lsp-installer"             -- simple to use language server installer
 
   -- git
   use "lewis6991/gitsigns.nvim"
@@ -104,19 +110,16 @@ return packer.startup(function(use)
   -- terminal
   use "akinsho/toggleterm.nvim"
 
-  --buffer_line
-  use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
+  -------------------------------
+  -- Language specific plugins --
+  -------------------------------
 
-  ----------------------
-  -- Hristo's plugins --
-  ----------------------
-  use 'mfussenegger/nvim-dap'
-  use 'mfussenegger/nvim-dap-python'
-  use 'theHamsta/nvim-dap-virtual-text'
-  use 'kana/vim-textobj-user'
-  use 'bps/vim-textobj-python'
-
+  -- use 'mfussenegger/nvim-dap'
+  -- use 'mfussenegger/nvim-dap-python'
+  -- use 'theHamsta/nvim-dap-virtual-text'
+  -- use 'kana/vim-textobj-user'
+  -- use 'bps/vim-textobj-python'
+ 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
