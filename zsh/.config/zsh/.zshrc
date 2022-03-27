@@ -37,7 +37,8 @@ zle_highlight=('paste:none')
 unsetopt BEEP
 
 # completions
-autoload -Uz compinit
+autoload -U +X bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 # zstyle ':completion::complete:lsof:*' menu yes select
 zmodload zsh/complist
@@ -64,6 +65,7 @@ zsh_add_file "zsh-aliases"
 zsh_add_plugin "romkatv/powerlevel10k"
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
+zsh_add_plugin "zsh-users/zsh-completions"
 zsh_add_plugin "hlissner/zsh-autopair"
 
 # FZF

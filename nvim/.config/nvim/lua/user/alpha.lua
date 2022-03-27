@@ -18,7 +18,7 @@ dashboard.section.buttons.val = {
   dashboard.button("r", "  Recent files", ":Telescope oldfiles <CR>"),
   dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
   dashboard.button("c", "  nvim config", ":e ~/.config/nvim/init.lua <CR>"),
-  dashboard.button("z", "  zsh  config", ":e $ZDOTDIR/.zshrc <CR>"),
+  dashboard.button("z", "  zsh config", ":e $ZDOTDIR/.zshrc <CR>"),
 }
 dashboard.section.footer.opts.hl = "Type"
 dashboard.section.header.opts.hl = "Include"
