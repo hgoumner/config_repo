@@ -67,7 +67,10 @@ return packer.startup(function(use)
 
   -- Colorscheme and appearance
   use "lunarvim/darkplus.nvim"
-  use "vim-airline/vim-airline"
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
   use {
     'goolord/alpha-nvim',
     requires = { 'kyazdani42/nvim-web-devicons' }
@@ -76,6 +79,12 @@ return packer.startup(function(use)
   --buffer_line
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
+
+  -- browser add on
+  use {
+    'glacambre/firenvim',
+    run = function() vim.fn['firenvim#install'](0) end 
+  }
 
   -- Productivity
   ----------------------------------------------------------------------------------------
