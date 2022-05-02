@@ -1,4 +1,3 @@
-require("user.options")
 require("user.keymaps")
 require("user.plugins")
 require("user.telescope")
@@ -13,5 +12,6 @@ require("user.lsp")
 require("user.gitsigns")
 require("user.nvim-tree")
 require("user.toggleterm")
+require("user.options")
 -- require("user.nvim-dap")
 
