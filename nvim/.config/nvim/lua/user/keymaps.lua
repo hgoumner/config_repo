@@ -45,6 +45,8 @@ keymap("n", "<leader>w", ":w<cr>", opts)
 keymap("n", "<leader>q", ":q!<cr>", opts)
 keymap("n", "<leader>x", ":x<cr>", opts)
 keymap("n", "<leader>s", ":set hlsearch!<cr>", opts)
+keymap("n", "n", "nzz", opts)
+keymap("n", "N", "Nzz", opts)
 
 -- Visual --
 -- Stay in indent mode
