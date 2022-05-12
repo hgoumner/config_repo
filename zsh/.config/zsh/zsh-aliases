@@ -68,11 +68,13 @@ alias lg='lazygit'
 # listing
 ###################################
 
-alias lss='logo-ls'
+# alias lss='logo-ls'
 alias ls='lsd'
 
 ###################################
 # other
 ###################################
 
-alias brave="sh /opt/brave.com/brave/brave-browser"
+# alias brave="sh /opt/brave.com/brave/brave-browser"
+
+alias cheat='~/config_repo/cheat/cheat'
