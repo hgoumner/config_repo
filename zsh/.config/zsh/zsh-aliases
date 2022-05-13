@@ -76,5 +76,3 @@ alias ls='lsd'
 ###################################
 
 # alias brave="sh /opt/brave.com/brave/brave-browser"
-
-alias cheat='~/config_repo/cheat/cheat'
