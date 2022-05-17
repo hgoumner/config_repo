@@ -75,4 +75,4 @@ alias ls='lsd --color=auto'
 # other
 ###################################
 
-alias brave="sh /opt/brave.com/brave/brave-browser"
+# alias brave="sh /opt/brave.com/brave/brave-browser"

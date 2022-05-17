@@ -4,3 +4,4 @@ nvim/.config/nvim/plugin
 
 nvim/.config/nvim/plugin/packer_compiled.lua
 zsh/.config/zsh/.zcompdump
+cheat/.config/cheat/cheatsheets/community
