@@ -36,15 +36,6 @@ zle_highlight=('paste:none')
 # beeping is annoying
 unsetopt BEEP
 
-# completions
-autoload -U +X bashcompinit && bashcompinit
-autoload -Uz compinit && compinit
-zstyle ':completion:*' menu select
-# zstyle ':completion::complete:lsof:*' menu yes select
-zmodload zsh/complist
-# compinit
-_comp_options+=(globdots)       # Include hidden files.
-
 # Colors
 autoload -Uz colors && colors
 
@@ -58,6 +49,7 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # Normal files to source
 zsh_add_file "zsh-exports"
+zsh_add_file "zsh-completions"
 zsh_add_file "zsh-vim-mode"
 zsh_add_file "zsh-aliases"
 

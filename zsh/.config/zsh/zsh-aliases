@@ -68,8 +68,8 @@ alias lg='lazygit'
 # listing
 ###################################
 
-alias lss='logo-ls'
-alias ls='lsd'
+# alias lss='logo-ls'
+alias ls='lsd --color=auto'
 
 ###################################
 # other
