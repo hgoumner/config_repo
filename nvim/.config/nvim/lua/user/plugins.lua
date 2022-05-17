@@ -66,7 +66,8 @@ return packer.startup(function(use)
   ----------------------
 
   -- Colorscheme and appearance
-  use "lunarvim/darkplus.nvim"
+  -- use "lunarvim/darkplus.nvim"
+  use 'gruvbox-community/gruvbox'
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
