@@ -1,8 +1,12 @@
 # completions
 autoload -U +X bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
-
 zmodload zsh/complist
+
+if [ ! -f ~/.config/zsh/plugins/zsh-completions/src/_docker ]; then
+    curl -L https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker -o ~/.config/zsh/plugins/zsh-completions/src/_docker
+    compinit
+fi
 
 # style settings
 zstyle ':completion:*' menu select search
@@ -20,6 +24,9 @@ zstyle ':completion:*:builtins' list-colors '=*=1;38;5;142'
 zstyle ':completion:*:aliases' list-colors '=*=2;38;5;128'
 zstyle ':completion:*:*:kill:*' list-colors '=(#b) #([0-9]#)*( *[a-z])*=34=31=33'
 zstyle ':completion:*:options' list-colors '=^(-- *)=33'
+
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 _comp_options+=(globdots)       # Include hidden files.
 
