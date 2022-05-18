@@ -12,7 +12,7 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 # find
-# alias fd='fdfind'
+alias fd='fd --hidden'
 
 # fzf
 alias fzfp='fzf --preview "bat --style=numbers --color=always {}"'
