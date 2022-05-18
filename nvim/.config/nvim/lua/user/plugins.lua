@@ -107,8 +107,17 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets"                -- a bunch of snippets to use
 
   -- LSP
-  use "neovim/nvim-lspconfig"                       -- enable LSP
-  use "williamboman/nvim-lsp-installer"             -- simple to use language server installer
+  use {
+    "williamboman/nvim-lsp-installer",
+    {
+        "neovim/nvim-lspconfig",
+        config = function()
+            require("nvim-lsp-installer").setup {}
+            local lspconfig = require("lspconfig")
+            lspconfig.sumneko_lua.setup {}
+        end
+    }
+  }
 
   -- git
   use "lewis6991/gitsigns.nvim"
