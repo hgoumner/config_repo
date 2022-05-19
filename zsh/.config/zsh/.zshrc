@@ -70,6 +70,7 @@ zsh_add_plugin "hlissner/zsh-autopair"
 # Key-bindings
 bindkey '\e[1;5C' forward-word
 bindkey '\e[1;5D' backward-word
+bindkey -s '^h' ' --help'
 
 # ------------------------------
 # ------------ Conda -----------
