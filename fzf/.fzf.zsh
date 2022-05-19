@@ -29,4 +29,4 @@ rg-fzf() {
 }
 
 zle     -N  rg-fzf
-bindkey '^H' rg-fzf
+bindkey 'MH' rg-fzf
