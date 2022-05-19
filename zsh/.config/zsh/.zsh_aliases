@@ -1,5 +1,12 @@
 #!/bin/sh
 
+# -----------------------------------------------
+# ------------------ ZSH ------------------
+# -----------------------------------------------
+
+alias d='dirs -v'
+for index ({1..9}) alias "$index"="cd +${index}"; unset index
+
 # alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 
 # -----------------------------------------------
@@ -12,7 +19,7 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 # find
-alias fd='fd --hidden'
+alias fd='fd --hidden --follow'
 
 # fzf
 alias fzfp='fzf --preview "bat --style=numbers --color=always {}"'
@@ -54,8 +61,8 @@ alias gcon='git config --list'
 alias gch='git checkout'
 alias gd='git diff'
 alias gf='git fetch'
-alias gp='git push origin $(current_branch)'
-alias gpl='git pull origin $(current_branch)'
+alias gp='git push'
+alias gpl='git pull'
 alias gl='git log'
 alias gm='git merge'
 alias gr='git reset --hard'

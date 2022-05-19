@@ -1,3 +1,16 @@
+#!/usr/bin/env zsh
+
+# navigation
+bindkey '\e[1;5C' forward-word
+bindkey '\e[1;5D' backward-word
+
+# help
+bindkey -s '^h' ' --help'
+
+# --------------------------------
+# VIM mode
+# --------------------------------
+
 # bindkey -e will be emacs mode
 bindkey -v
 export KEYTIMEOUT=1
@@ -9,11 +22,6 @@ bindkey -M menuselect '^l' vi-forward-char
 bindkey -M menuselect '^j' vi-down-line-or-history
 bindkey -M menuselect '^[[Z' vi-up-line-or-history
 bindkey -v '^?' backward-delete-char
-
-# Change cursor shape for different vi modes.
-# vi mode
-bindkey -v
-export KEYTIMEOUT=1
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
@@ -35,3 +43,7 @@ zle-line-init() {
 zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line

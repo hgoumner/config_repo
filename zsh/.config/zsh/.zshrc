@@ -11,47 +11,20 @@ fi
 
 [[ ! -f "$ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme" ]] || source "$ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme"
 
-# if [[ ! -e ~/powerlevel10k ]]; then
-#   git -C ~ clone --quiet --depth=1 https://github.com/romkatv/powerlevel10k.git
-# fi
-#
-# source ~/.config/zsh/.p10k.zsh
-# return
-
-# ------------------------------
-# -------- ZSH settings --------
-# ------------------------------
-
-# set zsh directory and history options
-# export ZDOTDIR=$HOME/.config/zsh
-HISTFILE=~/.zsh_history
-setopt appendhistory
-
-# some useful options (man zshoptions)
-setopt autocd extendedglob nomatch menucomplete
-setopt interactive_comments
-# stty stop undef       # Disable ctrl-s to freeze terminal.
-zle_highlight=('paste:none')
-
-# beeping is annoying
-unsetopt BEEP
-
-# Colors
-autoload -Uz colors && colors
-
 # --------------------------------
 # -------- External files --------
 # --------------------------------
 
 # Useful Functions
-source "$ZDOTDIR/zsh-functions"
+source "$ZDOTDIR/.zsh_functions"
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # Normal files to source
-zsh_add_file "zsh-exports"
-zsh_add_file "zsh-completions"
-zsh_add_file "zsh-vim-mode"
-zsh_add_file "zsh-aliases"
+zsh_add_file ".zsh_completions"
+zsh_add_file ".zsh_vim-mode"
+zsh_add_file ".zsh_aliases"
+zsh_add_file ".zsh_keymaps"
+zsh_add_file ".zsh_options"
 
 # Plugins
 zsh_add_plugin "romkatv/powerlevel10k"
@@ -62,15 +35,6 @@ zsh_add_plugin "hlissner/zsh-autopair"
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# ------------------------------
-# -------- Key-bindings --------
-# ------------------------------
-
-# Key-bindings
-bindkey '\e[1;5C' forward-word
-bindkey '\e[1;5D' backward-word
-bindkey -s '^h' ' --help'
 
 # ------------------------------
 # ------------ Conda -----------

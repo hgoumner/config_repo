@@ -1,3 +1,8 @@
+#!/usr/bin/env zsh
+
+# Load completions
+fpath=($DOTFILES/zsh/plugins/zsh-completions/src $fpath)
+
 # completions
 autoload -U +X bashcompinit && bashcompinit
 autoload -Uz compinit && compinit

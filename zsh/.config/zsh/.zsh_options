@@ -1,0 +1,27 @@
+#!/usr/bin/env zsh
+
+# history
+setopt APPEND_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+
+# directory
+setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
+setopt PUSHD_SILENT
+
+# some useful options (man zshoptions)
+# setopt AUTO_CD
+setopt EXTENDED_GLOB
+setopt NO_MATCH
+setopt MENU_COMPLETE
+setopt INTERACTIVE_COMMENTS
+
+# highlight
+zle_highlight=('paste:none')
+
+# beeping is annoying
+unsetopt BEEP
+
+# Colors
+autoload -Uz colors && colors
