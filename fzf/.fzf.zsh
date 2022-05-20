@@ -12,7 +12,7 @@ fi
 # ------------
 source "/home/$(whoami)/.fzf/shell/key-bindings.zsh"
 
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude BraveSoftware'
 
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS='--preview "bat --style=numbers --color=always --line-range :500 {}"'
