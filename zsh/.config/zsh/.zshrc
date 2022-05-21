@@ -38,6 +38,10 @@ zsh_add_plugin "hlissner/zsh-autopair"
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
+HISTSIZE=10000                   # Maximum events for internal history
+SAVEHIST=10000                   # Maximum events in history file
+
 # ------------------------------
 # ------------ Conda -----------
 # ------------------------------

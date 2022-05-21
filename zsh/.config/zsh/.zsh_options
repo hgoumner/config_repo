@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # history
-setopt APPEND_HISTORY
+setopt SHARE_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_SAVE_NO_DUPS
 
