@@ -1,17 +1,20 @@
 #!/usr/bin/env zsh
 
 # Load completions
-fpath=($DOTFILES/zsh/plugins/zsh-completions/src $fpath)
+fpath=($ZDOTDIR/plugins/zsh-completions/src $fpath)
+
+if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_docker ]; then
+    curl -L https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker -o $ZDOTDIR/plugins/zsh-completions/src/_docker
+fi
+
+if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_conda ]; then
+    curl -L https://raw.githubusercontent.com/esc/conda-zsh-completion/master/_conda -o $ZDOTDIR/plugins/zsh-completions/src/_conda
+fi
 
 # completions
 autoload -U +X bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 zmodload zsh/complist
-
-if [ ! -f ~/.config/zsh/plugins/zsh-completions/src/_docker ]; then
-    curl -L https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker -o ~/.config/zsh/plugins/zsh-completions/src/_docker
-    compinit
-fi
 
 # style settings
 zstyle ':completion:*' menu select search
