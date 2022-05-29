@@ -16,6 +16,9 @@ autoload -U +X bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 zmodload zsh/complist
 
+# zoxide
+eval "$(zoxide init --cmd z zsh)"
+
 # style settings
 zstyle ':completion:*' menu select search
 zstyle ':completion:*' file-list all
