@@ -1,12 +1,5 @@
 #!/usr/bin/env zsh
 
-# navigation
-bindkey '\e[1;5C' forward-word
-bindkey '\e[1;5D' backward-word
-
-# help
-bindkey -s '^h' ' --help'
-
 # --------------------------------
 # VIM mode
 # --------------------------------
@@ -47,3 +40,8 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
+
+# navigation
+bindkey '\e[1;5C' forward-word
+bindkey '\e[1;5D' backward-word
+
