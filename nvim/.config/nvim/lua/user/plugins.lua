@@ -133,12 +133,14 @@ return packer.startup(function(use)
   -- Language specific plugins --
   -------------------------------
 
-  -- use 'mfussenegger/nvim-dap'
-  -- use 'mfussenegger/nvim-dap-python'
-  -- use 'theHamsta/nvim-dap-virtual-text'
+  use 'mfussenegger/nvim-dap'
+  use 'mfussenegger/nvim-dap-python'
+  use 'rcarriga/nvim-dap-ui'
+  use 'theHamsta/nvim-dap-virtual-text'
+  use 'nvim-telescope/telescope-dap.nvim'
   -- use 'kana/vim-textobj-user'
   -- use 'bps/vim-textobj-python'
- 
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

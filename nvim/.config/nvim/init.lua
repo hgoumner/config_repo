@@ -14,5 +14,5 @@ require("user.toggleterm")
 require("user.options")
 require("user.nvim-lsp-installer")
 require("user.nvim-lsp-config")
--- require("user.nvim-dap")
+require("user.nvim-dap")
 

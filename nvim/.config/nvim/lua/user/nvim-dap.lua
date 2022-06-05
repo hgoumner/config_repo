@@ -3,7 +3,8 @@
 --  return
 --end
 
-require('dap-python').setup('~/.virtualenv/debugpy/bin/python')
+require('dap').set_log_level('ERROR')
+require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
 
 require("nvim-dap-virtual-text").setup {
     enabled = true,                     -- enable this plugin (the default)
@@ -17,5 +18,17 @@ require("nvim-dap-virtual-text").setup {
     all_frames = false,                 -- show virtual text for all stack frames not only current. Only works for debugpy on my machine.
     virt_lines = false,                 -- show virtual lines instead of virtual text (will flicker!)
     virt_text_win_col = nil             -- position the virtual text at a fixed window column (starting from the first text column) ,
-                                        -- e.g. 80 to position at column 80, see `:h nvim_buf_set_extmark()`
 }
+
+require('dapui').setup()
+
+local dap, dapui = require('dap'), require('dapui')
+dap.listeners.after.event_initialized['dapui_config'] = function()
+  dapui.open()
+end
+dap.listeners.after.event_terminated['dapui_config'] = function()
+  dapui.close()
+end
+dap.listeners.after.event_exited['dapui_config'] = function()
+  dapui.close()
+end
