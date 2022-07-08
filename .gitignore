@@ -1,9 +1,7 @@
-zsh/.config/zsh/plugins
-zsh/.config/zsh/.zcompdump
+cheat/.config/cheat/cheatsheets/community
+lazygit/.config/lazygit/state.yml
 nvim/.config/nvim/plugin
-
 nvim/.config/nvim/plugin/packer_compiled.lua
 zsh/.config/zsh/.zcompdump
-cheat/.config/cheat/cheatsheets/community
-zsh/.config/zsh/.zcompdump.PC3223.31997
 zsh/.config/zsh/.zhistory
+zsh/.config/zsh/plugins
