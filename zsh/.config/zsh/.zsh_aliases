@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # -----------------------------------------------
-# ------------------ ZSH ------------------
+# --------------------- ZSH ---------------------
 # -----------------------------------------------
 
 alias d='dirs -v'
@@ -17,6 +17,9 @@ for index ({1..9}) alias "$index"="cd +${index}"; unset index
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
+
+# ripgrep
+alias rg='rg --hidden --ignore-case'
 
 # find
 alias fd='fd --hidden --follow'
