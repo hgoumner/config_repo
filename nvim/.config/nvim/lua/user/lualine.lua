@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 local function filelength()
-    return vim.fn.line('$')
+    return '%3l/' .. vim.fn.line('$') .. ':%-2v'
 end
 
 require('lualine').setup {
@@ -31,8 +31,8 @@ require('lualine').setup {
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
     lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress', filelength},
-    lualine_z = {'location'}
+    lualine_y = {'progress'},
+    lualine_z = {filelength}
   },
   inactive_sections = {
     lualine_a = {},
