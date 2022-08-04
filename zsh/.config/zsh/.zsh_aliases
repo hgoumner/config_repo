@@ -85,4 +85,5 @@ alias ls='lsd --color=auto'
 # other
 ###################################
 
-# alias brave="sh /opt/brave.com/brave/brave-browser"
+# set keyboard layout
+alias km='~/keylayout.sh'
