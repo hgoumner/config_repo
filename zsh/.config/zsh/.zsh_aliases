@@ -87,3 +87,6 @@ alias ls='lsd --color=auto'
 
 # set keyboard layout
 alias km='~/keylayout.sh'
+
+# youtube-dl only audio
+alias youdla='youtube-dl -x'

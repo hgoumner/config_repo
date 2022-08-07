@@ -1,0 +1,8 @@
+# best format
+-f best
+
+# progress bar 
+--newline
+
+# output
+-o ~/Videos/%(title)s.%(ext)s
