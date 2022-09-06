@@ -78,8 +78,12 @@ return packer.startup(function(use)
   }
 
   --buffer_line
-  use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
+  use 'moll/vim-bbye'
+  use {
+    'akinsho/bufferline.nvim',
+    tag = "v2.*",
+    requires = { 'kyazdani42/nvim-web-devicons' }
+  }
 
   -- browser add on
   use {
