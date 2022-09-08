@@ -5,5 +5,5 @@ nvim/.config/nvim/plugin/packer_compiled.lua
 zsh/.config/zsh/.zcompdump
 zsh/.config/zsh/.zhistory
 zsh/.config/zsh/plugins
-
-zsh/.config
+zsh/.config/cache
+zsh/.config/local
