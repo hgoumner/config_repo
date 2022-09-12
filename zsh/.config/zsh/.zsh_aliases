@@ -90,3 +90,8 @@ alias km='~/keylayout.sh'
 
 # youtube-dl only audio
 alias youdla='youtube-dl -x'
+
+# ASML network
+alias cdv='cd /mnt/p/'
+alias cdq='cd /mnt/q/'
+alias cdv='cd /mnt/q/Verwaltung'
