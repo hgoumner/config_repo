@@ -52,10 +52,10 @@ __conda_setup="$('/home/gou/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/nul
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/gou/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/gou/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/mnt/c/Users/Goumnerovh/Anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/mnt/c/Users/Goumnerovh/Anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/gou/miniconda3/bin:$PATH"
+        export PATH="/mnt/c/Users/Goumnerovh/Anaconda3/condabin:$PATH"
     fi
 fi
 unset __conda_setup
