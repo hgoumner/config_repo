@@ -94,8 +94,12 @@ return packer.startup(function(use)
   -- Productivity
   ----------------------------------------------------------------------------------------
 
-  use "numToStr/Comment.nvim"                       -- Easily comment stuff
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
+  use {
+      'numToStr/Comment.nvim',
+      config = function()
+          require('Comment').setup()
+      end
+  }
 
   -- completion
   use "hrsh7th/nvim-cmp"                            -- The completion plugin
@@ -109,19 +113,6 @@ return packer.startup(function(use)
   -- snippets
   use "L3MON4D3/LuaSnip"                            -- snippet engine
   use "rafamadriz/friendly-snippets"                -- a bunch of snippets to use
-
-  -- LSP
-  use {
-    "williamboman/nvim-lsp-installer",
-    {
-        "neovim/nvim-lspconfig",
-        config = function()
-            require("nvim-lsp-installer").setup {}
-            local lspconfig = require("lspconfig")
-            lspconfig.sumneko_lua.setup {}
-        end
-    }
-  }
 
   -- git
   use "lewis6991/gitsigns.nvim"
