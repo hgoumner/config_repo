@@ -12,7 +12,7 @@ require("user.gitsigns")
 require("user.nvim-tree")
 require("user.toggleterm")
 require("user.options")
-require("user.nvim-lsp-installer")
-require("user.nvim-lsp-config")
+--[[ require("user.nvim-lsp-installer") ]]
+--[[ require("user.nvim-lsp-config") ]]
 require("user.nvim-dap")
 
