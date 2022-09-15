@@ -86,3 +86,6 @@ keymap("n", "<leader>dv", ":lua require('dap').step_over()<CR>", opts)
 keymap("n", "<leader>dd", ":lua require('dap').continue()<CR>", opts)
 keymap("n", "<leader>dr", ":lua require('dap').repl_open({}, 'vsplit')<CR>", opts)
 
+-- EasyAlign
+keymap("n", "ga=", "vip:EasyAlign =<CR>", opts)
+keymap("v", "ga=", ":EasyAlign =<CR>", opts)

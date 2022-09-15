@@ -58,7 +58,7 @@ return packer.startup(function(use)
       "nvim-treesitter/nvim-treesitter",
       run = ":TSUpdate",
   }
-  -- use "p00f/nvim-ts-rainbow"                     -- Optional addons
+   use "p00f/nvim-ts-rainbow"                     -- Optional addons
   -- use "nvim-treesitter/playground"
 
   ----------------------
@@ -96,6 +96,9 @@ return packer.startup(function(use)
 
   use "numToStr/Comment.nvim"                       -- Easily comment stuff
   use 'JoosepAlviste/nvim-ts-context-commentstring'
+
+  -- align code
+  use 'junegunn/vim-easy-align'
 
   -- completion
   use "hrsh7th/nvim-cmp"                            -- The completion plugin
