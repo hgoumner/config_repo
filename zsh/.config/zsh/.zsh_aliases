@@ -81,6 +81,9 @@ alias lg='lazygit'
 # alias lss='logo-ls'
 alias ls='ls --color=auto'
 
+# tree
+alias tree='tree -C'
+
 ###################################
 # other
 ###################################
