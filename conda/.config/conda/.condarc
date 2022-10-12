@@ -1,0 +1,6 @@
+channels:
+  - defaults
+  - conda-forge
+
+envs_dirs:
+  - /mnt/c/Users/Goumnerovh/Anaconda3/envs/

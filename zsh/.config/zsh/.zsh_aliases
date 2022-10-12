@@ -98,3 +98,6 @@ alias youdla='youtube-dl -x'
 alias cdv='cd /mnt/p/'
 alias cdq='cd /mnt/q/'
 alias cdv='cd /mnt/q/Verwaltung'
+
+# conda
+alias caa='conda activate /mnt/c/Users/Goumnerovh/Anaconda3'
