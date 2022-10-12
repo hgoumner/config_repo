@@ -25,7 +25,11 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+-- NvimTreeToggle
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+
+-- Show all characters
+keymap("n", "<leader>c", ":set list!<cr>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
