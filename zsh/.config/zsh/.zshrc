@@ -42,6 +42,9 @@ HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
 HISTSIZE=10000                   # Maximum events for internal history
 SAVEHIST=10000                   # Maximum events in history file
 
+# Broot
+[ -f ~/.config/broot/launcher/bash/br ] && source ~/.config/broot/launcher/bash/br
+
 # ------------------------------
 # ------------ Conda -----------
 # ------------------------------
