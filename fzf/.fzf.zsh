@@ -20,13 +20,41 @@ export FZF_CTRL_T_OPTS='--preview "bat --style=numbers --color=always --line-ran
 export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude BraveSoftware --exclude .git'
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
-rg-fzf() {
-    INITIAL_QUERY=""
-    RG_PREFIX="rg --files-with-matches --hidden --column --line-number --no-heading --color=always --smart-case "
-    FZF_DEFAULT_COMMAND="$RG_PREFIX '$INITIAL_QUERY'" \
-        fzf --preview "bat --style=numbers --color=always --line-range :500 {}" --bind "change:reload:$RG_PREFIX {q} || true" \
-        --ansi --disabled --query "$INITIAL_QUERY" --layout=reverse
+# rg-fzf() {
+#     INITIAL_QUERY=""
+#     RG_PREFIX="rg --files-with-matches --hidden --column --line-number --no-heading --color=always --smart-case "
+#     FZF_DEFAULT_COMMAND="$RG_PREFIX '$INITIAL_QUERY'" \
+#         fzf --preview "bat --style=numbers --color=always --line-range=:500 {}" --bind "change:reload:$RG_PREFIX {q} || true" \
+#         --ansi --disabled --query "$INITIAL_QUERY"
+# }
+#
+
+rg-fzf-nvim(){
+    local match=$(
+      rg --column --line-number --no-heading --color=always --smart-case "${*:-}" |
+        fzf --ansi --delimiter : \
+            --preview "nvim +{2} {1}"
+      )
+    local file=$(echo "$match" | cut -d':' -f1)
+    if [[ -n $file ]]; then
+        $EDITOR "$file" +$(echo "$match" | cut -d':' -f2)
+    fi
 }
 
-zle     -N  rg-fzf
-bindkey 'MH' rg-fzf
+rg-fzf-bat(){
+    local match=$(
+      rg --column --line-number --no-heading --color=always --smart-case "${*:-}" |
+        fzf --ansi --delimiter : \
+            --preview "bat --style=numbers --color=always --highlight-line {2} {1}"
+      )
+    local file=$(echo "$match" | cut -d':' -f1)
+    if [[ -n $file ]]; then
+        $EDITOR "$file" +$(echo "$match" | cut -d':' -f2)
+    fi
+}
+
+zle     -N  rg-fzf-bat
+bindkey '^P' rg-fzf-bat
+
+zle     -N  rg-fzf-nvim
+bindkey '^H' rg-fzf-nvim
