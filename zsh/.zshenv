@@ -69,3 +69,5 @@ export MANWIDTH=999
 # nodejs
 export PATH=$PATH:~/node-v17.3.0-linux-x64/bin
 
+# Okular
+export PATH=$PATH:/mnt/c/Users/Goumnerovh/AppData/Local/Programs/Okular/bin
