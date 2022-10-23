@@ -45,3 +45,13 @@ bindkey -M vicmd v edit-command-line
 bindkey '\e[1;5C' forward-word
 bindkey '\e[1;5D' backward-word
 
+# FZF and RG mappings
+zle     -N  rga-fzf-noline
+bindkey '^F' rga-fzf-noline
+
+zle     -N  rga-fzf-line
+bindkey '^G' rga-fzf-line
+
+#
+# zle     -N  rg-fzf-nvim
+# bindkey '^H' rg-fzf-nvim

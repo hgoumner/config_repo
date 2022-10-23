@@ -72,5 +72,3 @@ unset __conda_setup
 # typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
-
-source /home/hristo/.config/broot/launcher/bash/br
