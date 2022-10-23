@@ -20,17 +20,37 @@ export FZF_CTRL_T_OPTS='--preview "bat --style=numbers --color=always --line-ran
 export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude BraveSoftware --exclude .git'
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
-rga-fzf-all() {
+export FZF_DEFAULT_OPTS='
+  --color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f
+  --color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54
+'
+
+rga-fzf-noline() {
+	RG_PREFIX="rga --files-with-matches --hidden"
+	local match="$(
+		FZF_DEFAULT_COMMAND=$RG_PREFIX \
+			fzf --ansi --sort --preview="[[ ! -z {} ]] && rga --line-number --pretty --context 5 {q} {}" \
+				--phony -q "$1" \
+				--bind "change:reload:$RG_PREFIX {q}"
+	)"
+    local file=$(echo "$match" | cut -d':' -f1)
+    if [[ -n $file ]]; then
+        $EDITOR "$file"
+    fi
+}
+
+rga-fzf-line() {
     local match=$(
-      rga --hidden --column --no-heading --color=always --smart-case "${*:-}" |
-        fzf --ansi --delimiter : --nth 3.. \
-            --preview "[[ ! -z {} ]] && rga --pretty --line-number --context 5 {q} {1}"
+      rga --hidden --column --no-heading --line-number --smart-case "${*:-}" |
+        fzf --ansi --delimiter : \
+            --preview "[[ ! -z {1} ]] && rga --pretty --line-number --context 5 {q} {1}"
       )
     local file=$(echo "$match" | cut -d':' -f1)
     if [[ -n $file ]]; then
         $EDITOR "$file" +$(echo "$match" | cut -d':' -f2)
     fi
 }
+
 
 # rga-fzf-all() {
 # 	RG_PREFIX="rga --hidden --files-with-matches --column --line-number --no-heading --color=always"
@@ -70,12 +90,12 @@ rga-fzf-all() {
 # }
 #
 
-zle     -N  rga-fzf-all
-bindkey '^H' rga-fzf-all
+zle     -N  rga-fzf-noline
+bindkey '^H' rga-fzf-noline
 
-# zle     -N  rg-fzf-bat
-# bindkey '^P' rg-fzf-bat
-#
+zle     -N  rga-fzf-line
+bindkey '^N' rga-fzf-line
+
 #
 # zle     -N  rg-fzf-nvim
 # bindkey '^H' rg-fzf-nvim
