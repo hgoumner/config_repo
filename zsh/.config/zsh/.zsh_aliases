@@ -24,9 +24,6 @@ alias rg='rg --hidden --ignore-case'
 # find
 alias fd='fd --hidden --follow'
 
-# fzf
-alias fzfp='fzf --preview "bat --style=numbers --color=always {}"'
-
 # -----------------------------------------------
 # ------------------- System --------------------
 # -----------------------------------------------

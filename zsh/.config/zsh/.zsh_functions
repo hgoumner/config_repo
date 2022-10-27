@@ -43,8 +43,13 @@ function rga-fzf-noline() {
 				--bind "change:reload:$RG_PREFIX {q}"
 	)"
     local file=$(echo "$match" | cut -d':' -f1)
+    local extension=$(echo "$file" | cut -d'.' -f2)
     if [[ -n $file ]]; then
-        $EDITOR "$file"
+        if [[ $extension == "pdf" ]]; then
+            okular.exe "$file"
+        else
+            $EDITOR "$file"
+        fi
     fi
 }
 
@@ -58,14 +63,24 @@ function rga-fzf-line() {
 				--bind "change:reload:$RG_PREFIX {q}"
       )"
     local file=$(echo "$match" | cut -d':' -f1)
+    local extension=$(echo "$file" | cut -d'.' -f2)
     local linenumber=$(echo "$match" | cut -d':' -f2)
     if [[ -n $file ]]; then
-        $EDITOR "$file" +$linenumber
+        if [[ $extension == "pdf" ]]; then
+            okular.exe "$file"
+        else
+            $EDITOR "$file" +$linenumber
+        fi
     fi
 }
 
-function fzfpp() {
-    fzf --ansi --sort --preview="[[ ! -z {} ]] && rga --line-number --pretty --context 5 {q} {}" \
+# fzf
+function fzf_bat() {
+    fzf --preview "bat --style=numbers --color=always {}"
+}
+
+function fzf_pretty() {
+    fzf --ansi --sort --preview="[[ ! -z {} ]] && rga --line-number --pretty --context 5 {q} {}"
 }
 
 # rga-fzf-all() {
