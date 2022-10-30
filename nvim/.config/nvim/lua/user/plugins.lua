@@ -101,6 +101,9 @@ return packer.startup(function(use)
         end
     }
 
+    -- align code
+    use "junegunn/vim-easy-align"
+
     -- LSP
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -158,6 +161,9 @@ return packer.startup(function(use)
     use 'nvim-telescope/telescope-dap.nvim'
     -- use 'kana/vim-textobj-user'
     -- use 'bps/vim-textobj-python'
+
+    -- python black
+    use "averms/black-nvim"
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

@@ -15,3 +15,6 @@ require("user.options")
 require("user.nvim-dap")
 require("user.lspzero")
 
+vim.cmd [[
+    let g:python3_host_prog = $HOME . '/.local/venv/nvim/bin/python'
+]]
