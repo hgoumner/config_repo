@@ -162,6 +162,9 @@ return packer.startup(function(use)
     -- use 'kana/vim-textobj-user'
     -- use 'bps/vim-textobj-python'
 
+    -- python black
+    use "averms/black-nvim"
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
