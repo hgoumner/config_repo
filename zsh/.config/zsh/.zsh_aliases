@@ -99,3 +99,6 @@ alias cdv='cd /mnt/q/Verwaltung'
 
 # conda
 alias caa='conda activate /mnt/c/Users/Goumnerovh/Anaconda3'
+
+# xlsxgrep
+alias xg=xlsxgrep.exe
