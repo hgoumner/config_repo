@@ -90,3 +90,5 @@ keymap("n", "<leader>dv", ":lua require('dap').step_over()<CR>", opts)
 keymap("n", "<leader>dd", ":lua require('dap').continue()<CR>", opts)
 keymap("n", "<leader>dr", ":lua require('dap').repl_open({}, 'vsplit')<CR>", opts)
 
+-- tree hopper
+keymap("n", "<leader>h", ":lua require('tsht').nodes()<CR>", opts)
