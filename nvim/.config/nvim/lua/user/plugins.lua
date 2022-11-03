@@ -91,6 +91,15 @@ return packer.startup(function(use)
         run = function() vim.fn['firenvim#install'](0) end 
     }
 
+    -- highlight cursor word
+    use 'RRethy/vim-illuminate'
+
+    -- treehopper
+    use "mfussenegger/nvim-treehopper"
+
+    -- context vt
+    use "haringsrob/nvim_context_vt"
+
     -- Productivity
     ----------------------------------------------------------------------------------------
 
