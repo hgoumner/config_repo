@@ -96,3 +96,6 @@ keymap("n", "gai", "vip:EasyAlign /import/<CR>", opts)
 keymap("v", "gai", ":EasyAlign /import/<CR>", opts)
 keymap("n", "ga=", "vip:EasyAlign =<CR>", opts)
 keymap("v", "ga=", ":EasyAlign =<CR>", opts)
+
+-- tree hopper
+keymap("n", "<leader>h", ":lua require('tsht').nodes()<CR>", opts)
