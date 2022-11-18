@@ -49,3 +49,11 @@ vim.cmd [[set colorcolumn=79]]
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work:
+
+vim.cmd [[
+    highlight CursorLine ctermbg=none guibg=none
+    highlight LineNrAbove guifg=white
+    highlight CursorLineNr guifg=green
+    highlight LineNrBelow guifg=red
+]]
+
