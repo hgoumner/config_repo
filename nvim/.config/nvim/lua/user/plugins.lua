@@ -85,11 +85,11 @@ return packer.startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons' }
     }
 
-    -- browser add on
-    use {
-        'glacambre/firenvim',
-        run = function() vim.fn['firenvim#install'](0) end 
-    }
+    -- -- browser add on
+    -- use {
+    --     'glacambre/firenvim',
+    --     run = function() vim.fn['firenvim#install'](0) end 
+    -- }
 
     -- highlight cursor word
     use 'RRethy/vim-illuminate'
