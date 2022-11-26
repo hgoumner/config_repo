@@ -53,7 +53,7 @@ vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work:
 vim.cmd [[
     highlight CursorLine ctermbg=none guibg=none
     highlight LineNrAbove guifg=white
-    highlight CursorLineNr guifg=green
+    highlight CursorLineNr guifg=green guibg=none
     highlight LineNrBelow guifg=red
 ]]
 

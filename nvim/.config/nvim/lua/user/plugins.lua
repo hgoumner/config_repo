@@ -159,6 +159,14 @@ return packer.startup(function(use)
     -- terminal
     use "akinsho/toggleterm.nvim"
 
+    -- code structure
+    require('packer').startup(function()
+    use {
+      'stevearc/aerial.nvim',
+      config = function() require('aerial').setup() end
+    }
+    end)
+
     -------------------------------
     -- Language specific plugins --
     -------------------------------

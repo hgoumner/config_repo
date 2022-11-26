@@ -16,6 +16,7 @@ require("user.nvim-dap")
 require("user.lspzero")
 require("user.vim-illuminate")
 require("user.nvim-context-vt")
+require("user.aerial")
 
 vim.cmd [[
     let g:python3_host_prog = $HOME . '/.local/venv/nvim/bin/python'
