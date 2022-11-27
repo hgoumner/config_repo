@@ -111,3 +111,6 @@ end
 dap.listeners.after.event_exited['dapui_config'] = function()
   dapui.close()
 end
+
+-- change breakpoint icon
+vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='', numhl=''})

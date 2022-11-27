@@ -88,8 +88,11 @@ keymap("n", "<F7>", ":lua require('dap').step_into()<CR>", opts)
 keymap("n", "<F8>", ":lua require('dap').step_over()<CR>", opts)
 keymap("n", "<F10>", ":lua require('dap').step_out()<CR>", opts)
 keymap("n", "<F9>", ":lua require('dap').continue()<CR>", opts)
+keymap("n", "<leader>dk", ":lua require('dap').down()<CR>", opts)
+keymap("n", "<leader>dj", ":lua require('dap').up()<CR>", opts)
 keymap("n", "<leader>dt", ":lua require('dap').terminate()<CR>", opts)
 keymap("n", "<leader>dr", ":lua require('dap').repl_open({}, 'vsplit')<CR>", opts)
+keymap("n", "<leader>df", ":lua require('dapui').float_element('scopes', {enter=true})<CR>", opts)
 
 -- tree hopper
 keymap("n", "<leader>h", ":lua require('tsht').nodes()<CR>", opts)
