@@ -91,14 +91,3 @@ alias km='~/keylayout.sh'
 # youtube-dl only audio
 alias youdla='youtube-dl -x'
 
-# ASML network
-alias md='~/md.sh'
-alias cdv='cd /mnt/p/'
-alias cdq='cd /mnt/q/'
-alias cdv='cd /mnt/q/Verwaltung'
-
-# conda
-alias caa='conda activate /mnt/c/Users/Goumnerovh/Anaconda3'
-
-# xlsxgrep
-alias xg=xlsxgrep.exe

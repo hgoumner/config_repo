@@ -1,0 +1,31 @@
+#!/usr/bin/env zsh
+
+#---------------------------------------
+# Aliases
+#---------------------------------------
+
+# ASML network
+alias md='~/mount_drives.sh'
+alias c='cd /mnt/c/'
+alias p='cd /mnt/p/'
+alias q='cd /mnt/q/'
+alias cdv='cd /mnt/q/Verwaltung'
+
+# conda
+alias caa='conda activate /mnt/c/Users/Goumnerovh/Anaconda3'
+
+# xlsxgrep
+alias xg=xlsxgrep.exe
+
+# ansys license
+alias anslic='/mnt/c/Program\ Files/ANSYS\ Inc/Shared\ Files/Licensing/winx64/lmutil.exe lmstat -a -c 1055@ansys | rg mech_1'
+
+#---------------------------------------
+# Functions
+#---------------------------------------
+
+# cd to windows path
+function cdw() {
+    local path=$(wslpath -u "$1")
+    cd $path 2>/dev/null
+}

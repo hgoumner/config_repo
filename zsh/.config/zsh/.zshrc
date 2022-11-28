@@ -27,6 +27,7 @@ zsh_add_file ".zsh_vim-mode"
 zsh_add_file ".zsh_aliases"
 zsh_add_file ".zsh_keymaps"
 zsh_add_file ".zsh_options"
+zsh_add_file ".zsh_asml"
 
 # Plugins
 zsh_add_plugin "romkatv/powerlevel10k"

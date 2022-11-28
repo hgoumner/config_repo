@@ -83,8 +83,7 @@ function fzf_pretty() {
     fzf --ansi --sort --preview="[[ ! -z {} ]] && rga --line-number --pretty --context 5 {q} {}"
 }
 
-# cd to windows path
-function cdw() {
-    local path=$(wslpath -u "$1")
-    cd $path 2>/dev/null
+shacheck ()
+{
+    echo "$1  $2" | sha256sum -c -   
 }
