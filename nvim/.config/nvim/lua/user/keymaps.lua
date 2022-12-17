@@ -2,97 +2,110 @@ local opts = { noremap = true, silent = true }
 
 local term_opts = { silent = true }
 
+-- Modes
+--   normal_mode = 'n',
+--   insert_mode = 'i',
+--   visual_mode = 'v',
+--   visual_block_mode = 'x',
+--   term_mode = 't',
+--   command_mode = 'c',
+
 -- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+local nmap = function (keys, func, desc)
+    if desc then
+        desc = 'LSP: ' .. desc
+    end
+
+    vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+end
+
+-- Shorten function name
+local vmap = function (keys, func, desc)
+    if desc then
+        desc = 'LSP: ' .. desc
+    end
+
+    vim.keymap.set('v', keys, func, { buffer = bufnr, desc = desc })
+end
+
+-- Shorten function name
+local xmap = function (keys, func, desc)
+    if desc then
+        desc = 'LSP: ' .. desc
+    end
+
+    vim.keymap.set('x', keys, func, { buffer = bufnr, desc = desc })
+end
 
 -- Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
--- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
+nmap('<Space>', '<Nop>', 'Leader key')
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- Normal --
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+nmap('<C-h>', '<C-w>h', 'Move to left buffer')
+nmap('<C-j>', '<C-w>j', 'Move to lower buffer')
+nmap('<C-k>', '<C-w>k', 'Move to upper buffer')
+nmap('<C-l>', '<C-w>l', 'Move to right buffer')
 
 -- NvimTreeToggle
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+nmap('<leader>e', ':NvimTreeToggle<cr>', 'Toggle NvimTree')
 
 -- Show all characters
-keymap("n", "<leader>c", ":set list!<cr>", opts)
+nmap('<leader>c', ':set list!<cr>', 'Toggle display of all characters')
 
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize +2<CR>", opts)
-keymap("n", "<C-Down>", ":resize -2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+nmap('<C-Up>',    ':resize +2<CR>',          'Grow buffer horizontally')
+nmap('<C-Down>',  ':resize -2<CR>',          'Shrink buffer horizontally')
+nmap('<C-Left>',  ':vertical resize -2<CR>', 'Shrink buffer vertically')
+nmap('<C-Right>', ':vertical resize +2<CR>', 'Grow buffer vertically')
 
 -- Navigate buffers
-keymap("n", "<A-l>", ":bnext<CR>", opts)
-keymap("n", "<A-h>", ":bprevious<CR>", opts)
+nmap('<A-l>', ':bnext<CR>',     'Move to next buffer')
+nmap('<A-h>', ':bprevious<CR>', 'Move to previous buffer')
 
 -- Hristo's mappings
-keymap("n", "gg", "gg0", opts)
-keymap("n", "G", "G0", opts)
-keymap("n", "Q", "<nop>", opts)
-keymap("n", "<leader>w", ":w<cr>", opts)
-keymap("n", "<leader>q", ":q!<cr>", opts)
-keymap("n", "<leader>x", ":x<cr>", opts)
-keymap("n", "<leader>s", ":set hlsearch!<cr>", opts)
-keymap("n", "n", "nzz", opts)
-keymap("n", "N", "Nzz", opts)
+nmap('gg',        'gg0',                'Go to first character in buffer')
+nmap('G',         'G0',                 'Go to first character in last line in buffer')
+nmap('Q',         '<nop>',              'Disable Ex mode')
+nmap('n',         'nzz',                'Navigate to next search match and center screen')
+nmap('N',         'Nzz',                'Navigate to previous search match and center screen')
+nmap('<leader>w', ':w<cr>',             'Save file')
+nmap('<leader>q', ':q!<cr>',            'Quit file without saving')
+nmap('<leader>x', ':x<cr>',             'Save and quit file')
+nmap('<leader>s', ':set hlsearch!<cr>', 'Toggle search highlighting')
 
 -- Visual --
 -- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
-
--- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
+vmap('<', '<gv', 'Left indent')
+vmap('>', '>gv', 'Right indent')
 
 -- Visual Block --
 -- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-
--- Terminal --
--- Better terminal navigation
-keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
-keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
-keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
-keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+xmap('J', ":move '>+1<CR>gv-gv", 'Move line down one line')
+xmap('K', ":move '<-2<CR>gv-gv", 'Move line up one line')
+vmap('p', '"_dP',                'Paste without overwriting register')
 
 -- TELESCOPE
--- keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown())<cr>", opts)
-keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
-keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opts)
+nmap('<leader>b',  require('telescope.builtin').buffers,                   'Search buffers')
+nmap('<leader>f',  require('telescope.builtin').find_files,                'Search file')
+nmap('<leader>g',  require('telescope.builtin').live_grep,                 'Search string')
+nmap('<leader>?',  require('telescope.builtin').oldfiles,                  'Search recently opened files')
+nmap('<leader>/',  require('telescope.builtin').current_buffer_fuzzy_find, 'Search in current buffer')
+nmap('<leader>sh', require('telescope.builtin').diagnostics,               'Search diagnostics')
 
 -- NVIM-DAP
-keymap("n", "<F6>", ":lua require('dap').toggle_breakpoint()<CR>", opts)
-keymap("n", "<F7>", ":lua require('dap').step_into()<CR>", opts)
-keymap("n", "<F8>", ":lua require('dap').step_over()<CR>", opts)
-keymap("n", "<F10>", ":lua require('dap').step_out()<CR>", opts)
-keymap("n", "<F9>", ":lua require('dap').continue()<CR>", opts)
-keymap("n", "<leader>dk", ":lua require('dap').down()<CR>", opts)
-keymap("n", "<leader>dj", ":lua require('dap').up()<CR>", opts)
-keymap("n", "<leader>dt", ":lua require('dap').terminate()<CR>", opts)
-keymap("n", "<leader>dr", ":lua require('dap').repl_open({}, 'vsplit')<CR>", opts)
-keymap("n", "<leader>df", ":lua require('dapui').float_element('scopes', {enter=true})<CR>", opts)
+nmap('<F6>',       ':lua require("dap").toggle_breakpoint()<CR>',                     'Toggle breakpoint')
+nmap('<F7>',       ':lua require("dap").step_into()<CR>',                             'Step into')
+nmap('<F8>',       ':lua require("dap").step_over()<CR>',                             'Step over')
+nmap('<F10>',      ':lua require("dap").step_out()<CR>',                              'Step out')
+nmap('<F9>',       ':lua require("dap").continue()<CR>',                              'Continue')
+nmap('<leader>dk', ':lua require("dap").down()<CR>',                                  'Move to lower stack frame')
+nmap('<leader>dj', ':lua require("dap").up()<CR>',                                    'Move to upper stack frame')
+nmap('<leader>dt', ':lua require("dap").terminate()<CR>',                             'Terminate')
+nmap('<leader>dr', ':lua require("dap").repl_open({}, "vsplit")<CR>',                 'Open REPL in new buffer')
+nmap('<leader>df', ':lua require("dapui").float_element("scopes", {enter=true})<CR>', 'Floating window for variables in scope')
 
 -- tree hopper
-keymap("n", "<leader>h", ":lua require('tsht').nodes()<CR>", opts)
+nmap('<leader>h', ':lua require("tsht").nodes()<CR>', 'Hop node trees')

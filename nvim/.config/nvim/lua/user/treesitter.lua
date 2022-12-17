@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 configs.setup {
-    ensure_installed = "all",
+    ensure_installed = { 'c', 'cpp', 'lua', 'python', 'bash', 'help' },
     sync_install = false,
     ignore_install = { "" }, -- list of parsers to ignore installing
     highlight = {
@@ -31,6 +31,8 @@ configs.setup {
 		    lookahead = true, -- automatically jump forward to textobj, similar to targets.vim
 		    keymaps = {
 			    -- you can use the capture groups defined in textobjects.scm
+			    ['aa'] = '@parameter.outer',
+			    ['ia'] = '@parameter.inner',
 			    ['af'] = '@function.outer',
 			    ['if'] = '@function.inner',
 			    ['ac'] = '@class.outer',
