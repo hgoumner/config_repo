@@ -1,7 +1,3 @@
-local opts = { noremap = true, silent = true }
-
-local term_opts = { silent = true }
-
 -- Modes
 --   normal_mode = 'n',
 --   insert_mode = 'i',
@@ -88,24 +84,27 @@ xmap('K', ":move '<-2<CR>gv-gv", 'Move line up one line')
 vmap('p', '"_dP',                'Paste without overwriting register')
 
 -- TELESCOPE
-nmap('<leader>sb',  require('telescope.builtin').buffers,                   'Search buffers')
-nmap('<leader>sf',  require('telescope.builtin').find_files,                'Search file')
-nmap('<leader>sg',  require('telescope.builtin').live_grep,                 'Search string')
+nmap('<leader>b',  require('telescope.builtin').buffers,                   'Search buffers')
+nmap('<leader>f',  require('telescope.builtin').find_files,                'Search file')
+nmap('<leader>g',  require('telescope.builtin').live_grep,                 'Search string')
 nmap('<leader>?',  require('telescope.builtin').oldfiles,                  'Search recently opened files')
 nmap('<leader>/',  require('telescope.builtin').current_buffer_fuzzy_find, 'Search in current buffer')
-nmap('<leader>sd', require('telescope.builtin').diagnostics,               'Search diagnostics')
+nmap('<leader>sh', require('telescope.builtin').diagnostics,               'Search diagnostics')
 
 -- NVIM-DAP
-nmap('<F6>',       ':lua require("dap").toggle_breakpoint()<CR>',                     'Toggle breakpoint')
-nmap('<F7>',       ':lua require("dap").step_into()<CR>',                             'Step into')
-nmap('<F8>',       ':lua require("dap").step_over()<CR>',                             'Step over')
-nmap('<F10>',      ':lua require("dap").step_out()<CR>',                              'Step out')
-nmap('<F9>',       ':lua require("dap").continue()<CR>',                              'Continue')
-nmap('<leader>dk', ':lua require("dap").down()<CR>',                                  'Move to lower stack frame')
-nmap('<leader>dj', ':lua require("dap").up()<CR>',                                    'Move to upper stack frame')
-nmap('<leader>dt', ':lua require("dap").terminate()<CR>',                             'Terminate')
+nmap('<F6>',       ':lua require("dap").toggle_breakpoint()<CR>',                      'Toggle breakpoint')
+nmap('<F7>',       ':lua require("dap").step_into()<CR>',                              'Step into')
+nmap('<F8>',       ':lua require("dap").step_over()<CR>',                              'Step over')
+nmap('<F10>',      ':lua require("dap").step_out()<CR>',                               'Step out')
+nmap('<F9>',       ':lua require("dap").continue()<CR>',                               'Continue')
+nmap('<leader>dk', ':lua require("dap").down()<CR>',                                   'Move to lower stack frame')
+nmap('<leader>dj', ':lua require("dap").up()<CR>',                                     'Move to upper stack frame')
+nmap('<leader>dt', ':lua require("dap").terminate()<CR>',                              'Terminate')
 nmap('<leader>dr', ':lua require("dap").repl_open({}, "vsplit")<CR>',                 'Open REPL in new buffer')
-nmap('<leader>df', ':lua require("dapui").float_element("scopes", {enter=true})<CR>', 'Floating window for variables in scope')
+nmap('<leader>df', ':lua require("dapui").float_element("scopes", enter=true})<CR>', 'Floating window for variables in scope')
 
 -- tree hopper
 nmap('<leader>h', ':lua require("tsht").nodes()<CR>', 'Hop node trees')
+
+-- undotree
+nmap('<leader>ut', ':UndotreeToggle<CR>', 'Toggle Undotree')
