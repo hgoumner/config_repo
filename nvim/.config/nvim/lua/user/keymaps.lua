@@ -88,12 +88,12 @@ xmap('K', ":move '<-2<CR>gv-gv", 'Move line up one line')
 vmap('p', '"_dP',                'Paste without overwriting register')
 
 -- TELESCOPE
-nmap('<leader>b',  require('telescope.builtin').buffers,                   'Search buffers')
-nmap('<leader>f',  require('telescope.builtin').find_files,                'Search file')
-nmap('<leader>g',  require('telescope.builtin').live_grep,                 'Search string')
+nmap('<leader>sb',  require('telescope.builtin').buffers,                   'Search buffers')
+nmap('<leader>sf',  require('telescope.builtin').find_files,                'Search file')
+nmap('<leader>sg',  require('telescope.builtin').live_grep,                 'Search string')
 nmap('<leader>?',  require('telescope.builtin').oldfiles,                  'Search recently opened files')
 nmap('<leader>/',  require('telescope.builtin').current_buffer_fuzzy_find, 'Search in current buffer')
-nmap('<leader>sh', require('telescope.builtin').diagnostics,               'Search diagnostics')
+nmap('<leader>sd', require('telescope.builtin').diagnostics,               'Search diagnostics')
 
 -- NVIM-DAP
 nmap('<F6>',       ':lua require("dap").toggle_breakpoint()<CR>',                     'Toggle breakpoint')
