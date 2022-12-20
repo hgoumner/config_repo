@@ -38,6 +38,9 @@ nmap('<Space>', '<Nop>', 'Leader key')
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- display keymaps
+nmap('<leader>k', require('telescope.builtin').keymaps, 'Search keymaps')
+
 -- Normal --
 -- Better window navigation
 nmap('<C-h>', '<C-w>h', 'Move to left buffer')
