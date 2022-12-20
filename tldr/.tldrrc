@@ -9,12 +9,12 @@
     },
     "myOwnCoolTheme": {
       "commandName": "bold, red",
-      "mainDescription": "underline",
-      "exampleDescription": "yellow",
-      "exampleCode": "underline, green",
-      "exampleToken": ""
+      "mainDescription": "",
+      "exampleDescription": "green",
+      "exampleCode": "red",
+      "exampleToken": "dim"
     }
   },
-  "theme": "ocean",
+  "theme": "myOwnCoolTheme",
   "platform": "linux"
 }

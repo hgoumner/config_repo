@@ -78,6 +78,8 @@ alias gsh='git stash'
 
 alias lg='lazygit'
 
+alias cs='~/cht.sh'
+
 ###################################
 # listing
 ###################################

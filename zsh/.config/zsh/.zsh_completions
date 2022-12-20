@@ -11,6 +11,10 @@ if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_conda ]; then
     curl -L https://raw.githubusercontent.com/esc/conda-zsh-completion/master/_conda -o $ZDOTDIR/plugins/zsh-completions/src/_conda
 fi
 
+if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_tldr ]; then
+    curl -L https://github.com/tldr-pages/tldr-node-client/blob/master/bin/completion/zsh/_tldr -o $ZDOTDIR/plugins/zsh-completions/src/_tldr
+fi
+
 # completions
 autoload -U +X bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
