@@ -3,16 +3,25 @@
 # Load completions
 fpath=($ZDOTDIR/plugins/zsh-completions/src $fpath)
 
+# docker
 if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_docker ]; then
+    if [ ! -d $ZDOTDIR/plugins/zsh-completions/src ]; then
+        mkdir -p $ZDOTDIR/plugins/zsh-completions/src
+    fi
     curl -L https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker -o $ZDOTDIR/plugins/zsh-completions/src/_docker
 fi
 
-if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_conda ]; then
-    curl -L https://raw.githubusercontent.com/esc/conda-zsh-completion/master/_conda -o $ZDOTDIR/plugins/zsh-completions/src/_conda
-fi
+# conda
+# if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_conda ]; then
+#     curl -L https://raw.githubusercontent.com/esc/conda-zsh-completion/master/_conda -o $ZDOTDIR/plugins/zsh-completions/src/_conda
+# fi
 
+# tldr
 if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_tldr ]; then
-    curl -L https://github.com/tldr-pages/tldr-node-client/blob/master/bin/completion/zsh/_tldr -o $ZDOTDIR/plugins/zsh-completions/src/_tldr
+    if [ ! -d $ZDOTDIR/plugins/zsh-completions/src ]; then
+        mkdir -p $ZDOTDIR/plugins/zsh-completions/src
+    fi
+    curl -L https://raw.githubusercontent.com/tldr-pages/tldr-node-client/master/bin/completion/zsh/_tldr -o $ZDOTDIR/plugins/zsh-completions/src/_tldr
 fi
 
 # completions
