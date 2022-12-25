@@ -39,8 +39,8 @@
 
 # Examples of commands:
 
-# "xbindkeys_show" 
-#   control+shift + q
+"xbindkeys_show" 
+    control + shift + q
 
 # # set directly keycode (here control + f with my keyboard)
 # "xterm"
@@ -69,11 +69,11 @@
 
 # tilix
 "tilix"
-control + alt + t
+    control + alt + t
 
 # chrome
 "xdotool search 'Brave' windowactivate --sync key --clearmodifiers shift+o"
-control + alt + b
+    control + alt + b
 
 ##################################
 # End of xbindkeys configuration #
