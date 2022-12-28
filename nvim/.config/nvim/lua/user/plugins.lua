@@ -166,6 +166,19 @@ return require('packer').startup(function(use)
     -- undotree
     use "mbbill/undotree"
 
+    -- harpoon
+    use 'ThePrimeagen/harpoon'
+
+    -- nvimpeek
+    -- use 'gennaro-tedesco/nvim-peekup'
+
+    use {
+        "tversteeg/registers.nvim",
+        -- config = function()
+        --     require("registers").setup()
+        -- end,
+    }
+
     -------------------------------
     -- Language specific plugins --
     -------------------------------

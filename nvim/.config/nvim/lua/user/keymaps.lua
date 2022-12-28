@@ -117,3 +117,7 @@ xmap('ga=', ':EasyAlign =<CR>', 'Align to =')
 xmap('gai', ':EasyAlign /import/<CR>', 'Align to import')
 nmap('ga=', 'vip :EasyAlign =<CR>', 'Align to =')
 nmap('gai', 'vip :EasyAlign /import/<CR>', 'Align to import')
+
+-- HARPOON --
+nmap('<leader>hm', ':lua require("harpoon.mark").add_file()<CR>', 'Add file to harpoon list')
+nmap('<leader>hu', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', 'Show harpoon list')

@@ -1,8 +1,11 @@
+[Colors:View]
+BackgroundNormal=40, 40, 40
+
 [KDE]
 ShowDeleteCommand=false
 
+[KShortcutsDialog Settings]
+Dialog Size=600,480
+
 [PreviewSettings]
 MaximumRemoteSize=0
-
-[Colors:View]
-BackgroundNormal=40, 40, 40

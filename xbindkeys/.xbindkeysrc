@@ -67,13 +67,21 @@
 
 # Hristo - Logitech MX Master 3
 
+# workspace
+"xdotool key Super_L+PgDown"
+    b:10
+
 # tilix
 "tilix"
     control + alt + t
 
-# chrome
+# Brave
 "xdotool search 'Brave' windowactivate --sync key --clearmodifiers shift+o"
     control + alt + b
+
+# always on top
+"wmctrl -r :ACTIVE: -b toggle,above"
+    alt + esc
 
 ##################################
 # End of xbindkeys configuration #
