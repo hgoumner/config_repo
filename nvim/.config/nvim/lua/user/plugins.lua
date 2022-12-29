@@ -65,11 +65,14 @@ return require('packer').startup(function(use)
 
     -- Colorscheme and appearance
     -- use "lunarvim/darkplus.nvim"
-    use 'gruvbox-community/gruvbox'
+    -- use 'gruvbox-community/gruvbox'
+    use 'sainnhe/gruvbox-material'
+
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
+
     use {
         'goolord/alpha-nvim',
         requires = { 'kyazdani42/nvim-web-devicons' }
@@ -176,6 +179,13 @@ return require('packer').startup(function(use)
         "tversteeg/registers.nvim",
         -- config = function()
         --     require("registers").setup()
+        -- end,
+    }
+
+    use {
+         'NvChad/nvim-colorizer.lua',
+        --  config = function()
+        --     require('colorizer').setup()
         -- end,
     }
 
