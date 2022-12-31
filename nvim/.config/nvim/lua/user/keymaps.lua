@@ -121,3 +121,6 @@ nmap('gai', 'vip :EasyAlign /import/<CR>', 'Align to import')
 -- HARPOON --
 nmap('<leader>hm', ':lua require("harpoon.mark").add_file()<CR>', 'Add file to harpoon list')
 nmap('<leader>hu', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', 'Show harpoon list')
+
+-- AERIAL --
+nmap('<leader>a', '<cmd>AerialToggle<CR>', 'Toggle aerial panel')
