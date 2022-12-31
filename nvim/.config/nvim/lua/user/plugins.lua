@@ -73,6 +73,7 @@ return require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
+    -- alpha start up
     use {
         'goolord/alpha-nvim',
         requires = { 'kyazdani42/nvim-web-devicons' }
