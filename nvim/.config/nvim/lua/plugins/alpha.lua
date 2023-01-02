@@ -13,12 +13,9 @@ if not fortune_ok then
     return
 end
 
-vim.api.nvim_set_hl(0, 'StartLogo1', { fg = 'white' })
-vim.api.nvim_set_hl(0, 'StartLogo2', { fg = 'white' })
-vim.api.nvim_set_hl(0, 'StartLogo3', { fg = 'green' })
-vim.api.nvim_set_hl(0, 'StartLogo4', { fg = 'green' })
-vim.api.nvim_set_hl(0, 'StartLogo5', { fg = 'red' })
-vim.api.nvim_set_hl(0, 'StartLogo6', { fg = 'red' })
+vim.api.nvim_set_hl(0, 'BGtop', { fg = 'white' })
+vim.api.nvim_set_hl(0, 'BGmid', { fg = 'green' })
+vim.api.nvim_set_hl(0, 'BGbot', { fg = 'red' })
 
 local header = {
     [[██████╗ ██╗   ██╗██╗      ██████╗  █████╗ ██████╗ ██╗ █████╗ ]],
@@ -31,13 +28,23 @@ local header = {
 
 -- Colorize header
 local function colorize_header()
-    local lines = {}
+    local lines  = {}
+    local ind    = 1
+    local cur    = 1
+    local length = #header
+    local ldiv3  = length / 3
+    local hlcur  = {'BGtop', 'BGmid', 'BGbot'}
     for i, chars in pairs(header) do
+        if (i > cur*ldiv3) then
+            cur = cur + 1
+            ind = ind + 1
+        end
+        local hlcurselection = hlcur[ind]
         local line = {
             type = "text",
             val = chars,
             opts = {
-                hl = "StartLogo" .. i,
+                hl = hlcurselection,
                 shrink_margin = false,
                 position = "center",
             },
