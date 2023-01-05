@@ -4,10 +4,17 @@
 # --------------------- ZSH ---------------------
 # -----------------------------------------------
 
+# source zshrc file
+alias s='source $ZDOTDIR/.zshrc'
+
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
 # alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
+
+# copy and move with progress
+alias rscp='rsync -aP'
+alias rsmv='rsync -aP --remove-source-files'
 
 # -----------------------------------------------
 # ------------------ Searching ------------------
@@ -70,6 +77,8 @@ alias gst='git status'
 alias gsh='git stash'
 
 alias lg='lazygit'
+
+alias cs='~/cht.sh'
 
 ###################################
 # listing

@@ -12,22 +12,20 @@ if fn.empty(fn.glob(install_path)) > 0 then
         install_path,
     }
     print "Installing packer close and reopen Neovim..."
-    vim.cmd [[packadd packer.nvim]]
 end
-
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd [[
-  augroup packer_user_config
-  autocmd!
-  autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]]
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
     return
 end
+
+vim.cmd([[
+  augroup packer_user_config
+  autocmd!
+  autocmd BufWritePost plugins.lua source <afile> | PackerSync
+  augroup end
+]])
 
 -- Have packer use a popup window
 packer.init {
@@ -39,7 +37,7 @@ packer.init {
 }
 
 -- Install your plugins here
-return packer.startup(function(use)
+return require('packer').startup(function(use)
 
     -----------------------
     -- Necessary plugins --
@@ -67,11 +65,15 @@ return packer.startup(function(use)
 
     -- Colorscheme and appearance
     -- use "lunarvim/darkplus.nvim"
-    use 'gruvbox-community/gruvbox'
+    -- use 'gruvbox-community/gruvbox'
+    use 'sainnhe/gruvbox-material'
+
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
+
+    -- alpha start up
     use {
         'goolord/alpha-nvim',
         requires = { 'kyazdani42/nvim-web-devicons' }
@@ -100,6 +102,15 @@ return packer.startup(function(use)
     -- context vt
     use "haringsrob/nvim_context_vt"
 
+    -- highlight cursor word
+    use 'RRethy/vim-illuminate'
+
+    -- treehopper
+    use "mfussenegger/nvim-treehopper"
+
+    -- context vt
+    use "haringsrob/nvim_context_vt"
+
     -- Productivity
     ----------------------------------------------------------------------------------------
 
@@ -111,7 +122,7 @@ return packer.startup(function(use)
     }
 
     -- align code
-    use 'junegunn/vim-easy-align'
+    use "junegunn/vim-easy-align"
 
     -- LSP
     use {
@@ -159,6 +170,35 @@ return packer.startup(function(use)
     -- terminal
     use "akinsho/toggleterm.nvim"
 
+    -- code structure
+    use {
+      'stevearc/aerial.nvim',
+      config = function() require('aerial').setup() end
+    }
+
+    -- undotree
+    use "mbbill/undotree"
+
+    -- harpoon
+    use 'ThePrimeagen/harpoon'
+
+    -- nvimpeek
+    -- use 'gennaro-tedesco/nvim-peekup'
+
+    use {
+        "tversteeg/registers.nvim",
+        -- config = function()
+        --     require("registers").setup()
+        -- end,
+    }
+
+    use {
+         'NvChad/nvim-colorizer.lua',
+        --  config = function()
+        --     require('colorizer').setup()
+        -- end,
+    }
+
     -------------------------------
     -- Language specific plugins --
     -------------------------------
@@ -173,10 +213,4 @@ return packer.startup(function(use)
 
     -- python black
     use "averms/black-nvim"
-
-    -- Automatically set up your configuration after cloning packer.nvim
-    -- Put this at the end after all plugins
-    if PACKER_BOOTSTRAP then
-        require("packer").sync()
-    end
 end)

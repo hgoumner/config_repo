@@ -1,0 +1,70 @@
+general {
+    output_format = "i3bar"
+    colors = true
+    interval = 1
+}
+
+order += "wireless wlan0"
+order += "ethernet eth0"
+order += "battery 0"
+order += "cpu_temperature 0"
+order += "cpu_temperature 1"
+order += "cpu_temperature 2"
+order += "load"
+order += "memory"
+order += "disk /"
+order += "tztime local"
+
+load {
+    format = "Load: %1min"
+}
+disk "/" {
+    format = "Free space: %avail"
+}
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+battery 0 {
+    format = "%status %percentage %remaining %emptytime"
+    format_down = "No battery"
+    status_chr = "⚡ CHR"
+    status_bat = "🔋 BAT"
+    status_unk = "? UNK"
+    status_full = "☻ FULL"
+    path = "/sys/class/power_supply/BAT%d/uevent"
+    low_threshold = 10
+}
+
+cpu_temperature 0 {
+    format = "T: %degrees °C"
+    path = "/sys/devices/platform/coretemp.0/hwmon/hwmon7/subsystem/hwmon1/temp1_input"
+}
+
+cpu_temperature 1 {
+    format = "T: %degrees °C"
+    path = "/sys/devices/platform/coretemp.0/hwmon/hwmon7/subsystem/hwmon3/temp1_input"
+}
+
+cpu_temperature 2 {
+    format = "T: %degrees °C"
+    path = "/sys/devices/platform/coretemp.0/hwmon/hwmon7/subsystem/hwmon5/temp1_input"
+}
+
+memory {
+    format = "Memory: %used"
+    threshold_degraded = "10%"
+    format_degraded = "MEMORY: %free"
+}
+
+tztime local {
+    format = "%d-%m-%Y %H:%M:%S"
+}
+

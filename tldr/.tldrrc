@@ -1,0 +1,20 @@
+{
+  "themes": {
+    "ocean": {
+      "commandName": "bold, cyan",
+      "mainDescription": "",
+      "exampleDescription": "green",
+      "exampleCode": "cyan",
+      "exampleToken": "dim"
+    },
+    "myOwnCoolTheme": {
+      "commandName": "bold, red",
+      "mainDescription": "",
+      "exampleDescription": "green",
+      "exampleCode": "red",
+      "exampleToken": "dim"
+    }
+  },
+  "theme": "myOwnCoolTheme",
+  "platform": "linux"
+}
