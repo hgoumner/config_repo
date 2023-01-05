@@ -18,7 +18,7 @@ alias caa='conda activate /mnt/c/Users/Goumnerovh/Anaconda3'
 alias xg=xlsxgrep.exe
 
 # ansys license
-alias anslic='/mnt/c/Program\ Files/ANSYS\ Inc/Shared\ Files/Licensing/winx64/lmutil.exe lmstat -a -c 1055@ansys | rg mech_1'
+alias anslic='/mnt/c/Program\ Files/ANSYS\ Inc/Shared\ Files/Licensing/winx64/lmutil.exe lmstat -a -c 1055@ansys'
 
 #---------------------------------------
 # Functions
@@ -27,5 +27,13 @@ alias anslic='/mnt/c/Program\ Files/ANSYS\ Inc/Shared\ Files/Licensing/winx64/lm
 # cd to windows path
 function cdw() {
     local path=$(wslpath -u "$1")
-    cd $path 2>/dev/null
+    echo $path | /usr/bin/sed 's/\s/\\ /g' | /mnt/c/Windows/System32/clip.exe
 }
+
+#---------------------------------------
+# Proxy
+#---------------------------------------
+
+# http Proxy
+# export http_proxy="172.16.200.163:1234"
+# export https_proxy=$http_proxy
