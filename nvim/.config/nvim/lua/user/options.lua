@@ -54,4 +54,5 @@ vim.scriptencoding = 'utf-8'
 vim.wo.colorcolumn = '80'
 
 -- change breakpoint icon
-vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='', numhl=''})
+-- debugBreakpoint xxx ctermfg=236 ctermbg=167 guifg=#32302f guibg=#ea6962
+vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='debugBreakpoint', numhl=''})
