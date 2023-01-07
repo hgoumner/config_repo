@@ -1,19 +1,22 @@
+-- This file contains all the neovim options and settings
+
 -- help options
 local options = {
     autochdir = true,
     backup = false,                                                                     -- creates a backup file
-    clipboard = "unnamedplus",                                                          -- allows neovim to access the system clipboard
+    clipboard = 'unnamedplus',                                                          -- allows neovim to access the system clipboard
     cmdheight = 2,                                                                      -- more space in the neovim command line for displaying messages
-    completeopt = { "menuone", "noselect" },                                            -- mostly just for cmp
+    completeopt = { 'menuone', 'noselect' },                                            -- mostly just for cmp
     conceallevel = 0,                                                                   -- so that `` is visible in markdown files
     cursorline = true,                                                                  -- highlight the current line
+    encoding = 'utf-8',
     expandtab = true,                                                                   -- convert tabs to spaces
-    fileencoding = "utf-8",                                                             -- the encoding written to a file
+    fileencoding = 'utf-8',                                                             -- the encoding written to a file
     hlsearch = true,                                                                    -- highlight all matches on previous search pattern
     ignorecase = true,                                                                  -- ignore case in search patterns
     laststatus = 3,
     listchars = { eol='¬', tab='>·', trail='~', extends='>', precedes='<', space='␣' },
-    mouse = "a",                                                                        -- allow the mouse to be used in neovim
+    mouse = 'a',                                                                        -- allow the mouse to be used in neovim
     number = true,                                                                      -- set numbered lines
     numberwidth = 4,                                                                    -- set number column width to 2 {default 4}
     pumheight = 10,                                                                     -- pop up menu height
@@ -23,7 +26,7 @@ local options = {
     showmode = false,                                                                   -- we don't need to see things like -- INSERT -- anymore
     showtabline = 2,                                                                    -- always show tabs
     sidescrolloff = 8,
-    signcolumn = "yes",                                                                 -- always show the sign column, otherwise it would shift the text each time
+    signcolumn = 'yes',                                                                 -- always show the sign column, otherwise it would shift the text each time
     smartcase = true,                                                                   -- smart case
     smartindent = true,                                                                 -- make indenting smarter again
     splitbelow = true,                                                                  -- force all horizontal splits to go below current window
@@ -42,15 +45,16 @@ for k, v in pairs(options) do
     vim.opt[k] = v
 end
 
-vim.opt.formatoptions:remove("cro")
-vim.opt.iskeyword:append("-")
-vim.opt.shortmess:append("c")
-vim.opt.whichwrap:append("<,>,[,],h,l")
+vim.opt.formatoptions:remove('cro')
+vim.opt.iskeyword:append('-')
+vim.opt.shortmess:append('c')
+vim.opt.whichwrap:append('<,>,[,],h,l')
 
-vim.wo.colorcolumn = "80"
+vim.scriptencoding = 'utf-8'
+vim.wo.colorcolumn = '80'
 
-vim.api.nvim_command("highlight CursorLine ctermbg=none guibg=none")
-vim.api.nvim_command("highlight LineNrAbove guifg=white")
-vim.api.nvim_command("highlight CursorLineNr guifg=green guibg=none")
-vim.api.nvim_command("highlight LineNrBelow guifg=red")
+vim.api.nvim_command('highlight CursorLine ctermbg=none guibg=none')
+vim.api.nvim_command('highlight LineNrAbove guifg=white')
+vim.api.nvim_command('highlight CursorLineNr guifg=green guibg=none')
+vim.api.nvim_command('highlight LineNrBelow guifg=red')
 

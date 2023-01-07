@@ -1,3 +1,6 @@
+-- This file contains all the keymap settings, except for some plugin specific
+-- keymaps from plugin configs
+
 -- Modes
 --   normal_mode = 'n',
 --   insert_mode = 'i',
@@ -38,21 +41,22 @@ nmap('<Space>', '<Nop>', 'Leader key')
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- display keymaps
-nmap('<leader>k', require('telescope.builtin').keymaps, 'Search keymaps')
+-- Hristo's mappings
+-- NORMAL --
+nmap('gg',        'gg0',                'Go to first character in buffer')
+nmap('G',         'G0',                 'Go to first character in last line in buffer')
+nmap('Q',         '<nop>',              'Disable Ex mode')
+nmap('n',         'nzz',                'Navigate to next search match and center screen')
+nmap('N',         'Nzz',                'Navigate to previous search match and center screen')
+nmap('<leader>w', ':w<CR>',             'Save file')
+nmap('<leader>q', ':q!<CR>',            'Quit file without saving')
+nmap('<leader>x', ':x<CR>',             'Save and quit file')
+nmap('<leader>s', ':set hlsearch!<CR>', 'Toggle search highlighting')
+nmap('<leader>c', ':set list!<CR>',     'Toggle display of all characters')
 
--- Normal --
--- Better window navigation
-nmap('<C-h>', '<C-w>h', 'Move to left buffer')
-nmap('<C-j>', '<C-w>j', 'Move to lower buffer')
-nmap('<C-k>', '<C-w>k', 'Move to upper buffer')
-nmap('<C-l>', '<C-w>l', 'Move to right buffer')
-
--- NvimTreeToggle
-nmap('<leader>e', ':NvimTreeToggle<cr>', 'Toggle NvimTree')
-
--- Show all characters
-nmap('<leader>c', ':set list!<cr>', 'Toggle display of all characters')
+-- Navigate buffers
+nmap('<A-l>', ':bnext<CR>',     'Move to next buffer')
+nmap('<A-h>', ':bprevious<CR>', 'Move to previous buffer')
 
 -- Resize with arrows
 nmap('<C-Up>',    ':resize +2<CR>',          'Grow buffer horizontally')
@@ -60,67 +64,44 @@ nmap('<C-Down>',  ':resize -2<CR>',          'Shrink buffer horizontally')
 nmap('<C-Left>',  ':vertical resize -2<CR>', 'Shrink buffer vertically')
 nmap('<C-Right>', ':vertical resize +2<CR>', 'Grow buffer vertically')
 
--- Navigate buffers
-nmap('<A-l>', ':bnext<CR>',     'Move to next buffer')
-nmap('<A-h>', ':bprevious<CR>', 'Move to previous buffer')
+-- Better window navigation
+nmap('<C-h>', '<C-w>h', 'Move to left buffer')
+nmap('<C-j>', '<C-w>j', 'Move to lower buffer')
+nmap('<C-k>', '<C-w>k', 'Move to upper buffer')
+nmap('<C-l>', '<C-w>l', 'Move to right buffer')
 
--- Hristo's mappings
-nmap('gg',        'gg0',                'Go to first character in buffer')
-nmap('G',         'G0',                 'Go to first character in last line in buffer')
-nmap('Q',         '<nop>',              'Disable Ex mode')
-nmap('n',         'nzz',                'Navigate to next search match and center screen')
-nmap('N',         'Nzz',                'Navigate to previous search match and center screen')
-nmap('<leader>w', ':w<cr>',             'Save file')
-nmap('<leader>q', ':q!<cr>',            'Quit file without saving')
-nmap('<leader>x', ':x<cr>',             'Save and quit file')
-nmap('<leader>s', ':set hlsearch!<cr>', 'Toggle search highlighting')
-
--- Visual --
+-- VISUAL --
 -- Stay in indent mode
 vmap('<', '<gv', 'Left indent')
 vmap('>', '>gv', 'Right indent')
 
--- Visual Block --
+-- VISUAL BLOCK --
 -- Move text up and down
 xmap('J', ":move '>+1<CR>gv-gv", 'Move line down one line')
 xmap('K', ":move '<-2<CR>gv-gv", 'Move line up one line')
 vmap('p', '"_dP',                'Paste without overwriting register')
 
+-- Plugins --
 -- TELESCOPE --
-nmap('<leader>b',  require('telescope.builtin').buffers,                   'Search buffers')
-nmap('<leader>f',  require('telescope.builtin').find_files,                'Search file')
-nmap('<leader>g',  require('telescope.builtin').live_grep,                 'Search string')
-nmap('<leader>?',  require('telescope.builtin').oldfiles,                  'Search recently opened files')
-nmap('<leader>/',  require('telescope.builtin').current_buffer_fuzzy_find, 'Search in current buffer')
-nmap('<leader>sh', require('telescope.builtin').diagnostics,               'Search diagnostics')
+nmap('<leader>k',  '<CMD>Telescope keymaps<CR>',                   'Search keymaps')
+nmap('<leader>b',  '<CMD>Telescope buffers<CR>',                   'Search buffers')
+nmap('<leader>f',  '<CMD>Telescope find_files<CR>',                'Search file')
+nmap('<leader>g',  '<CMD>Telescope live_grep<CR>',                 'Search string')
+nmap('<leader>?',  '<CMD>Telescope oldfiles<CR>',                  'Search recently opened files')
+nmap('<leader>/',  '<CMD>Telescope current_buffer_fuzzy_find<CR>', 'Search in current buffer')
+nmap('<leader>sh', '<CMD>Telescope diagnostics<CR>',               'Search diagnostics')
 
--- NVIM-DAP --
-nmap('<F6>',       ':lua require("dap").toggle_breakpoint()<CR>',                      'Toggle breakpoint')
-nmap('<F7>',       ':lua require("dap").step_into()<CR>',                              'Step into')
-nmap('<F8>',       ':lua require("dap").step_over()<CR>',                              'Step over')
-nmap('<F10>',      ':lua require("dap").step_out()<CR>',                               'Step out')
-nmap('<F9>',       ':lua require("dap").continue()<CR>',                               'Continue')
-nmap('<leader>dk', ':lua require("dap").down()<CR>',                                   'Move to lower stack frame')
-nmap('<leader>dj', ':lua require("dap").up()<CR>',                                     'Move to upper stack frame')
-nmap('<leader>dt', ':lua require("dap").terminate()<CR>',                              'Terminate')
-nmap('<leader>dr', ':lua require("dap").repl_open({}, "vsplit")<CR>',                 'Open REPL in new buffer')
-nmap('<leader>df', ':lua require("dapui").float_element("scopes", enter=true})<CR>', 'Floating window for variables in scope')
-
--- TREE HOPPER --
-nmap('<leader>h', ':lua require("tsht").nodes()<CR>', 'Hop node trees')
-
--- UNDOTREE --
-nmap('<leader>ut', ':UndotreeToggle<CR>', 'Toggle Undotree')
-
--- EASY-ALIGN --
-xmap('ga=', ':EasyAlign =<CR>', 'Align to =')
-xmap('gai', ':EasyAlign /import/<CR>', 'Align to import')
-nmap('ga=', 'vip :EasyAlign =<CR>', 'Align to =')
-nmap('gai', 'vip :EasyAlign /import/<CR>', 'Align to import')
-
--- HARPOON --
-nmap('<leader>hm', ':lua require("harpoon.mark").add_file()<CR>', 'Add file to harpoon list')
-nmap('<leader>hu', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', 'Show harpoon list')
-
--- AERIAL --
-nmap('<leader>a', '<cmd>AerialToggle<CR>', 'Toggle aerial panel')
+-- -- NVIM-DAP --
+-- nmap('<F6>',       ':lua require("dap").toggle_breakpoint()<CR>',                      'Toggle breakpoint')
+-- nmap('<F7>',       ':lua require("dap").step_into()<CR>',                              'Step into')
+-- nmap('<F8>',       ':lua require("dap").step_over()<CR>',                              'Step over')
+-- nmap('<F10>',      ':lua require("dap").step_out()<CR>',                               'Step out')
+-- nmap('<F9>',       ':lua require("dap").continue()<CR>',                               'Continue')
+-- nmap('<leader>dk', ':lua require("dap").down()<CR>',                                   'Move to lower stack frame')
+-- nmap('<leader>dj', ':lua require("dap").up()<CR>',                                     'Move to upper stack frame')
+-- nmap('<leader>dt', ':lua require("dap").terminate()<CR>',                              'Terminate')
+-- nmap('<leader>dr', ':lua require("dap").repl_open({}, "vsplit")<CR>',                 'Open REPL in new buffer')
+-- nmap('<leader>df', ':lua require("dapui").float_element("scopes", enter=true})<CR>', 'Floating window for variables in scope')
+-- 
+-- -- TREE HOPPER --
+-- nmap('<leader>h', ':lua require("tsht").nodes()<CR>', 'Hop node trees')
