@@ -26,15 +26,15 @@ return {
     -- 'nvim-lua/popup.nvim',
 
     -- TreeSitter for parsing
-    {
-        'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate',
-        lazy = false,
-    },
-    {
-        'nvim-treesitter/nvim-treesitter-textobjects',
-        lazy = false,
-    },
+    -- {
+    --     'nvim-treesitter/nvim-treesitter',
+    --     build = ':TSUpdate',
+    --     lazy = false,
+    -- },
+    -- {
+    --     'nvim-treesitter/nvim-treesitter-textobjects',
+    --     lazy = false,
+    -- },
 
     -------------------------
     -- Basic functionality --
@@ -56,14 +56,14 @@ return {
     },
 
     -- Searching
-    {
-        'nvim-telescope/telescope.nvim',
-        lazy = false,
-        dependencies = {
-            -- Useful lua functions used ny lots of plugins
-            'nvim-lua/plenary.nvim'
-        }
-    },
+    -- {
+    --     'nvim-telescope/telescope.nvim',
+    --     lazy = false,
+    --     dependencies = {
+    --         -- Useful lua functions used ny lots of plugins
+    --         'nvim-lua/plenary.nvim'
+    --     }
+    -- },
 
     -- Commenting
     {
@@ -114,30 +114,30 @@ return {
     },
 
     -- color colors
-    {
-        'NvChad/nvim-colorizer.lua',
-        lazy = false,
-    },
+    -- {
+    --     'NvChad/nvim-colorizer.lua',
+    --     lazy = false,
+    -- },
 
-    -- LSP
-    {
-        'VonHeikemen/lsp-zero.nvim',
-        lazy = false,
-        dependencies = {
-            -- LSP Support
-            'neovim/nvim-lspconfig',
-            'williamboman/mason.nvim',
-            'williamboman/mason-lspconfig.nvim',
-
-            -- Autocompletion
-            'hrsh7th/nvim-cmp',
-            'hrsh7th/cmp-buffer',
-            'hrsh7th/cmp-path',
-            'saadparwaiz1/cmp_luasnip',
-            'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-nvim-lua',
-        },
-    },
+    -- -- LSP
+    -- {
+    --     'VonHeikemen/lsp-zero.nvim',
+    --     lazy = false,
+    --     dependencies = {
+    --         -- LSP Support
+    --         'neovim/nvim-lspconfig',
+    --         'williamboman/mason.nvim',
+    --         'williamboman/mason-lspconfig.nvim',
+    --
+    --         -- Autocompletion
+    --         'hrsh7th/nvim-cmp',
+    --         'hrsh7th/cmp-buffer',
+    --         'hrsh7th/cmp-path',
+    --         'saadparwaiz1/cmp_luasnip',
+    --         'hrsh7th/cmp-nvim-lsp',
+    --         'hrsh7th/cmp-nvim-lua',
+    --     },
+    -- },
 
     -- undotree
     {
@@ -159,50 +159,44 @@ return {
     },
 
     -- terminal
-    {
-        'akinsho/toggleterm.nvim',
-        config = function()
-            require('toggleterm').setup()
-        end,
-        keys = {
-            { '<C-\\>', '<CMD>ToggleTerm size=20 direction=float<CR>', 'Toggle terminal' },
-        },
-    },
+    -- {
+    --     'akinsho/toggleterm.nvim',
+    --     config = function()
+    --         require('toggleterm').setup()
+    --     end,
+    --     keys = {
+    --         { '<C-\\>', '<CMD>ToggleTerm size=20 direction=float<CR>', 'Toggle terminal' },
+    --     },
+    -- },
 
     -- align objects
     {
         'junegunn/vim-easy-align',
-        config = function()
-            require('vim-easy-align').setup()
-        end,
-        keys = {
-            {'ga=', 'vip :EasyAlign =<CR>', 'Align to ='},
-            {'gai', 'vip :EasyAlign /import/<CR>', 'Align to import'},
-        },
+        lazy = false,
     },
 
     -------------------------
     -- Appearance settings --
     -------------------------
 
-    -- alpha start up
-    {
-        'goolord/alpha-nvim',
-        lazy = false,
-        dependencies = { 'kyazdani42/nvim-web-devicons' },
-        config = function()
-            require('alpha').setup(require('alpha.themes.theta').config)
-        end,
-    },
+    -- -- alpha start up
+    -- {
+    --     'goolord/alpha-nvim',
+    --     lazy = false,
+    --     dependencies = { 'kyazdani42/nvim-web-devicons' },
+    --     config = function()
+    --         require('alpha').setup(require('alpha.themes.theta').config)
+    --     end,
+    -- },
 
-    {
-        'nvim-lualine/lualine.nvim',
-        lazy = false,
-        dependencies = { 'kyazdani42/nvim-web-devicons' },
-        config = function()
-            require('lualine').setup()
-        end,
-    },
+    -- {
+    --     'nvim-lualine/lualine.nvim',
+    --     lazy = false,
+    --     dependencies = { 'kyazdani42/nvim-web-devicons' },
+    --     config = function()
+    --         require('lualine').setup()
+    --     end,
+    -- },
 
     --buffer_line
     {
@@ -210,7 +204,11 @@ return {
         lazy = false,
         dependencies = { 'kyazdani42/nvim-web-devicons' },
         config = function()
-            require('bufferline').setup()
+            require('bufferline').setup({
+                options = {
+                    separator_style = 'slant',
+                }
+            })
         end,
     },
 
@@ -232,26 +230,30 @@ return {
         -- end,
     },
 
-}
+    -------------------------------
+    -- Language specific plugins --
+    -------------------------------
 
+    -- {
+    --     'mfussenegger/nvim-dap',
+    --     'rcarriga/nvim-dap-ui',
+    --     'theHamsta/nvim-dap-virtual-text',
+    --     'nvim-telescope/telescope-dap.nvim',
+    --
+    --     --language specific
+    --     'mfussenegger/nvim-dap-python',
+    -- },
+
+    -- python black
+    {
+        'averms/black-nvim',
+        ft = { 'python' },
+    },
+
+}
 
 -- -------------------
 -- -- Miscellaneous --
 -- -------------------
 -- -- treehopper
 -- 'mfussenegger/nvim-treehopper'
-
--- -------------------------------
--- -- Language specific plugins --
--- -------------------------------
---
--- 'mfussenegger/nvim-dap'
--- 'mfussenegger/nvim-dap-python'
--- 'rcarriga/nvim-dap-ui'
--- 'theHamsta/nvim-dap-virtual-text'
--- 'nvim-telescope/telescope-dap.nvim'
---
--- -- python black
--- 'averms/black-nvim'
---
-

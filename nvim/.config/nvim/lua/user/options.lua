@@ -53,8 +53,5 @@ vim.opt.whichwrap:append('<,>,[,],h,l')
 vim.scriptencoding = 'utf-8'
 vim.wo.colorcolumn = '80'
 
-vim.api.nvim_command('highlight CursorLine ctermbg=none guibg=none')
-vim.api.nvim_command('highlight LineNrAbove guifg=white')
-vim.api.nvim_command('highlight CursorLineNr guifg=green guibg=none')
-vim.api.nvim_command('highlight LineNrBelow guifg=red')
-
+-- change breakpoint icon
+vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='', numhl=''})

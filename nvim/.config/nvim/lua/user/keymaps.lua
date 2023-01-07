@@ -91,17 +91,23 @@ nmap('<leader>?',  '<CMD>Telescope oldfiles<CR>',                  'Search recen
 nmap('<leader>/',  '<CMD>Telescope current_buffer_fuzzy_find<CR>', 'Search in current buffer')
 nmap('<leader>sh', '<CMD>Telescope diagnostics<CR>',               'Search diagnostics')
 
--- -- NVIM-DAP --
--- nmap('<F6>',       ':lua require("dap").toggle_breakpoint()<CR>',                      'Toggle breakpoint')
--- nmap('<F7>',       ':lua require("dap").step_into()<CR>',                              'Step into')
--- nmap('<F8>',       ':lua require("dap").step_over()<CR>',                              'Step over')
--- nmap('<F10>',      ':lua require("dap").step_out()<CR>',                               'Step out')
--- nmap('<F9>',       ':lua require("dap").continue()<CR>',                               'Continue')
--- nmap('<leader>dk', ':lua require("dap").down()<CR>',                                   'Move to lower stack frame')
--- nmap('<leader>dj', ':lua require("dap").up()<CR>',                                     'Move to upper stack frame')
--- nmap('<leader>dt', ':lua require("dap").terminate()<CR>',                              'Terminate')
--- nmap('<leader>dr', ':lua require("dap").repl_open({}, "vsplit")<CR>',                 'Open REPL in new buffer')
--- nmap('<leader>df', ':lua require("dapui").float_element("scopes", enter=true})<CR>', 'Floating window for variables in scope')
--- 
+-- EASY-ALIGN --
+xmap('ga=', ':EasyAlign =<CR>', 'Align to =')
+xmap('gai', ':EasyAlign /import/<CR>', 'Align to import')
+nmap('ga=', 'vip :EasyAlign =<CR>', 'Align to =')
+nmap('gai', 'vip :EasyAlign /import/<CR>', 'Align to import')
+
+-- NVIM-DAP --
+nmap('<F6>',       ':lua require("dap").toggle_breakpoint()<CR>',                    'Toggle breakpoint')
+nmap('<F7>',       ':lua require("dap").step_into()<CR>',                            'Step into')
+nmap('<F8>',       ':lua require("dap").step_over()<CR>',                            'Step over')
+nmap('<F10>',      ':lua require("dap").step_out()<CR>',                             'Step out')
+nmap('<F9>',       ':lua require("dap").continue()<CR>',                             'Continue')
+nmap('<leader>dk', ':lua require("dap").down()<CR>',                                 'Move to lower stack frame')
+nmap('<leader>dj', ':lua require("dap").up()<CR>',                                   'Move to upper stack frame')
+nmap('<leader>dt', ':lua require("dap").terminate()<CR>',                            'Terminate')
+nmap('<leader>dr', ':lua require("dap").repl_open({}, "vsplit")<CR>',                'Open REPL in new buffer')
+nmap('<leader>df', ':lua require("dapui").float_element("scopes", enter=true})<CR>', 'Floating window for variables in scope')
+
 -- -- TREE HOPPER --
 -- nmap('<leader>h', ':lua require("tsht").nodes()<CR>', 'Hop node trees')
