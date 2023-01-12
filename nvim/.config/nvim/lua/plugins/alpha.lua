@@ -56,7 +56,7 @@ return {
             dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
             dashboard.button("c", "  nvim config", ":e ~/.config/nvim/init.lua <CR>"),
             dashboard.button('u', '  Update plugins', '<Cmd>PackerSync<CR>'),
-            dashboard.button('a', '力 LSP servers', '<Cmd>Mason<CR>'),
+            dashboard.button('a', '力  LSP servers', '<Cmd>Mason<CR>'),
             dashboard.button("z", "  zsh config", ":e $ZDOTDIR/.zshrc <CR>"),
             dashboard.button('q', '  Quit', '<Cmd>qa!<CR>'),
         }
