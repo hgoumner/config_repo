@@ -9,3 +9,4 @@ zsh/.config/cache
 zsh/.config/local
 i3/.i3blocks/blocklets/i3blocks-contrib
 vim/.vim/vim-plugged
+nvim/.config/nvim/lazy-lock.json

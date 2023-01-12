@@ -46,6 +46,12 @@ augroup myvimrc
     autocmd BufWritePost .vimrc,_vimrc,vimrc so $MYVIMRC
 augroup END
 
+" use a | cursor in insert mode
+let &t_SI = "\<Esc>[5 q"
+
+" use a rectangle cursor otherwise
+let &t_EI = "\<Esc>[1 q"
+
 " start vim/gvim maximized
 autocmd GUIEnter * simalt ~X
 
