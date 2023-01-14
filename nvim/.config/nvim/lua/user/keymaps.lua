@@ -11,29 +11,17 @@
 
 -- Shorten function name
 local nmap = function (keys, func, desc)
-    if desc then
-        desc = 'LSP: ' .. desc
-    end
-
-    vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+    vim.keymap.set('n', keys, func, { buffer = bufnr, noremap = true, desc = desc })
 end
 
 -- Shorten function name
 local vmap = function (keys, func, desc)
-    if desc then
-        desc = 'LSP: ' .. desc
-    end
-
-    vim.keymap.set('v', keys, func, { buffer = bufnr, desc = desc })
+    vim.keymap.set('v', keys, func, { buffer = bufnr, noremap = true, desc = desc })
 end
 
 -- Shorten function name
 local xmap = function (keys, func, desc)
-    if desc then
-        desc = 'LSP: ' .. desc
-    end
-
-    vim.keymap.set('x', keys, func, { buffer = bufnr, desc = desc })
+    vim.keymap.set('x', keys, func, { buffer = bufnr, noremap = true, desc = desc })
 end
 
 -- Remap space as leader key
@@ -48,21 +36,21 @@ nmap('G',         'G0',                 'Go to first character in last line in b
 nmap('Q',         '<nop>',              'Disable Ex mode')
 nmap('n',         'nzz',                'Navigate to next search match and center screen')
 nmap('N',         'Nzz',                'Navigate to previous search match and center screen')
-nmap('<leader>w', ':w<CR>',             'Save file')
-nmap('<leader>q', ':q!<CR>',            'Quit file without saving')
-nmap('<leader>x', ':x<CR>',             'Save and quit file')
-nmap('<leader>s', ':set hlsearch!<CR>', 'Toggle search highlighting')
-nmap('<leader>c', ':set list!<CR>',     'Toggle display of all characters')
+nmap('<leader>w', '<CMD>w<CR>',             'Save file')
+nmap('<leader>q', '<CMD>q!<CR>',            'Quit file without saving')
+nmap('<leader>x', '<CMD>x<CR>',             'Save and quit file')
+nmap('<leader>s', '<CMD>set hlsearch!<CR>', 'Toggle search highlighting')
+nmap('<leader>c', '<CMD>set list!<CR>',     'Toggle display of all characters')
 
 -- Navigate buffers
-nmap('<A-l>', ':bnext<CR>',     'Move to next buffer')
-nmap('<A-h>', ':bprevious<CR>', 'Move to previous buffer')
+nmap('<A-l>', '<CMD>bnext<CR>',     'Move to next buffer')
+nmap('<A-h>', '<CMD>bprevious<CR>', 'Move to previous buffer')
 
 -- Resize with arrows
-nmap('<C-Up>',    ':resize +2<CR>',          'Grow buffer horizontally')
-nmap('<C-Down>',  ':resize -2<CR>',          'Shrink buffer horizontally')
-nmap('<C-Left>',  ':vertical resize -2<CR>', 'Shrink buffer vertically')
-nmap('<C-Right>', ':vertical resize +2<CR>', 'Grow buffer vertically')
+nmap('<C-Up>',    '<CMD>resize +2<CR>',          'Grow buffer horizontally')
+nmap('<C-Down>',  '<CMD>resize -2<CR>',          'Shrink buffer horizontally')
+nmap('<C-Left>',  '<CMD>vertical resize -2<CR>', 'Shrink buffer vertically')
+nmap('<C-Right>', '<CMD>vertical resize +2<CR>', 'Grow buffer vertically')
 
 -- Better window navigation
 nmap('<C-h>', '<C-w>h', 'Move to left buffer')
@@ -77,9 +65,9 @@ vmap('>', '>gv', 'Right indent')
 
 -- VISUAL BLOCK --
 -- Move text up and down
-xmap('J', ":move '>+1<CR>gv-gv", 'Move line down one line')
-xmap('K', ":move '<-2<CR>gv-gv", 'Move line up one line')
-vmap('p', '"_dP',                'Paste without overwriting register')
+xmap('<A-j>', "<CMD>move '>+1<CR>gv=gv", 'Move line down one line')
+xmap('<A-k>', "<CMD>move '<-2<CR>gv=gv", 'Move line up one line')
+vmap('p', '"_dP',                        'Paste without overwriting register')
 
 -- Plugins --
 -- TELESCOPE --
@@ -92,22 +80,35 @@ nmap('<leader>/',  '<CMD>Telescope current_buffer_fuzzy_find<CR>', 'Search in cu
 nmap('<leader>sh', '<CMD>Telescope diagnostics<CR>',               'Search diagnostics')
 
 -- EASY-ALIGN --
-xmap('ga=', ':EasyAlign =<CR>', 'Align to =')
-xmap('gai', ':EasyAlign /import/<CR>', 'Align to import')
-nmap('ga=', 'vip :EasyAlign =<CR>', 'Align to =')
-nmap('gai', 'vip :EasyAlign /import/<CR>', 'Align to import')
+xmap('ga=', '<CMD>EasyAlign =<CR>', 'Align to =')
+xmap('gai', '<CMD>EasyAlign /import/<CR>', 'Align to import')
+nmap('ga=', 'vip <CMD>EasyAlign =<CR>', 'Align to =')
+nmap('gai', 'vip <CMD>EasyAlign /import/<CR>', 'Align to import')
+
+-- Gitsigns --
+nmap('<leader>hh', '<CMD>Gitsigns preview_hunk<CR>', 'Preview git hunk')
+nmap('<leader>hd', '<CMD>Gitsigns diffthis<CR>', 'Git-diff this file')
+
+-- LSP --
+nmap('<leader>gD', '<CMD>lua vim.lsp.buf.declaration()<CR>', 'Go to declaration')
+nmap('<leader>gd', '<CMD>lua vim.lsp.buf.definition()<CR>', 'Go to definition')
+nmap('<leader>K',  '<CMD>lua vim.lsp.buf.hover()<CR>', 'Show information - LSP')
+nmap('<leader>gi', '<CMD>lua vim.lsp.buf.implementation()<CR>', 'Go to implementation')
 
 -- NVIM-DAP --
-nmap('<F6>',       ':lua require("dap").toggle_breakpoint()<CR>',                    'Toggle breakpoint')
-nmap('<F7>',       ':lua require("dap").step_into()<CR>',                            'Step into')
-nmap('<F8>',       ':lua require("dap").step_over()<CR>',                            'Step over')
-nmap('<F10>',      ':lua require("dap").step_out()<CR>',                             'Step out')
-nmap('<F9>',       ':lua require("dap").continue()<CR>',                             'Continue')
-nmap('<leader>dk', ':lua require("dap").down()<CR>',                                 'Move to lower stack frame')
-nmap('<leader>dj', ':lua require("dap").up()<CR>',                                   'Move to upper stack frame')
-nmap('<leader>dt', ':lua require("dap").terminate()<CR>',                            'Terminate')
-nmap('<leader>dr', ':lua require("dap").repl_open({}, "vsplit")<CR>',                'Open REPL in new buffer')
-nmap('<leader>df', ':lua require("dapui").float_element("scopes", enter=true})<CR>', 'Floating window for variables in scope')
+nmap('<F6>',       '<CMD>lua require("dap").toggle_breakpoint()<CR>',                    'Toggle breakpoint')
+nmap('<F7>',       '<CMD>lua require("dap").step_into()<CR>',                            'Step into')
+nmap('<F8>',       '<CMD>lua require("dap").step_over()<CR>',                            'Step over')
+nmap('<F10>',      '<CMD>lua require("dap").step_out()<CR>',                             'Step out')
+nmap('<F9>',       '<CMD>lua require("dap").continue()<CR>',                             'Continue')
+nmap('<leader>dk', '<CMD>lua require("dap").down()<CR>',                                 'Move to lower stack frame')
+nmap('<leader>dj', '<CMD>lua require("dap").up()<CR>',                                   'Move to upper stack frame')
+nmap('<leader>dt', '<CMD>lua require("dap").terminate()<CR>',                            'Terminate')
+nmap('<leader>dr', '<CMD>lua require("dap").repl_open({}, "vsplit")<CR>',                'Open REPL in new buffer')
+nmap('<leader>df', '<CMD>lua require("dapui").float_element("scopes", enter=true})<CR>', 'Floating window for variables in scope')
+
+-- SWENV --
+nmap('<leader>ce', '<CMD>lua require("swenv.api").pick_venv()<CR>', 'Choose python environment')
 
 -- -- TREE HOPPER --
--- nmap('<leader>h', ':lua require("tsht").nodes()<CR>', 'Hop node trees')
+-- nmap('<leader>h', '<CMD>lua require("tsht").nodes()<CR>', 'Hop node trees')
