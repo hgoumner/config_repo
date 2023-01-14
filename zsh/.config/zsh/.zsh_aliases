@@ -102,3 +102,7 @@ alias km='~/keylayout.sh'
 
 # youtube-dl only audio
 alias youdla='youtube-dl -x'
+
+# jobsearch
+alias j='python ~/jobsearch/main.py'
+

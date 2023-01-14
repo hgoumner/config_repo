@@ -55,4 +55,5 @@ vim.wo.colorcolumn = '80'
 
 -- change breakpoint icon
 -- debugBreakpoint xxx ctermfg=236 ctermbg=167 guifg=#32302f guibg=#ea6962
+vim.api.nvim_set_hl(0, 'HGbreak', { ctermfg=236, ctermbg=167, fg='#32302F', bg='#EA6962' })
 vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='debugBreakpoint', numhl=''})
