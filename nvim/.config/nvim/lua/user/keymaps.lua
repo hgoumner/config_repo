@@ -31,15 +31,15 @@ vim.g.maplocalleader = ' '
 
 -- Hristo's mappings
 -- NORMAL --
-nmap('gg',        'gg0',                'Go to first character in buffer')
-nmap('G',         'G0',                 'Go to first character in last line in buffer')
-nmap('Q',         '<nop>',              'Disable Ex mode')
-nmap('n',         'nzz',                'Navigate to next search match and center screen')
-nmap('N',         'Nzz',                'Navigate to previous search match and center screen')
+nmap('gg',        'gg0',                    'Go to first character in buffer')
+nmap('G',         'G0',                     'Go to first character in last line in buffer')
+nmap('Q',         '<nop>',                  'Disable Ex mode')
+nmap('n',         'nzz',                    'Navigate to next search match and center screen')
+nmap('N',         'Nzz',                    'Navigate to previous search match and center screen')
 nmap('<leader>w', '<CMD>w<CR>',             'Save file')
 nmap('<leader>q', '<CMD>q!<CR>',            'Quit file without saving')
 nmap('<leader>x', '<CMD>x<CR>',             'Save and quit file')
-nmap('<leader>s', '<CMD>set hlsearch!<CR>', 'Toggle search highlighting')
+nmap('<leader>h', '<CMD>set hlsearch!<CR>', 'Toggle search highlighting')
 nmap('<leader>c', '<CMD>set list!<CR>',     'Toggle display of all characters')
 
 -- Navigate buffers
@@ -80,10 +80,10 @@ nmap('<leader>/',  '<CMD>Telescope current_buffer_fuzzy_find<CR>', 'Search in cu
 nmap('<leader>sh', '<CMD>Telescope diagnostics<CR>',               'Search diagnostics')
 
 -- EASY-ALIGN --
-xmap('ga=', '<CMD>EasyAlign =<CR>', 'Align to =')
-xmap('gai', '<CMD>EasyAlign /import/<CR>', 'Align to import')
-nmap('ga=', 'vip <CMD>EasyAlign =<CR>', 'Align to =')
-nmap('gai', 'vip <CMD>EasyAlign /import/<CR>', 'Align to import')
+xmap('ga=', ':EasyAlign =<CR>', 'Align to =')
+xmap('gai', ':EasyAlign /import/<CR>', 'Align to import')
+nmap('ga=', 'vip :EasyAlign =<CR>', 'Align to =')
+nmap('gai', 'vip :EasyAlign /import/<CR>', 'Align to import')
 
 -- Gitsigns --
 nmap('<leader>hh', '<CMD>Gitsigns preview_hunk<CR>', 'Preview git hunk')
