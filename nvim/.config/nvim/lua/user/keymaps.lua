@@ -78,6 +78,7 @@ nmap('<leader>g',  '<CMD>Telescope live_grep<CR>',                 'Search strin
 nmap('<leader>?',  '<CMD>Telescope oldfiles<CR>',                  'Search recently opened files')
 nmap('<leader>/',  '<CMD>Telescope current_buffer_fuzzy_find<CR>', 'Search in current buffer')
 nmap('<leader>sh', '<CMD>Telescope diagnostics<CR>',               'Search diagnostics')
+nmap('<leader>fb', '<CMD>Telescope file_browser<CR>',              'Toggle file browser')
 
 -- EASY-ALIGN --
 xmap('ga=', ':EasyAlign =<CR>', 'Align to =')
@@ -90,10 +91,11 @@ nmap('<leader>hh', '<CMD>Gitsigns preview_hunk<CR>', 'Preview git hunk')
 nmap('<leader>hd', '<CMD>Gitsigns diffthis<CR>', 'Git-diff this file')
 
 -- LSP --
-nmap('<leader>gD', '<CMD>lua vim.lsp.buf.declaration()<CR>', 'Go to declaration')
-nmap('<leader>gd', '<CMD>lua vim.lsp.buf.definition()<CR>', 'Go to definition')
-nmap('<leader>K',  '<CMD>lua vim.lsp.buf.hover()<CR>', 'Show information - LSP')
-nmap('<leader>gi', '<CMD>lua vim.lsp.buf.implementation()<CR>', 'Go to implementation')
+nmap('<leader>gD', '<CMD>lua vim.lsp.buf.declaration()<CR>',                     'Go to declaration')
+nmap('<leader>gd', '<CMD>lua vim.lsp.buf.definition()<CR>',                      'Go to definition')
+nmap('<leader>gi', '<CMD>lua vim.lsp.buf.implementation()<CR>',                  'Go to implementation')
+-- nmap('<leader>gl', '<CMD>lua vim.diagnostic.open_float(nil, {focus=false})<CR>', 'Show diagnostic message')
+nmap('<leader>K',  '<CMD>lua vim.lsp.buf.hover()<CR>',                           'Show information - LSP')
 
 -- NVIM-DAP --
 nmap('<F6>',       '<CMD>lua require("dap").toggle_breakpoint()<CR>',                    'Toggle breakpoint')
@@ -108,7 +110,7 @@ nmap('<leader>dr', '<CMD>lua require("dap").repl_open({}, "vsplit")<CR>',       
 nmap('<leader>df', '<CMD>lua require("dapui").float_element("scopes", enter=true})<CR>', 'Floating window for variables in scope')
 
 -- SWENV --
-nmap('<leader>ce', '<CMD>lua require("swenv.api").pick_venv()<CR>', 'Choose python environment')
+nmap('<leader>p', '<CMD>lua require("swenv.api").pick_venv()<CR>', 'Choose python environment')
 
 -- -- TREE HOPPER --
 -- nmap('<leader>h', '<CMD>lua require("tsht").nodes()<CR>', 'Hop node trees')

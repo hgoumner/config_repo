@@ -2,7 +2,6 @@ return {
     'AckslD/swenv.nvim',
     lazy = false,
     -- ft = { 'python' },
-    dependencies = 'stevearc/dressing.nvim',
     config = function()
         require('swenv').setup({
           -- Should return a list of tables with a `name` and a `path` entry each.

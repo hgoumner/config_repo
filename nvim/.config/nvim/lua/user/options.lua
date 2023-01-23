@@ -57,3 +57,30 @@ vim.wo.colorcolumn = '80'
 -- debugBreakpoint xxx ctermfg=236 ctermbg=167 guifg=#32302f guibg=#ea6962
 vim.api.nvim_set_hl(0, 'HGbreak', { ctermfg=236, ctermbg=167, fg='#32302F', bg='#EA6962' })
 vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='debugBreakpoint', numhl=''})
+
+vim.api.nvim_create_autocmd(
+    'BufEnter',
+    {
+        buffer = bufnr,
+        pattern = 'py',
+        command = 'require("swenv.api").get_current_venv()'
+    }
+)
+
+vim.api.nvim_create_autocmd(
+    {'Cursorhold', 'CursorHoldI'},
+        {
+          buffer = bufnr,
+          callback = function()
+            local opts = {
+              focusable = false,
+              close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+              border = 'rounded',
+              source = 'always',
+              prefix = ' ',
+              scope = 'cursor',
+            }
+            vim.diagnostic.open_float(nil, opts)
+          end
+        }
+)
