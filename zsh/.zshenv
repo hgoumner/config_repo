@@ -67,5 +67,10 @@ export MANWIDTH=999
 # ----------------------------------
 
 # nodejs
-export PATH=$PATH:~/node-v17.3.0-linux-x64/bin
+export PATH=$PATH:'~/node-v17.3.0-linux-x64/bin'
 
+# texlive
+export PATH=$PATH:'/usr/local/texlive/2022/bin/x86_64'
+
+# flatpak apps
+export PATH=$PATH:'/var/lib/flatpak/exports/bin/'
