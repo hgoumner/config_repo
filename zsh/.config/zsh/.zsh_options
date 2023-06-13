@@ -27,6 +27,9 @@ unsetopt BEEP
 # Colors
 autoload -Uz colors && colors
 
+# zmv - renaming and moving files/directories
+autoload -U zmv
+
 # url stuff
 autoload -Uz bracketed-paste-magic
 zle -N bracketed-paste bracketed-paste-magic

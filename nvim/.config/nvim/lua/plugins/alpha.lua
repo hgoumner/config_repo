@@ -61,15 +61,15 @@ return {
         end
 
         dashboard.section.buttons.val = {
-            dashboard.button("e", "  New file", "<CMD>ene <BAR> startinsert <CR>"),
-            dashboard.button("f", "  Find file", "<CMD>Telescope find_files <CR>"),
-            dashboard.button("r", "  Recent files", "<CMD>Telescope oldfiles <CR>"),
-            dashboard.button("t", "  Find text", "<CMD>Telescope live_grep <CR>"),
-            dashboard.button("c", "  nvim config", "<CMD>e ~/.config/nvim/init.lua <CR>"),
+            dashboard.button("e", "  New file",       "<CMD>ene <BAR> startinsert <CR>"),
+            dashboard.button("f", "  Find file",      "<CMD>Telescope find_files <CR>"),
+            dashboard.button("r", "  Recent files",   "<CMD>Telescope oldfiles <CR>"),
+            dashboard.button("t", "  Find text",      "<CMD>Telescope live_grep <CR>"),
+            dashboard.button("c", "  nvim config",    "<CMD>e ~/.config/nvim/init.lua <CR>"),
             dashboard.button('u', '  Update plugins', '<CMD>Lazy update<CR>'),
-            dashboard.button('a', '力 LSP servers', '<CMD>Mason<CR>'),
-            dashboard.button("z", "  zsh config", "<CMD>e $ZDOTDIR/.zshrc <CR>"),
-            dashboard.button('q', '  Quit', '<CMD>qa!<CR>'),
+            dashboard.button('l', '力 LSP servers',    '<CMD>Mason<CR>'),
+            dashboard.button("z", "  zsh config",     "<CMD>e $ZDOTDIR/.zshrc <CR>"),
+            dashboard.button('q', '  Quit',           '<CMD>qa!<CR>'),
         }
 
         dashboard.section.footer.val = fortune()

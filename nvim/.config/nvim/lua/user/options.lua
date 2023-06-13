@@ -34,6 +34,7 @@ local options = {
     swapfile = false,                                                                   -- creates a swapfile,,,
     tabstop = 4,                                                                        -- insert 2 spaces for a tab
     termguicolors = true,                                                               -- set term gui colors (most terminals support this)
+    textwidth = 80,
     timeoutlen = 1000,                                                                  -- time to wait for a mapped sequence to complete (in milliseconds)
     undofile = true,                                                                    -- enable persistent undo
     updatetime = 1000,                                                                   -- faster completion (4000ms default)
@@ -49,6 +50,8 @@ vim.opt.formatoptions:remove('cro')
 vim.opt.iskeyword:append('-')
 vim.opt.shortmess:append('c')
 vim.opt.whichwrap:append('<,>,[,],h,l')
+
+vim.opt.scrollopt:append('hor')
 
 vim.scriptencoding = 'utf-8'
 vim.wo.colorcolumn = '80'

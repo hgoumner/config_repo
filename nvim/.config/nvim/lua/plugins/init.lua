@@ -222,13 +222,13 @@ return {
     },
 
     -- context vt
-    {
-        'haringsrob/nvim_context_vt',
-        lazy = false,
-        -- config = function()
-        --     require('nvim_context_vt').setup()
-        -- end,
-    },
+    -- {
+    --     'haringsrob/nvim_context_vt',
+    --     lazy = false,
+    --     -- config = function()
+    --     --     require('nvim_context_vt').setup()
+    --     -- end,
+    -- },
 
     -------------------------------
     -- Language specific plugins --
@@ -264,6 +264,10 @@ return {
         lazy = false,
     },
 
+    {
+        'https://github.com/chrisbra/csv.vim',
+        ft = { 'csv' },
+    },
 }
 
 -- -------------------

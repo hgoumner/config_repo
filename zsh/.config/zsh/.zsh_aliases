@@ -91,7 +91,7 @@ alias cs='~/cht.sh'
 alias ls='ls --color=auto'
 
 # tree
-alias tree='tree -C'
+alias tree='tree -C --dirsfirst'
 
 ###################################
 # other
@@ -105,3 +105,8 @@ alias youdla='youtube-dl -x'
 
 # jobsearch
 alias j='python ~/jobsearch/main.py'
+
+# wbs_bootcamp
+alias caw='conda activate wbs_bootcamp'
+alias jp='jupyter lab'
+alias wbs='cd ~/Documents/WBS_Data_Science/Bootcamp/Python/ && conda activate wbs_bootcamp && jupyter lab'

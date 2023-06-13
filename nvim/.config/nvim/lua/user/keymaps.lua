@@ -31,16 +31,17 @@ vim.g.maplocalleader = ' '
 
 -- Hristo's mappings
 -- NORMAL --
-nmap('gg',        'gg0',                    'Go to first character in buffer')
-nmap('G',         'G0',                     'Go to first character in last line in buffer')
-nmap('Q',         '<nop>',                  'Disable Ex mode')
-nmap('n',         'nzz',                    'Navigate to next search match and center screen')
-nmap('N',         'Nzz',                    'Navigate to previous search match and center screen')
-nmap('<leader>w', '<CMD>w<CR>',             'Save file')
-nmap('<leader>q', '<CMD>q!<CR>',            'Quit file without saving')
-nmap('<leader>x', '<CMD>x<CR>',             'Save and quit file')
-nmap('<leader>h', '<CMD>set hlsearch!<CR>', 'Toggle search highlighting')
-nmap('<leader>c', '<CMD>set list!<CR>',     'Toggle display of all characters')
+nmap('gg',         'gg0',                     'Go to first character in buffer')
+nmap('G',          'G0',                      'Go to first character in last line in buffer')
+nmap('Q',          '<nop>',                   'Disable Ex mode')
+nmap('n',          'nzz',                     'Navigate to next search match and center screen')
+nmap('N',          'Nzz',                     'Navigate to previous search match and center screen')
+nmap('<leader>w',  '<CMD>w<CR>',              'Save file')
+nmap('<leader>q',  '<CMD>q!<CR>',             'Quit file without saving')
+nmap('<leader>x',  '<CMD>x<CR>',              'Save and quit file')
+nmap('<leader>h',  '<CMD>set hlsearch!<CR>',  'Toggle search highlighting')
+nmap('<leader>c',  '<CMD>set list!<CR>',      'Toggle display of all characters')
+nmap('<leader>cl', '<CMD>%s/^\\s\\+$//g<CR>', 'Remove spaces in empty lines')
 
 -- Navigate buffers
 nmap('<A-l>', '<CMD>bnext<CR>',     'Move to next buffer')

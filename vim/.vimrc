@@ -33,6 +33,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'puremourning/vimspector'
 Plug 'perost/modelica-vim'
 Plug 'morhetz/gruvbox'
+Plug 'chrisbra/csv.vim'
 
 call plug#end()
 
