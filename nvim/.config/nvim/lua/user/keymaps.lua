@@ -113,5 +113,10 @@ nmap('<leader>df', '<CMD>lua require("dapui").float_element("scopes", enter=true
 -- SWENV --
 nmap('<leader>p', '<CMD>lua require("swenv.api").pick_venv()<CR>', 'Choose python environment')
 
+-- Icons --
+nmap('<leader><leader>n', '<CMD>IconPickerNormal<CR>', 'Pick icon and insert (normal)')
+nmap('<leader><leader>i', '<CMD>IconPickerInsert<CR>', 'Pick icon and insert (insert)')
+nmap('<leader><leader>y', '<CMD>IconPickerYank<CR>',   'Icons')
+
 -- -- TREE HOPPER --
 -- nmap('<leader>h', '<CMD>lua require("tsht").nodes()<CR>', 'Hop node trees')

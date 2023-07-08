@@ -265,9 +265,19 @@ return {
     },
 
     {
-        'https://github.com/chrisbra/csv.vim',
+        'chrisbra/csv.vim',
         ft = { 'csv' },
     },
+
+    {
+        'ziontee113/icon-picker.nvim',
+        lazy = false,
+        config = function()
+            require("icon-picker").setup({
+                disable_legacy_commands = true
+            })
+        end
+    }
 }
 
 -- -------------------
