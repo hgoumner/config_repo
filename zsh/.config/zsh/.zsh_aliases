@@ -87,8 +87,8 @@ alias cs='~/cht.sh'
 # listing
 ###################################
 
-# alias lss='logo-ls'
-alias ls='ls --color=auto'
+alias ls='ls --color=auto --group-directories-first'
+alias lsd='lsd --color=auto --group-directories-first'
 
 # tree
 alias tree='tree -C --dirsfirst'
@@ -101,12 +101,16 @@ alias tree='tree -C --dirsfirst'
 alias km='~/keylayout.sh'
 
 # youtube-dl only audio
-alias youdla='youtube-dl -x'
+# alias youdla='youtube-dl -x'
 
 # jobsearch
 alias j='python ~/jobsearch/main.py'
 
 # wbs_bootcamp
-alias caw='conda activate wbs_bootcamp'
-alias jp='jupyter lab'
-alias wbs='cd ~/Documents/WBS_Data_Science/Bootcamp/Python/ && conda activate wbs_bootcamp && jupyter lab'
+alias cjp='conda activate tm && jupyter lab'
+
+# knime
+alias knime='/opt/knime/knime'
+
+# orange
+alias orange='conda activate tm && python -m Orange.canvas'

@@ -277,7 +277,12 @@ return {
                 disable_legacy_commands = true
             })
         end
-    }
+    },
+
+    {
+        "christoomey/vim-tmux-navigator",
+        lazy = false,
+    },
 }
 
 -- -------------------
