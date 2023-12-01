@@ -119,10 +119,10 @@ no-symlink: false
 # == Total size ==
 # Whether to display the total size of directories.
 # Possible values: false, true
-total-size: false
+total-size: true
 
 # == Hyperlink ==
-# Whether to display the total size of directories.
+# Attach hyperlink to filenames
 # Possible values: always, auto, never
 # hyperlink: never
 
