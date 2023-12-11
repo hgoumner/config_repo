@@ -114,3 +114,10 @@ alias knime='/opt/knime/knime'
 
 # orange
 alias orange='conda activate tm && python -m Orange.canvas'
+
+###################################
+# PharVision
+###################################
+
+alias r='cd ~/Documents/Development'
+

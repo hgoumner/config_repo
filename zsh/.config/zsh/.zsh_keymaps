@@ -57,5 +57,9 @@ bindkey '^G' rga-fzf-line
 zle     -N  fkill
 bindkey '^P' fkill
 
+# toggle alacritty opacity
+zle     -N  toggle_opacity
+bindkey '^O' toggle_opacity
+
 # zle     -N  rg-fzf-nvim
 # bindkey '^H' rg-fzf-nvim
