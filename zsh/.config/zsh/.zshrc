@@ -28,7 +28,7 @@ zsh_add_file ".zsh_aliases"
 zsh_add_file ".zsh_keymaps"
 zsh_add_file ".zsh_options"
 
-[ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
+[ -f "/home/hristo/.config/local/share/zap/zap.zsh" ] && source "/home/hristo/.config/local/share/zap/zap.zsh"
 
 # Plugins
 plug "zap-zsh/supercharge"
