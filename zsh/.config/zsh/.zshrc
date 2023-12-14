@@ -28,6 +28,9 @@ zsh_add_file ".zsh_aliases"
 zsh_add_file ".zsh_keymaps"
 zsh_add_file ".zsh_options"
 
+# PharVision
+zsh_add_file "pharvision"
+
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 [ -f "$HOME/.config/local/share/zap/zap.zsh" ] && source "$HOME/.config/local/share/zap/zap.zsh"
 
@@ -39,37 +42,12 @@ plug "zsh-users/zsh-syntax-highlighting"
 plug "zsh-users/zsh-completions"
 plug "hlissner/zsh-autopair"
 
-# completions
-plug "esc/conda-zsh-completion"
-
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
 HISTSIZE=10000                   # Maximum events for internal history
 SAVEHIST=10000                   # Maximum events in history file
-
-# Broot
-[ -f ~/.config/broot/launcher/bash/br ] && source ~/.config/broot/launcher/bash/br
-
-# ------------------------------
-# ------------ Conda -----------
-# ------------------------------
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/'$(whoami)'/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/'$(whoami)'/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/'$(whoami)'/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/'$(whoami)'/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 # -----------------------
 # -------- Theme --------
