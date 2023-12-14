@@ -14,6 +14,13 @@ fi
 # [[ ! -f "$ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme" ]] || source "$ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme"
 
 # --------------------------------
+# -------- ZAP --------
+# --------------------------------
+
+[ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
+[ -f "$HOME/.config/local/share/zap/zap.zsh" ] && source "$HOME/.config/local/share/zap/zap.zsh"
+
+# --------------------------------
 # -------- External files --------
 # --------------------------------
 
