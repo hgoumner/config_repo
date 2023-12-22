@@ -119,5 +119,7 @@ alias orange='conda activate tm && python -m Orange.canvas'
 # PharVision
 ###################################
 
-alias r='cd ~/Documents/Development'
+alias dev='cd ~/Documents/Development'
+alias p='cd ~/pipeline'
+alias a='cd ~/development_alphas'
 
