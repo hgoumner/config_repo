@@ -45,9 +45,12 @@ bindkey -M vicmd v edit-command-line
 bindkey '\e[1;5C' forward-word
 bindkey '\e[1;5D' backward-word
 
+zle -N fzf-file-widget
+bindkey "^F" fzf-file-widget
+
 # FZF and RG mappings
 zle     -N  rga-fzf-noline
-bindkey '^F' rga-fzf-noline
+bindkey '^N' rga-fzf-noline
 
 # line
 zle     -N  rga-fzf-line
@@ -55,7 +58,7 @@ bindkey '^G' rga-fzf-line
 
 # process fuzzy search and kill
 zle     -N  fkill
-bindkey '^P' fkill
+bindkey '^K' fkill
 
 # toggle alacritty opacity
 zle     -N  toggle_opacity
