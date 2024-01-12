@@ -48,12 +48,6 @@ alias psmem='ps auxf | sort -nr -k 4 | head -5'
 # get top process eating cpu ##
 alias pscpu='ps auxf | sort -nr -k 3 | head -5'
 
-# gpg encryption
-# verify signature for isos
-alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
-# receive the key of a developer
-alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
-
 # -----------------------------------------------
 # --------------- Applications ------------------
 # -----------------------------------------------
@@ -62,26 +56,26 @@ alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
 # git
 ###################################
 
-alias ga='git add --verbose'
-alias gaa='git add --all'
-alias gb='git branch'
-alias gc='git commit'
-alias gcm='git commit -m'
-alias gcon='git config --list'
-alias gch='git checkout'
-alias gd='git diff -w'
-alias gf='git fetch'
-alias gp='git push'
-alias gpl='git pull'
-alias gl='git log'
-alias gm='git merge'
-alias gr='git reset --hard'
-alias gst='git status'
-alias gsh='git stash'
+# alias ga='git add --verbose'
+# alias gaa='git add --all'
+# alias gb='git branch'
+# alias gc='git commit'
+# alias gcm='git commit -m'
+# alias gcon='git config --list'
+# alias gch='git checkout'
+# alias gd='git diff -w'
+# alias gf='git fetch'
+# alias gp='git push'
+# alias gpl='git pull'
+# alias gl='git log --graph --oneline --abbrev-commit --decorate --format=format:"%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)" --all'
+# alias gm='git merge'
+# alias gr='git reset --hard'
+# alias gst='git status'
+# alias gsh='git stash'
 
 alias lg='lazygit'
 
-alias cs='~/cht.sh'
+# alias cs='~/cht.sh'
 
 ###################################
 # listing
@@ -97,23 +91,7 @@ alias tree='tree -C --dirsfirst'
 # other
 ###################################
 
-# set keyboard layout
-alias km='~/keylayout.sh'
 
-# youtube-dl only audio
-# alias youdla='youtube-dl -x'
-
-# jobsearch
-alias j='python ~/jobsearch/main.py'
-
-# wbs_bootcamp
-alias cjp='conda activate tm && jupyter lab'
-
-# knime
-alias knime='/opt/knime/knime'
-
-# orange
-alias orange='conda activate tm && python -m Orange.canvas'
 
 ###################################
 # PharVision
