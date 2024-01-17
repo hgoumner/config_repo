@@ -19,10 +19,10 @@
     colorMoved = default
 
 [alias]
-    bl = blame --
+    bl = blame -w --
     br = branch
     ch = checkout
     cm = commit
-	lg = log --graph --oneline --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
+	lg = log --graph --oneline --abbrev-commit --decorate --pretty=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
     rh = reset --hard
     st = status
