@@ -91,3 +91,17 @@ function toggle_opacity() {
     ~/.local/bin/toggle_alacritty_opacity
 }
 
+# create bookmark
+function mark {
+    ln -rs "$(pwd)" ~/.bookmarks/"$1"
+}
+
+# remove bookmark
+function unmark {
+    rm ~/.bookmarks/"$1"
+}
+
+# list bookmarks
+function lb {
+    ls -l ~/.bookmarks/
+}

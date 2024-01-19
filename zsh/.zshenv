@@ -76,3 +76,6 @@ export PATH=$PATH:'/usr/local/texlive/2022/bin/x86_64'
 
 # flatpak apps
 export PATH=$PATH:'/var/lib/flatpak/exports/bin/'
+
+# bookmarks
+export CDPATH=.:~/.bookmarks

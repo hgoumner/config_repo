@@ -91,11 +91,6 @@ alias tree='tree -C --dirsfirst'
 # other
 ###################################
 
-
-
-###################################
-# PharVision
-###################################
-
-alias r='cd ~/Documents/Development'
+# resolve symlinks
+alias cd='cd -P'
 
