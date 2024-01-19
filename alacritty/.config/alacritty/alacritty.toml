@@ -7,7 +7,6 @@ style = "Regular"
 
 [selection]
 save_to_clipboard = true
-vi_mode_style = "None"
 
 [window]
 opacity = 1
