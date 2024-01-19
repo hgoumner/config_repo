@@ -1,3 +1,16 @@
 #!/usr/bin/bash
 
 # eval $(ssh-agent -s)
+
+# CDPATH for bookmarks
+export CDPATH=.:~/.bookmarks/
+
+# create new bookmark
+function mark {
+    ln -sr "$(pwd)" ~/.bookmarks/"$1"
+}
+
+# list bookmarks
+function lb {
+    ls -la ~/.bookmarks/
+}

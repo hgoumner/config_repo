@@ -7,6 +7,10 @@
 # source zshrc file
 alias s='source $ZDOTDIR/.zshrc'
 
+# resolve symbolic links
+alias cd='cd -P'
+
+# directory shortcut
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
