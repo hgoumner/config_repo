@@ -95,14 +95,5 @@ alias tree='tree -C --dirsfirst'
 # other
 ###################################
 
-
-
-###################################
-# PharVision
-###################################
-
-alias dev='cd ~/Documents/Development'
-alias p='cd ~/pipeline'
-alias a='cd ~/development_alphas'
-
 alias br='br -w --sort-by-type'
+

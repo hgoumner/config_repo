@@ -10,6 +10,11 @@ function mark {
     ln -sr "$(pwd)" ~/.bookmarks/"$1"
 }
 
+# remove bookmark
+function unmark {
+    rm ~/.bookmarks/"$1"
+}
+
 # list bookmarks
 function lb {
     ls -la ~/.bookmarks/
