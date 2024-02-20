@@ -283,6 +283,11 @@ return {
         "christoomey/vim-tmux-navigator",
         lazy = false,
     },
+
+    {
+        "AndrewRadev/linediff.vim",
+        lazy = false,
+    },
 }
 
 -- -------------------
