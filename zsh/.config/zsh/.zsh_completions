@@ -11,6 +11,13 @@ if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_docker ]; then
     curl -L https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker -o $ZDOTDIR/plugins/zsh-completions/src/_docker
 fi
 
+# docker-compose
+if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_docker-compose ]; then
+    if [ ! -d $ZDOTDIR/plugins/zsh-completions/src ]; then
+        mkdir -p $ZDOTDIR/plugins/zsh-completions/src
+    fi
+    curl -L https://raw.githubusercontent.com/docker/compose/1.26.0/contrib/completion/zsh/_docker-compose -o $ZDOTDIR/plugins/zsh-completions/src/_docker-compose
+fi
 # conda
 # if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_conda ]; then
 #     curl -L https://raw.githubusercontent.com/esc/conda-zsh-completion/master/_conda -o $ZDOTDIR/plugins/zsh-completions/src/_conda
