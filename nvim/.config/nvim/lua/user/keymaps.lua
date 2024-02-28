@@ -74,8 +74,8 @@ vmap('p', '"_dP',                        'Paste without overwriting register')
 -- TELESCOPE --
 nmap('<leader>k',  '<CMD>Telescope keymaps<CR>',                   'Search keymaps')
 nmap('<leader>b',  '<CMD>Telescope buffers<CR>',                   'Search buffers')
-nmap('<leader>f',  '<CMD>Telescope find_files<CR>',                'Search file')
-nmap('<leader>g',  '<CMD>Telescope live_grep<CR>',                 'Search string')
+nmap('<leader>ff',  '<CMD>Telescope find_files<CR>',                'Search file')
+nmap('<leader>ft',  '<CMD>Telescope live_grep<CR>',                 'Search string')
 nmap('<leader>?',  '<CMD>Telescope oldfiles<CR>',                  'Search recently opened files')
 nmap('<leader>/',  '<CMD>Telescope current_buffer_fuzzy_find<CR>', 'Search in current buffer')
 nmap('<leader>sh', '<CMD>Telescope diagnostics<CR>',               'Search diagnostics')
@@ -88,8 +88,8 @@ nmap('ga=', 'vip :EasyAlign =<CR>', 'Align to =')
 nmap('gai', 'vip :EasyAlign /import/<CR>', 'Align to import')
 
 -- Gitsigns --
-nmap('<leader>hh', '<CMD>Gitsigns preview_hunk<CR>', 'Preview git hunk')
-nmap('<leader>hd', '<CMD>Gitsigns diffthis<CR>', 'Git-diff this file')
+-- nmap('<leader>hh', '<CMD>Gitsigns preview_hunk<CR>', 'Preview git hunk')
+-- nmap('<leader>hd', '<CMD>Gitsigns diffthis<CR>', 'Git-diff this file')
 
 -- LSP --
 nmap('<leader>gD', '<CMD>lua vim.lsp.buf.declaration()<CR>',                     'Go to declaration')
@@ -109,14 +109,3 @@ nmap('<leader>dj', '<CMD>lua require("dap").up()<CR>',                          
 nmap('<leader>dt', '<CMD>lua require("dap").terminate()<CR>',                            'Terminate')
 nmap('<leader>dr', '<CMD>lua require("dap").repl_open({}, "vsplit")<CR>',                'Open REPL in new buffer')
 nmap('<leader>df', '<CMD>lua require("dapui").float_element("scopes", enter=true})<CR>', 'Floating window for variables in scope')
-
--- SWENV --
-nmap('<leader>p', '<CMD>lua require("swenv.api").pick_venv()<CR>', 'Choose python environment')
-
--- Icons --
-nmap('<leader><leader>n', '<CMD>IconPickerNormal<CR>', 'Pick icon and insert (normal)')
-nmap('<leader><leader>i', '<CMD>IconPickerInsert<CR>', 'Pick icon and insert (insert)')
-nmap('<leader><leader>y', '<CMD>IconPickerYank<CR>',   'Icons')
-
--- -- TREE HOPPER --
--- nmap('<leader>h', '<CMD>lua require("tsht").nodes()<CR>', 'Hop node trees')

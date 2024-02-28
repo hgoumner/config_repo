@@ -92,6 +92,7 @@ return {
             require('registers').setup()
         end,
     },
+
     {
         'ThePrimeagen/harpoon',
         -- lazy = false,
@@ -158,17 +159,6 @@ return {
         },
     },
 
-    -- terminal
-    -- {
-    --     'akinsho/toggleterm.nvim',
-    --     config = function()
-    --         require('toggleterm').setup()
-    --     end,
-    --     keys = {
-    --         { '<C-\\>', '<CMD>ToggleTerm size=20 direction=float<CR>', 'Toggle terminal' },
-    --     },
-    -- },
-
     -- align objects
     {
         'junegunn/vim-easy-align',
@@ -221,15 +211,6 @@ return {
         -- end,
     },
 
-    -- context vt
-    -- {
-    --     'haringsrob/nvim_context_vt',
-    --     lazy = false,
-    --     -- config = function()
-    --     --     require('nvim_context_vt').setup()
-    --     -- end,
-    -- },
-
     -------------------------------
     -- Language specific plugins --
     -------------------------------
@@ -255,32 +236,17 @@ return {
         ft = { 'python' },
     },
 
-    -------------------------------
-    -- Testing -
-    -------------------------------
-
-    {
-        'mg979/vim-visual-multi',
-        lazy = false,
-    },
-
     {
         'chrisbra/csv.vim',
         ft = { 'csv' },
     },
 
-    {
-        'ziontee113/icon-picker.nvim',
-        lazy = false,
-        config = function()
-            require("icon-picker").setup({
-                disable_legacy_commands = true
-            })
-        end
-    },
+    -------------------------------
+    -- Testing -
+    -------------------------------
 
     {
-        "christoomey/vim-tmux-navigator",
+        "AndrewRadev/linediff.vim",
         lazy = false,
     },
 }
