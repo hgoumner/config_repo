@@ -31,6 +31,14 @@ if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_tldr ]; then
     curl -L https://raw.githubusercontent.com/tldr-pages/tldr-node-client/master/bin/completion/zsh/_tldr -o $ZDOTDIR/plugins/zsh-completions/src/_tldr
 fi
 
+# zellij
+if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_zellij ]; then
+    if [ ! -d $ZDOTDIR/plugins/zsh-completions/src ]; then
+        mkdir -p $ZDOTDIR/plugins/zsh-completions/src
+    fi
+    zellij setup --generate-completion zsh > $ZDOTDIR/plugins/zsh-completions/src/_zellij
+fi
+
 # completions
 autoload -U +X bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
