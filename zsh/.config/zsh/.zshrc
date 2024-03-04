@@ -86,3 +86,6 @@ if [ -f "/home/hristo/miniforge3/etc/profile.d/mamba.sh" ]; then
 fi
 # <<< conda initialize <<<
 
+# tput cup $LINES
+tput cup $LINES 0
+
