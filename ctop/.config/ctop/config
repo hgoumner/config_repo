@@ -1,5 +1,5 @@
 [options]
-  columns = "status,name,cpu,mem,uptime"
+  columns = "status,name,cpu,mem,cpus,pids"
   filterStr = ""
   sortField = "mem %"
 
