@@ -62,8 +62,5 @@ zle     -N  toggle_opacity
 bindkey '^O' toggle_opacity
 
 # clear
-zle     -N  prompt_to_bottom
-bindkey '^L' prompt_to_bottom
-
-# zle     -N  rg-fzf-nvim
-# bindkey '^H' rg-fzf-nvim
+zle     -N clear_prompt
+bindkey '^L' clear_prompt 

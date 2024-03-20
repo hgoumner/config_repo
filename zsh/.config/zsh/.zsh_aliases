@@ -12,6 +12,9 @@ for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
 # alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 
+# clear
+alias c='clear'
+
 # copy and move with progress
 alias rscp='rsync -aP'
 alias rsmv='rsync -aP --remove-source-files'
