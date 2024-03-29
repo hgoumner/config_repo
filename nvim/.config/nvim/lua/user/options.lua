@@ -1,5 +1,10 @@
 -- This file contains all the neovim options and settings
 
+vim.api.nvim_set_hl(0, 'CursorLine', {fg='', bg=''})
+vim.api.nvim_set_hl(0, 'LineNrAbove', {fg='white', bg=''})
+vim.api.nvim_set_hl(0, 'CursorLineNr', {fg='green', bg=''})
+vim.api.nvim_set_hl(0, 'LineNrBelow', {fg='red', bg=''})
+
 -- help options
 local options = {
     autochdir = true,
@@ -12,7 +17,7 @@ local options = {
     encoding = 'utf-8',
     expandtab = true,                                                                   -- convert tabs to spaces
     fileencoding = 'utf-8',                                                             -- the encoding written to a file
-    hlsearch = true,                                                                   -- highlight all matches on previous search pattern
+    hlsearch = true,                                                                    -- highlight all matches on previous search pattern
     ignorecase = true,                                                                  -- ignore case in search patterns
     laststatus = 3,
     listchars = { eol='¬', tab='>·', trail='~', extends='>', precedes='<', space='␣' },
@@ -56,20 +61,6 @@ vim.opt.scrollopt:append('hor')
 vim.scriptencoding = 'utf-8'
 vim.wo.colorcolumn = '80'
 
--- change breakpoint icon
--- debugBreakpoint xxx ctermfg=236 ctermbg=167 guifg=#32302f guibg=#ea6962
-vim.api.nvim_set_hl(0, 'HGbreak', { ctermfg=236, ctermbg=167, fg='#32302F', bg='#EA6962' })
-vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='debugBreakpoint', numhl=''})
-
-vim.api.nvim_create_autocmd(
-    'BufEnter',
-    {
-        buffer = bufnr,
-        pattern = 'py',
-        command = 'require("swenv.api").get_current_venv()'
-    }
-)
-
 vim.api.nvim_create_autocmd(
     {'Cursorhold', 'CursorHoldI'},
         {
@@ -87,3 +78,4 @@ vim.api.nvim_create_autocmd(
           end
         }
 )
+

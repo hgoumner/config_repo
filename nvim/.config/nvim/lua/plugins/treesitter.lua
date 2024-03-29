@@ -9,7 +9,7 @@ return {
 
             configs.setup {
                 -- ensure_installed = { 'c', 'cpp', 'lua', 'python', 'bash', 'help', 'latex', 'julia' },
-                ensure_installed = { 'c', 'cpp', 'lua', 'python', 'bash', 'julia' },
+                ensure_installed = { 'c', 'cpp', 'lua', 'python', 'rust', 'bash' },
                 sync_install = false,
                 ignore_install = { "" }, -- list of parsers to ignore installing
                 highlight = {
