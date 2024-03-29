@@ -39,6 +39,7 @@ nmap('N',          'Nzz',                     'Navigate to previous search match
 nmap('<leader>w',  '<CMD>w!<CR>',             'Save file')
 nmap('<leader>q',  '<CMD>q!<CR>',             'Quit file without saving')
 nmap('<leader>x',  '<CMD>x!<CR>',             'Save and quit file')
+nmap('<leader>bd', '<CMD>bd!<CR>',            'Close buffer')
 nmap('<leader>h',  '<CMD>set hlsearch!<CR>',  'Toggle search highlighting')
 nmap('<leader>c',  '<CMD>set list!<CR>',      'Toggle display of all characters')
 nmap('<leader>cl', '<CMD>%s/^\\s\\+$//g<CR>', 'Remove spaces in empty lines')
@@ -76,8 +77,7 @@ nmap('<leader>k',  '<CMD>Telescope keymaps<CR>',                      'Search ke
 nmap('<leader>b',  '<CMD>Telescope buffers<CR>',                      'Search buffers')
 nmap('<leader>ff', '<CMD>Telescope find_files<CR>',                   'Search file in current directory')
 nmap('<leader>fg', '<CMD>Telescope git_files<CR>',                    'Search file in git repository')
-nmap('<leader>ft',  '<CMD>lua live_grep_from_project_git_root()<CR>', 'Search string in git repository')
--- nmap('<leader>ft', '<CMD>Telescope live_grep<CR>',                 'Search string')
+nmap('<leader>ft', '<CMD>lua live_grep_from_project_git_root()<CR>', 'Search string in git repository')
 nmap('<leader>?',  '<CMD>Telescope oldfiles<CR>',                     'Search recently opened files')
 nmap('<leader>/',  '<CMD>Telescope current_buffer_fuzzy_find<CR>',    'Search in current buffer')
 nmap('<leader>sh', '<CMD>Telescope diagnostics<CR>',                  'Search diagnostics')
@@ -89,25 +89,8 @@ xmap('gai', ':EasyAlign /import/<CR>', 'Align to import')
 nmap('ga=', 'vip :EasyAlign =<CR>', 'Align to =')
 nmap('gai', 'vip :EasyAlign /import/<CR>', 'Align to import')
 
--- Gitsigns --
--- nmap('<leader>hh', '<CMD>Gitsigns preview_hunk<CR>', 'Preview git hunk')
--- nmap('<leader>hd', '<CMD>Gitsigns diffthis<CR>', 'Git-diff this file')
-
 -- LSP --
 nmap('<leader>gD', '<CMD>lua vim.lsp.buf.declaration()<CR>',                     'Go to declaration')
 nmap('<leader>gd', '<CMD>lua vim.lsp.buf.definition()<CR>',                      'Go to definition')
 nmap('<leader>gi', '<CMD>lua vim.lsp.buf.implementation()<CR>',                  'Go to implementation')
--- nmap('<leader>gl', '<CMD>lua vim.diagnostic.open_float(nil, {focus=false})<CR>', 'Show diagnostic message')
 nmap('<leader>K',  '<CMD>lua vim.lsp.buf.hover()<CR>',                           'Show information - LSP')
-
--- NVIM-DAP --
-nmap('<F6>',       '<CMD>lua require("dap").toggle_breakpoint()<CR>',                    'Toggle breakpoint')
-nmap('<F7>',       '<CMD>lua require("dap").step_into()<CR>',                            'Step into')
-nmap('<F8>',       '<CMD>lua require("dap").step_over()<CR>',                            'Step over')
-nmap('<F10>',      '<CMD>lua require("dap").step_out()<CR>',                             'Step out')
-nmap('<F9>',       '<CMD>lua require("dap").continue()<CR>',                             'Continue')
-nmap('<leader>dk', '<CMD>lua require("dap").down()<CR>',                                 'Move to lower stack frame')
-nmap('<leader>dj', '<CMD>lua require("dap").up()<CR>',                                   'Move to upper stack frame')
-nmap('<leader>dt', '<CMD>lua require("dap").terminate()<CR>',                            'Terminate')
-nmap('<leader>dr', '<CMD>lua require("dap").repl_open({}, "vsplit")<CR>',                'Open REPL in new buffer')
-nmap('<leader>df', '<CMD>lua require("dapui").float_element("scopes", enter=true})<CR>', 'Floating window for variables in scope')
