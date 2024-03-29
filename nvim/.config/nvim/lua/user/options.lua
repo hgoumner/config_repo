@@ -1,10 +1,5 @@
 -- This file contains all the neovim options and settings
 
-vim.api.nvim_set_hl(0, 'CursorLine', {fg='', bg=''})
-vim.api.nvim_set_hl(0, 'LineNrAbove', {fg='white', bg=''})
-vim.api.nvim_set_hl(0, 'CursorLineNr', {fg='green', bg=''})
-vim.api.nvim_set_hl(0, 'LineNrBelow', {fg='red', bg=''})
-
 -- help options
 local options = {
     autochdir = true,
@@ -79,3 +74,4 @@ vim.api.nvim_create_autocmd(
         }
 )
 
+LineNumberColors()
