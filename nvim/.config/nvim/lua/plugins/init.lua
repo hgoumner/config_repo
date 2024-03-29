@@ -22,20 +22,6 @@ return {
     -- Necessary plugins --
     -----------------------
 
-    -- An implementation of the Popup API from vim in Neovim
-    -- 'nvim-lua/popup.nvim',
-
-    -- TreeSitter for parsing
-    -- {
-    --     'nvim-treesitter/nvim-treesitter',
-    --     build = ':TSUpdate',
-    --     lazy = false,
-    -- },
-    -- {
-    --     'nvim-treesitter/nvim-treesitter-textobjects',
-    --     lazy = false,
-    -- },
-
     -------------------------
     -- Basic functionality --
     -------------------------
@@ -54,16 +40,6 @@ return {
             require('nvim-tree').setup()
         end,
     },
-
-    -- Searching
-    -- {
-    --     'nvim-telescope/telescope.nvim',
-    --     lazy = false,
-    --     dependencies = {
-    --         -- Useful lua functions used ny lots of plugins
-    --         'nvim-lua/plenary.nvim'
-    --     }
-    -- },
 
     -- Commenting
     {
@@ -93,18 +69,6 @@ return {
         end,
     },
 
-    {
-        'ThePrimeagen/harpoon',
-        -- lazy = false,
-        config = function()
-            require('harpoon').setup()
-        end,
-        keys = {
-            { '<leader>hm', ':lua require("harpoon.mark").add_file()<CR>', 'Add file to harpoon list' },
-            { '<leader>hu', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', 'Show harpoon list' },
-        },
-    },
-
     -- git
     {
         'lewis6991/gitsigns.nvim',
@@ -114,49 +78,12 @@ return {
         end,
     },
 
-    -- color colors
-    -- {
-    --     'NvChad/nvim-colorizer.lua',
-    --     lazy = false,
-    -- },
-
-    -- -- LSP
-    -- {
-    --     'VonHeikemen/lsp-zero.nvim',
-    --     lazy = false,
-    --     dependencies = {
-    --         -- LSP Support
-    --         'neovim/nvim-lspconfig',
-    --         'williamboman/mason.nvim',
-    --         'williamboman/mason-lspconfig.nvim',
-    --
-    --         -- Autocompletion
-    --         'hrsh7th/nvim-cmp',
-    --         'hrsh7th/cmp-buffer',
-    --         'hrsh7th/cmp-path',
-    --         'saadparwaiz1/cmp_luasnip',
-    --         'hrsh7th/cmp-nvim-lsp',
-    --         'hrsh7th/cmp-nvim-lua',
-    --     },
-    -- },
-
     -- undotree
     {
         'mbbill/undotree',
         keys = {
             { '<leader>ut', ':UndotreeToggle<CR>', 'Toggle Undotree' },
         }
-    },
-
-    -- code structure
-    {
-        'stevearc/aerial.nvim',
-        config = function()
-            require('aerial').setup()
-        end,
-        keys = {
-            { '<leader>a', '<cmd>AerialToggle<CR>', 'Toggle aerial panel' },
-        },
     },
 
     -- align objects
@@ -168,25 +95,6 @@ return {
     -------------------------
     -- Appearance settings --
     -------------------------
-
-    -- -- alpha start up
-    -- {
-    --     'goolord/alpha-nvim',
-    --     lazy = false,
-    --     dependencies = { 'kyazdani42/nvim-web-devicons' },
-    --     config = function()
-    --         require('alpha').setup(require('alpha.themes.theta').config)
-    --     end,
-    -- },
-
-    -- {
-    --     'nvim-lualine/lualine.nvim',
-    --     lazy = false,
-    --     dependencies = { 'kyazdani42/nvim-web-devicons' },
-    --     config = function()
-    --         require('lualine').setup()
-    --     end,
-    -- },
 
     --buffer_line
     {
@@ -215,27 +123,6 @@ return {
     -- Language specific plugins --
     -------------------------------
 
-    -- {
-    --     'mfussenegger/nvim-dap',
-    --     'rcarriga/nvim-dap-ui',
-    --     'theHamsta/nvim-dap-virtual-text',
-    --     'nvim-telescope/telescope-dap.nvim',
-    --
-    --     --language specific
-    --     'mfussenegger/nvim-dap-python',
-    -- },
-
-    -- python black
-    {
-        'averms/black-nvim',
-        ft = { 'python' },
-    },
-
-    {
-        'cjrh/vim-conda',
-        ft = { 'python' },
-    },
-
     {
         'chrisbra/csv.vim',
         ft = { 'csv' },
@@ -245,14 +132,4 @@ return {
     -- Testing -
     -------------------------------
 
-    {
-        "AndrewRadev/linediff.vim",
-        lazy = false,
-    },
 }
-
--- -------------------
--- -- Miscellaneous --
--- -------------------
--- -- treehopper
--- 'mfussenegger/nvim-treehopper'
