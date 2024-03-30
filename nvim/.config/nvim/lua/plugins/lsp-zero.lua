@@ -21,25 +21,24 @@ return {
         'rafamadriz/friendly-snippets',
     },
     config = function()
-        local lsp = require('lsp-zero')
 
-        lsp.set_preferences({
-          suggest_lsp_servers = true,
-          setup_servers_on_start = true,
-          set_lsp_keymaps = false,
-          configure_diagnostics = true,
-          cmp_capabilities = true,
-          manage_nvim_cmp = true,
-          call_servers = 'local',
-          sign_icons = {
-            error = '✘',
-            warn = '▲',
-            hint = '⚑',
-            info = ''
-          }
+        local lsp_zero = require('lsp-zero')
+
+        lsp_zero.on_attach(function(client, bufnr)
+          -- see :help lsp-zero-keybindings
+          -- to learn the available actions
+          lsp_zero.default_keymaps({buffer = bufnr})
+        end)
+
+        -- to learn how to use mason.nvim with lsp-zero
+        -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guide/integrate-with-mason-nvim.md
+        require('mason').setup({})
+        require('mason-lspconfig').setup({
+          ensure_installed = {},
+          handlers = {
+            lsp_zero.default_setup,
+          },
         })
-        -- lsp.preset('recommended')
-        -- lsp.nvim_workspace()
-        lsp.setup()
+
     end,
 }

@@ -12,7 +12,7 @@ local options = {
     encoding = 'utf-8',
     expandtab = true,                                                                   -- convert tabs to spaces
     fileencoding = 'utf-8',                                                             -- the encoding written to a file
-    hlsearch = true,                                                                    -- highlight all matches on previous search pattern
+    hlsearch = false,                                                                    -- highlight all matches on previous search pattern
     ignorecase = true,                                                                  -- ignore case in search patterns
     laststatus = 3,
     listchars = { eol='¬', tab='>·', trail='~', extends='>', precedes='<', space='␣' },
