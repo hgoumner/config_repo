@@ -114,9 +114,11 @@ return {
     {
         'RRethy/vim-illuminate',
         lazy = false,
-        -- config = function()
-        --     require('vim-illuminate').setup()
-        -- end,
+        config = function()
+            require('illuminate').configure({
+                under_cursor = true,
+            })
+        end,
     },
 
     -------------------------------
