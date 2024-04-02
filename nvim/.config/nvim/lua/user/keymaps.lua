@@ -88,9 +88,3 @@ xmap('ga=', ':EasyAlign =<CR>', 'Align to =')
 xmap('gai', ':EasyAlign /import/<CR>', 'Align to import')
 nmap('ga=', 'vip :EasyAlign =<CR>', 'Align to =')
 nmap('gai', 'vip :EasyAlign /import/<CR>', 'Align to import')
-
--- LSP --
-nmap('<leader>gD', '<CMD>lua vim.lsp.buf.declaration()<CR>',                     'Go to declaration')
-nmap('<leader>gd', '<CMD>lua vim.lsp.buf.definition()<CR>',                      'Go to definition')
-nmap('<leader>gi', '<CMD>lua vim.lsp.buf.implementation()<CR>',                  'Go to implementation')
-nmap('<leader>K',  '<CMD>lua vim.lsp.buf.hover()<CR>',                           'Show information - LSP')

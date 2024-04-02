@@ -1,10 +1,11 @@
 return {
     {
         'nvim-telescope/telescope.nvim',
+        branch = '0.1.x',
         lazy = false,
         dependencies = {
-            -- Useful lua functions used by lots of plugins
-            'nvim-lua/plenary.nvim'
+            'nvim-lua/plenary.nvim',
+            'nvim-tree/nvim-web-devicons',
         },
         config = function()
 
