@@ -134,4 +134,9 @@ return {
     -- Testing -
     -------------------------------
 
+    {
+       'hiphish/rainbow-delimiters.nvim',
+        lazy = false,
+    },
+
 }
