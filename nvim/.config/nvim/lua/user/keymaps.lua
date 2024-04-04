@@ -77,14 +77,23 @@ nmap('<leader>k',  '<CMD>Telescope keymaps<CR>',                      'Search ke
 nmap('<leader>b',  '<CMD>Telescope buffers<CR>',                      'Search buffers')
 nmap('<leader>ff', '<CMD>Telescope find_files<CR>',                   'Search file in current directory')
 nmap('<leader>fg', '<CMD>Telescope git_files<CR>',                    'Search file in git repository')
-nmap('<leader>ft', '<CMD>lua live_grep_from_project_git_root()<CR>', 'Search string in git repository')
+nmap('<leader>ft', '<CMD>lua live_grep_from_project_git_root()<CR>',  'Search string in git repository')
 nmap('<leader>?',  '<CMD>Telescope oldfiles<CR>',                     'Search recently opened files')
 nmap('<leader>/',  '<CMD>Telescope current_buffer_fuzzy_find<CR>',    'Search in current buffer')
 nmap('<leader>sh', '<CMD>Telescope diagnostics<CR>',                  'Search diagnostics')
 nmap('<leader>fb', '<CMD>Telescope file_browser<CR>',                 'Toggle file browser')
 
 -- EASY-ALIGN --
-xmap('ga=', ':EasyAlign =<CR>', 'Align to =')
-xmap('gai', ':EasyAlign /import/<CR>', 'Align to import')
-nmap('ga=', 'vip :EasyAlign =<CR>', 'Align to =')
+xmap('ga=', ':EasyAlign =<CR>',            'Align to =')
+xmap('gai', ':EasyAlign /import/<CR>',     'Align to import')
+nmap('ga=', 'vip :EasyAlign =<CR>',        'Align to =')
 nmap('gai', 'vip :EasyAlign /import/<CR>', 'Align to import')
+
+-- Git --
+nmap('<leader>hs', '<CMD>Gitsigns stage_hunk<CR>',                'Stage hunk')
+nmap('<leader>hr', '<CMD>Gitsigns reset_hunk<CR>',                'Reset hunk')
+nmap('<leader>hp', '<CMD>Gitsigns preview_hunk<CR>',              'Preview hunk')
+nmap('<leader>hb', '<CMD>Gitsigns toggle_current_line_blame<CR>', 'Line blame')
+nmap('<leader>hd', '<CMD>Gitsigns diffthis<CR>',                  'Diff this')
+nmap('<leader>ng', '<CMD>Neogit<CR>',                             'Start Neogit')
+
