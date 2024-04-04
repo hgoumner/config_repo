@@ -112,14 +112,49 @@ return {
 
     -- highlight cursor word
     {
-        'RRethy/vim-illuminate',
+        'azabiong/vim-highlighter',
         lazy = false,
-        config = function()
-            require('illuminate').configure({
-                under_cursor = true,
-            })
+        config = function ()
+            vim.cmd([[
+                " default key mappings
+                " let HiSet   = 'f<CR>'
+                " let HiErase = 'f<BS>'
+                " let HiClear = 'f<C-L>'
+                " let HiFind  = 'f<Tab>'
+                " let HiSetSL = 't<CR>'
+
+                " jump key mappings
+                nn <CR>     <Cmd>Hi><CR>
+                nn g<CR>    <Cmd>Hi<<CR>
+                nn [<CR>    <Cmd>Hi{<CR>
+                nn ]<CR>    <Cmd>Hi}<CR>
+
+                " find key mappings
+                nn -        <Cmd>Hi/next<CR>
+                nn _        <Cmd>Hi/previous<CR>
+                nn f<Left>  <Cmd>Hi/older<CR>
+                nn f<Right> <Cmd>Hi/newer<CR>
+
+                " directory to store highlight files
+                " let HiKeywords = '~/.vim/after/vim-highlighter'
+            ]])
         end,
     },
+    -- {
+    --     'RRethy/vim-illuminate',
+    --     lazy = false,
+    --     config = function()
+    --         require('illuminate').configure({
+    --             providers = {
+    --                 'lsp',
+    --                 'treesitter',
+    --                 'regex'
+    --             },
+    --             under_cursor = true,
+    --             case_insensitive_regex = true,
+    --         })
+    --     end,
+    -- },
 
     -------------------------------
     -- Language specific plugins --
