@@ -68,10 +68,6 @@ return {
         end,
     },
     {
-        'nvim-treesitter/nvim-treesitter-textobjects',
-        lazy = false,
-    },
-    {
         'nvim-treesitter/nvim-treesitter-refactor',
         lazy = false,
         config = function()
