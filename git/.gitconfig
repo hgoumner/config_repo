@@ -1,6 +1,6 @@
 [user]
-	email = goumnerov@gmail.com
-	name = Hristo Goumnerov
+    email = hristo.g@pharvision.ai
+    name = Hristo Goumnerov
 
 [core]
     pager = delta
@@ -9,9 +9,12 @@
     diffFilter = delta --color-only
 
 [delta]
-    navigate = true  # use n and N to move between diff sections
+    navigate = true
     side-by-side = true
     line-numbers = true
+
+[pull]
+    rebase = true
 
 [merge]
     conflictstyle = diff3
@@ -20,10 +23,10 @@
     colorMoved = default
 
 [alias]
-    bl = blame --
+    bl = blame -w --
     br = branch
     cm = commit
-	lg = log --graph --oneline --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
+    lg = log --graph --oneline --abbrev-commit --decorate --pretty=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
     rh = reset --hard
     st = status
     sw = switch
