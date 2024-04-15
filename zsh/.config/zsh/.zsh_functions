@@ -33,35 +33,18 @@ function zsh_add_completion() {
 }
 
 # FZF and RG functions
-function rga-fzf-noline() {
-	RG_PREFIX="rga --files-with-matches --hidden --column --no-heading --line-number --smart-case"
-	local match="$(
-		FZF_DEFAULT_COMMAND=$RG_PREFIX \
-			fzf --ansi --sort \
-                --preview "[[ ! -z {} ]] && rga --pretty --line-number --context 5 {q} {}" \
+rga-fzf() {
+	RG_PREFIX="rga --files-with-matches"
+	local file
+	file="$(
+		FZF_DEFAULT_COMMAND="$RG_PREFIX '$1'" \
+			fzf --sort --preview="[[ ! -z {} ]] && rga --pretty --context 5 {q} {}" \
 				--phony -q "$1" \
-				--bind "change:reload:$RG_PREFIX {q}"
-	)"
-    local file=$(echo "$match" | cut -d':' -f1)
-    if [[ -n $file ]]; then
-        $EDITOR "$file"
-    fi
-}
-
-function rga-fzf-line() {
-    RG_PREFIX="rga --hidden --column --no-heading --line-number --smart-case"
-    local match="$(
-		FZF_DEFAULT_COMMAND=$RG_PREFIX \
-            fzf --ansi --sort --delimiter : \
-                --preview "[[ ! -z {1} ]] && rga --pretty --line-number --context 5 {q} {1}" \
-				--phony -q "$1" \
-				--bind "change:reload:$RG_PREFIX {q}"
-      )"
-    local file=$(echo "$match" | cut -d':' -f1)
-    local linenumber=$(echo "$match" | cut -d':' -f2)
-    if [[ -n $file ]]; then
-        $EDITOR "$file" +$linenumber
-    fi
+				--bind "change:reload:$RG_PREFIX {q}" \
+				--preview-window="70%:wrap"
+	)" &&
+	echo "opening $file" &&
+	xdg-open "$file"
 }
 
 function fzfpp() {
