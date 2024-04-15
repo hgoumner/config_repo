@@ -42,7 +42,7 @@ nmap('<leader>x',  '<CMD>x!<CR>',             'Save and quit file')
 nmap('<leader>bd', '<CMD>bd!<CR>',            'Close buffer')
 nmap('<leader>h',  '<CMD>set hlsearch!<CR>',  'Toggle search highlighting')
 nmap('<leader>c',  '<CMD>set list!<CR>',      'Toggle display of all characters')
-nmap('<leader>cl', '<CMD>%s/^\\s\\+$//g<CR>', 'Remove spaces in empty lines')
+nmap('<leader>cl', '<CMD>%s/\\s\\+$//g<CR>',  'Remove spaces in blank lines or trailing spaces')
 
 -- Navigate buffers
 nmap('<A-l>', '<CMD>bnext<CR>',     'Move to next buffer')
