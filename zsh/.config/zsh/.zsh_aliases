@@ -29,7 +29,7 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 # ripgrep
-alias rg='rg --hidden --ignore-case'
+alias rg='rg --hidden'
 
 # find
 alias fd='fd --hidden --follow'
