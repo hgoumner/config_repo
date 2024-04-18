@@ -44,6 +44,7 @@ plug "esc/conda-zsh-completion"
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/fzf-git.sh/fzf-git.sh ] && source ~/fzf-git.sh/fzf-git.sh
 
 HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
 HISTSIZE=10000                   # Maximum events for internal history
