@@ -51,6 +51,7 @@ plug "hlissner/zsh-autopair"
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/fzf-git.sh/fzf-git.sh ] && source ~/fzf-git.sh/fzf-git.sh
 
 # Broot
 [ -f ~/.config/broot/launcher/bash/br ] && source ~/.config/broot/launcher/bash/br

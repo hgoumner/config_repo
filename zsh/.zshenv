@@ -65,7 +65,7 @@ export PATH="$HOME/.local/bin":$PATH
 export MANWIDTH=999
 
 # ----------------------------------
-# -------- Export variables -------- 
+# -------- Export variables --------
 # ----------------------------------
 
 # nodejs
@@ -76,3 +76,12 @@ export PATH=$PATH:'/usr/local/texlive/2022/bin/x86_64'
 
 # flatpak apps
 export PATH=$PATH:'/var/lib/flatpak/exports/bin/'
+
+# bookmarks
+export CDPATH=.:~/.bookmarks
+
+# bat theme
+export BAT_THEME=gruvbox_dark
+
+# keytimeout
+export KEYTIMEOUT=50
