@@ -81,7 +81,7 @@ export PATH=$PATH:'/var/lib/flatpak/exports/bin/'
 export CDPATH=.:~/.bookmarks
 
 # bat theme
-export BAT_THEME=gruvbox_dark
+export BAT_THEME=gruvbox-dark
 
 # keytimeout
 export KEYTIMEOUT=50
