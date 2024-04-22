@@ -106,6 +106,9 @@ return {
                     find_files = {
                         find_command = { "fd", "--type", "f", "--hidden" }
                     },
+                    live_grep = {
+                        glob_pattern = { "!*.git"}
+                    }
                 },
                 extensions = {
                     -- media_files = {
