@@ -35,6 +35,8 @@ zsh_add_file ".zsh_aliases"
 zsh_add_file ".zsh_keymaps"
 zsh_add_file ".zsh_options"
 
+[ -f "$HOME/.zshenv" ] && source "$HOME/.zshenv"
+
 # PharVision
 zsh_add_file "pharvision"
 
