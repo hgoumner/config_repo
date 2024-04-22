@@ -9,6 +9,7 @@
     diffFilter = delta --color-only
 
 [delta]
+    dark = true
     navigate = true
     side-by-side = true
     line-numbers = true
