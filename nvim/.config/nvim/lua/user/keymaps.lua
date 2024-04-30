@@ -36,6 +36,8 @@ nmap('G',          'G0',                      'Go to first character in last lin
 nmap('Q',          '<nop>',                   'Disable Ex mode')
 nmap('n',          'nzz',                     'Navigate to next search match and center screen')
 nmap('N',          'Nzz',                     'Navigate to previous search match and center screen')
+nmap('#',          '#zz',                     'Navigate to previous search match and center screen')
+nmap('*',          '*zz',                     'Navigate to previous search match and center screen')
 nmap('<leader>w',  '<CMD>w!<CR>',             'Save file')
 nmap('<leader>q',  '<CMD>q!<CR>',             'Quit file without saving')
 nmap('<leader>x',  '<CMD>x!<CR>',             'Save and quit file')
