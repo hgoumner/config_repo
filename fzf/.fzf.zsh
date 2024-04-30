@@ -21,7 +21,7 @@ export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude BraveSoftware 
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
 export FZF_DEFAULT_OPTS='
-  --color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f
-  --color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54
+    --color fg:-1,bg:-1,hl:230,fg+:3,bg+:233,hl+:229
+    --color info:150,prompt:110,spinner:150,pointer:167,marker:174
 '
 
