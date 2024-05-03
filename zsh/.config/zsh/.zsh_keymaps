@@ -48,3 +48,6 @@ bindkey '\e[1;5D' backward-word
 # process fuzzy search and kill
 zle     -N  fkill
 bindkey '^P' fkill
+
+bindkey "^[[A" history-search-backward
+bindkey "^[[B" history-search-forward
