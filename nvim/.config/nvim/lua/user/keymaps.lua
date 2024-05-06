@@ -94,7 +94,7 @@ nmap('gai', 'vip :EasyAlign /import/<CR>', 'Align to import')
 -- Git --
 nmap('<leader>hs', '<CMD>Gitsigns stage_hunk<CR>',                'Stage hunk')
 nmap('<leader>hr', '<CMD>Gitsigns reset_hunk<CR>',                'Reset hunk')
-nmap('<leader>hp', '<CMD>Gitsigns preview_hunk<CR>',              'Preview hunk')
+nmap('<leader>hp', '<CMD>Gitsigns preview_hunk_inline<CR>',       'Preview hunk')
 nmap('<leader>hb', '<CMD>Gitsigns toggle_current_line_blame<CR>', 'Line blame')
 nmap('<leader>hd', '<CMD>Gitsigns diffthis<CR>',                  'Diff this')
 nmap('<leader>ng', '<CMD>Neogit<CR>',                             'Start Neogit')
