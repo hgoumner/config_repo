@@ -17,22 +17,6 @@ fi
 # -------- External files --------
 # --------------------------------
 
-# Useful Functions
-source "$ZDOTDIR/.zsh_functions"
-fpath+=${ZDOTDIR:-~}/.zsh_functions
-
-# Normal files to source
-zsh_add_file ".zsh_completions"
-zsh_add_file ".zsh_vim-mode"
-zsh_add_file ".zsh_aliases"
-zsh_add_file ".zsh_keymaps"
-zsh_add_file ".zsh_options"
-
-[ -f "$HOME/.zshenv" ] && source "$HOME/.zshenv"
-
-# PharVision
-zsh_add_file "pharvision"
-
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 [ -f "$HOME/.config/local/share/zap/zap.zsh" ] && source "$HOME/.config/local/share/zap/zap.zsh"
 
@@ -50,6 +34,25 @@ plug "esc/conda-zsh-completion"
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/fzf-git.sh/fzf-git.sh ] && source ~/fzf-git.sh/fzf-git.sh
+
+# Broot
+[ -f ~/.config/broot/launcher/bash/br ] && source ~/.config/broot/launcher/bash/br
+
+# Useful Functions
+source "$ZDOTDIR/.zsh_functions"
+fpath+=${ZDOTDIR:-~}/.zsh_functions
+
+# Normal files to source
+zsh_add_file ".zsh_completions"
+zsh_add_file ".zsh_vim-mode"
+zsh_add_file ".zsh_aliases"
+zsh_add_file ".zsh_keymaps"
+zsh_add_file ".zsh_options"
+
+[ -f "$HOME/.zshenv" ] && source "$HOME/.zshenv"
+
+# PharVision
+zsh_add_file "pharvision"
 
 HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
 HISTSIZE=10000                   # Maximum events for internal history
