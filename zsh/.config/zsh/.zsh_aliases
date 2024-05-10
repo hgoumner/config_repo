@@ -29,10 +29,10 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 # ripgrep
-alias rg='rg --hidden'
+alias rg='rg --hidden --follow --glob "!.git"'
 
 # find
-alias fd='fd --hidden --follow'
+alias fd='fd --hidden --follow --exclude ".git"'
 
 # fzf
 alias fzfp='fzf --preview "bat --style=numbers --color=always {}"'
