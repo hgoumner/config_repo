@@ -48,10 +48,11 @@ zmodload zsh/complist
 eval "$(zoxide init --cmd z zsh)"
 
 # style settings
-zstyle ':completion:*' menu select search
+zstyle ':completion:*' menu no
 zstyle ':completion:*' file-list all
 zstyle ':completion:*' squeeze-slashes true
 zstyle ':completion:*' group-name ''
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 zstyle ':completion:*:*:*:*:corrections' format '%F{yellow}!- %d (errors: %e) -!%f'
 zstyle ':completion:*:*:*:*:descriptions' format '%F{blue}-- %D %d --%f'

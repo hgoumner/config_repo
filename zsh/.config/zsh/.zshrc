@@ -27,13 +27,23 @@ fi
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 [ -f "$HOME/.config/local/share/zap/zap.zsh" ] && source "$HOME/.config/local/share/zap/zap.zsh"
 
+# Normal files to source
+zsh_add_file ".zsh_completions"
+
 # Plugins
 plug "zap-zsh/supercharge"
 plug "romkatv/powerlevel10k"
+plug "Aloxaf/fzf-tab"
 plug "zsh-users/zsh-autosuggestions"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "zsh-users/zsh-completions"
 plug "hlissner/zsh-autopair"
+
+# ZSH files
+zsh_add_file ".zsh_vim-mode"
+zsh_add_file ".zsh_aliases"
+zsh_add_file ".zsh_keymaps"
+zsh_add_file ".zsh_options"
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -45,13 +55,6 @@ plug "hlissner/zsh-autopair"
 # Useful Functions
 source "$ZDOTDIR/.zsh_functions"
 fpath+=${ZDOTDIR:-~}/.zsh_functions
-
-# Normal files to source
-zsh_add_file ".zsh_completions"
-zsh_add_file ".zsh_vim-mode"
-zsh_add_file ".zsh_aliases"
-zsh_add_file ".zsh_keymaps"
-zsh_add_file ".zsh_options"
 
 [ -f "$HOME/.zshenv" ] && source "$HOME/.zshenv"
 
