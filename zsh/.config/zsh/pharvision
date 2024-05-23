@@ -1,7 +1,5 @@
 #!/usr/bin/bash
 
-# eval $(ssh-agent -s)
-
 # CDPATH for bookmarks
 export CDPATH=.:~/.bookmarks/
 
@@ -19,3 +17,9 @@ function unmark {
 function lb {
     ls -la ~/.bookmarks/
 }
+
+# ALIASES
+
+# zellij
+alias zem='zellij attach monitor'
+alias zeo='zellij attach ops'
