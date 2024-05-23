@@ -27,6 +27,19 @@ fi
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 [ -f "$HOME/.config/local/share/zap/zap.zsh" ] && source "$HOME/.config/local/share/zap/zap.zsh"
 
+# Useful Functions
+source "$ZDOTDIR/.zsh_functions"
+fpath+=${ZDOTDIR:-~}/.zsh_functions
+
+[ -f "$HOME/.zshenv" ] && source "$HOME/.zshenv"
+
+# PharVision
+zsh_add_file "pharvision"
+
+HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
+HISTSIZE=10000                   # Maximum events for internal history
+SAVEHIST=10000                   # Maximum events in history file
+
 # Normal files to source
 zsh_add_file ".zsh_completions"
 
@@ -51,19 +64,6 @@ zsh_add_file ".zsh_options"
 
 # Broot
 [ -f ~/.config/broot/launcher/bash/br ] && source ~/.config/broot/launcher/bash/br
-
-# Useful Functions
-source "$ZDOTDIR/.zsh_functions"
-fpath+=${ZDOTDIR:-~}/.zsh_functions
-
-[ -f "$HOME/.zshenv" ] && source "$HOME/.zshenv"
-
-# PharVision
-zsh_add_file "pharvision"
-
-HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
-HISTSIZE=10000                   # Maximum events for internal history
-SAVEHIST=10000                   # Maximum events in history file
 
 # -----------------------
 # -------- Theme --------
