@@ -24,7 +24,7 @@
     # if you don't want the hidden files you can launch `br -H`)
     # A popular flag is the `g` one which displays git related info.
     #
-    # default_flags:
+    default_flags:dgsw
 
     ###############################################################
     # Date/Time format
@@ -99,7 +99,7 @@
     # If you want the escape key to quit broot when there's nothing
     # to cancel (for example when you just opened broot), uncomment
     # this parameter
-    # 
+    #
     quit_on_last_cancel: true
 
     ###############################################################
@@ -123,7 +123,7 @@
     # easy to search on name rather than on the subpath.
     #
     # More information on
-    #  https://dystroy.org/broot/input/#the-filtering-pattern
+    # https://dystroy.org/broot/input/#the-filtering-pattern
     #
     # search_modes: {
     #     <empty>: fuzzy name
@@ -156,29 +156,29 @@
     # While it's possible to have all configuration in one file,
     # it's more convenient to split it in several ones.
     # Importing also allows to set a condition on the terminal's
-    # color, which makes it possible to have a different skin 
+    # color, which makes it possible to have a different skin
     # chosen when your terminal has a light background and when
     # it has a light one.
-	imports: [
+    imports: [
 
         # Verbs are better configured in verbs.hjson. But you
         # can also add another files for your personal verbs
-		verbs.hjson
+        verbs.hjson
 
         # This file contains the skin to use when the terminal
         # is dark (or when this couldn't be determined)
-		{
-			luma: [
-				dark
-				unknown
-			]
-			file: dark-gruvbox.hjson
-		}
+        {
+            luma: [
+                dark
+                unknown
+            ]
+            file: dark-gruvbox.hjson
+        }
 
         # This skin is imported when your terminal is light
-		{
-			luma: light
-			file: white-skin.hjson
-		}
-	]
+        {
+            luma: light
+            file: white-skin.hjson
+        }
+    ]
 }
