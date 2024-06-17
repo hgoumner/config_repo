@@ -68,8 +68,6 @@ alias clear="clear && tput cup $LINES 0"
 
 alias lg='lazygit'
 
-# alias cs='~/cht.sh'
-
 ###################################
 # listing
 ###################################
@@ -79,6 +77,9 @@ alias lsd='lsd --color=auto --group-directories-first'
 
 # tree
 alias tree='tree -C --dirsfirst'
+
+# list locally installed programs
+alias lsa='ls -l ~/.local/bin/'
 
 ###################################
 # other
