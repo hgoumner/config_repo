@@ -24,7 +24,7 @@
     # if you don't want the hidden files you can launch `br -H`)
     # A popular flag is the `g` one which displays git related info.
     #
-    default_flags:dgsw
+    default_flags:dgswp
 
     ###############################################################
     # Date/Time format
@@ -172,7 +172,7 @@
                 dark
                 unknown
             ]
-            file: dark-gruvbox.hjson
+            file: skins/dark-gruvbox.hjson
         }
 
         # This skin is imported when your terminal is light
