@@ -129,6 +129,18 @@
         #     external: "mv {file} {other-panel-directory}"
         #     leave_broot: false
         # }
+
+        # Stage
+        {
+            key: ctrl-v
+            cmd: ":stage"
+        }
+
+        # Unstage
+        {
+            key: ctrl-w
+            cmd: ":unstage"
+        }
     ]
 
 }
