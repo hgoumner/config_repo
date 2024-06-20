@@ -47,14 +47,6 @@ zsh_add_file ".zsh_options"
 # Broot
 [ -f ~/.config/broot/launcher/bash/br ] && source ~/.config/broot/launcher/bash/br
 
-# -----------------------
-# -------- Theme --------
-# -----------------------
-
-# # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/hristo/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -94,8 +86,22 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-bin-gem-node \
     zdharma-continuum/zinit-annex-patch-dl \
     zdharma-continuum/zinit-annex-rust
+    zdharma-continuum/fast-syntax-highlighting
 
+zinit light romkatv/powerlevel10k
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
+zinit light hlissner/zsh-autopair
+zinit light Aloxaf/fzf-tab
 ### End of Zinit's installer chunk
+
+# -----------------------
+# -------- Theme --------
+# -----------------------
+
+# # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
 tput cup $LINES 0
 
