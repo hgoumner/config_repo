@@ -66,7 +66,7 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-as-monitor \
     zdharma-continuum/zinit-annex-bin-gem-node \
     zdharma-continuum/zinit-annex-patch-dl \
-    zdharma-continuum/zinit-annex-rust
+    zdharma-continuum/zinit-annex-rust \
     zdharma-continuum/fast-syntax-highlighting
 
 zinit light romkatv/powerlevel10k
@@ -74,6 +74,8 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light hlissner/zsh-autopair
 zinit light Aloxaf/fzf-tab
+zinit light wfxr/forgit
+
 ### End of Zinit's installer chunk
 
 # -----------------------
