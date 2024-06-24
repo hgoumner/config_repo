@@ -101,6 +101,11 @@ return {
         end,
     },
 
+    {
+       'hiphish/rainbow-delimiters.nvim',
+        lazy = false,
+    },
+
     -------------------------------
     -- Language specific plugins --
     -------------------------------
@@ -115,11 +120,6 @@ return {
     -------------------------------
 
     {
-       'hiphish/rainbow-delimiters.nvim',
-        lazy = false,
-    },
-
-    {
         'rcarriga/nvim-notify',
         lazy = false,
         config = function ()
@@ -131,4 +131,8 @@ return {
         end
     },
 
+    {
+        'imsnif/kdl.vim',
+        ft = { 'kdl' },
+    },
 }
