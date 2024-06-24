@@ -17,7 +17,7 @@ function unmark {
 
 # list bookmarks
 function lb {
-    ls -la ~/.bookmarks/
+    eza -l ~/.bookmarks/
 }
 
 # ALIASES
