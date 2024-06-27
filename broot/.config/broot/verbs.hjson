@@ -141,6 +141,12 @@
             key: ctrl-w
             cmd: ":unstage"
         }
+
+        # Copy to clipboard
+        {
+            key: ctrl-p
+            cmd: ":copy_path"
+        }
     ]
 
 }
