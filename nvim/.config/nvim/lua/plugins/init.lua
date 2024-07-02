@@ -115,6 +115,11 @@ return {
         ft = { 'csv' },
     },
 
+    {
+        'imsnif/kdl.vim',
+        ft = { 'kdl' },
+    },
+
     -------------------------------
     -- Testing -
     -------------------------------
@@ -129,10 +134,5 @@ return {
                 stages = "fade_in_slide_out"
             })
         end
-    },
-
-    {
-        'imsnif/kdl.vim',
-        ft = { 'kdl' },
     },
 }
