@@ -11,7 +11,7 @@
 [delta]
     dark = true
     navigate = true
-    side-by-side = true
+    side-by-side = false
     line-numbers = true
 
 [pull]
