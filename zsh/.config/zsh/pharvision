@@ -1,9 +1,21 @@
 #!/usr/bin/bash
 
+# ----------------------------------------
+### export variables and source files
+# ----------------------------------------
+
+# npm and node
 export NVM_DIR="$HOME/.config/nvm"
+
+# rust
+source "$HOME/.cargo/env"
 
 # CDPATH for bookmarks
 export CDPATH=.:~/.bookmarks/
+
+# ----------------------------------------
+### functions
+# ----------------------------------------
 
 # create new bookmark
 function mark {
@@ -20,8 +32,13 @@ function lb {
     eza -l ~/.bookmarks/
 }
 
-# ALIASES
+# ----------------------------------------
+### ALIASES
+# ----------------------------------------
 
 # zellij
 alias zem='zellij attach monitor'
 alias zeo='zellij attach ops'
+
+# lsd
+alias lsd='lsd -la'
