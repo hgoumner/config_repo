@@ -12,9 +12,6 @@ for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
 # alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 
-# clear
-alias c='clear'
-
 # copy and move with progress
 alias rscp='rsync -aP'
 alias rsmv='rsync -aP --remove-source-files'
@@ -54,6 +51,9 @@ alias pscpu='ps auxf | sort -nr -k 3 | head -5'
 # clear and move prompt to bottom
 alias clear="clear && tput cup $LINES 0"
 
+# clear
+alias c='clear'
+
 # -----------------------------------------------
 # --------------- Applications ------------------
 # -----------------------------------------------
@@ -69,7 +69,7 @@ alias lg='lazygit'
 ###################################
 
 alias ls='ls --color=auto --group-directories-first'
-alias lsd='lsd --color=auto --group-directories-first'
+alias lsd='lsd --all --long --color=auto --group-directories-first'
 
 # tree
 alias tree='tree -C --dirsfirst'
