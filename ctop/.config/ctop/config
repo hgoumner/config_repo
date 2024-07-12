@@ -1,7 +1,7 @@
 [options]
   columns = "status,name,cpu,mem,uptime"
   filterStr = ""
-  sortField = "mem %"
+  sortField = "mem"
 
 [toggles]
   allContainers = false
