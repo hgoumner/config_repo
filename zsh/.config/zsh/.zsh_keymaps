@@ -46,8 +46,12 @@ bindkey '\e[1;5C' forward-word
 bindkey '\e[1;5D' backward-word
 
 # process fuzzy search and kill
-zle     -N  fkill
+zle -N fkill
 bindkey '^P' fkill
+
+# text fuzzy search and preview
+zle -N rga-fzf
+bindkey '^F' rga-fzf
 
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
