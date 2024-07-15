@@ -1,13 +1,18 @@
-cheat/.config/cheat/cheatsheets/community
-i3/.i3blocks/blocklets/i3blocks-contrib
 lazygit/.config/lazygit/state.yml
 nvim/.config/nvim/lazy-lock.json
+
+# Plugin directories
+cheat/.config/cheat/cheatsheets/community
+i3/.i3blocks/blocklets/i3blocks-contrib
 nvim/.config/nvim/plugin
 nvim/.config/nvim/plugin/packer_compiled.lua
 vim/.vim/vim-plugged
+zsh/.config/zsh/plugins
+yazi/.config/yazi/plugins
+
+# ZSH
 zsh/.config/cache
 zsh/.config/local
 zsh/.config/zsh/.zcompdump
 zsh/.config/zsh/.zhistory
 zsh/.config/zsh/.zsh_history
-zsh/.config/zsh/plugins
