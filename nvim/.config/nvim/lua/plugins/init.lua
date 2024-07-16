@@ -120,20 +120,15 @@ return {
     -------------------------------
 
     {
-       'hiphish/rainbow-delimiters.nvim',
-        lazy = false,
-    },
-
-    {
-        'rcarriga/nvim-notify',
-        lazy = false,
-        config = function ()
-            vim.notify = require("notify")
-            require("notify").setup({
-                background_colour = "#000000",
-                stages = "fade_in_slide_out"
-            })
-        end
+        "hedyhli/outline.nvim",
+        lazy = true,
+        cmd = { "Outline", "OutlineOpen" },
+        keys = { -- Example mapping to toggle outline
+            { "<leader>o", "<cmd>Outline<CR>", desc = "Toggle outline" },
+        },
+        opts = {
+            -- Your setup opts here
+        },
     },
 
     {
