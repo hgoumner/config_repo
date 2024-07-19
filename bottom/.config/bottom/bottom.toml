@@ -139,6 +139,7 @@ columns = ["PID", "User", "State", "CPU%", "Mem%", "Name", "R/s", "W/s", "T.Read
  type="mem"
  [[row.child]]
  type="cpu"
+ default=true
 [[row]]
  ratio=2
  [[row.child]]
@@ -151,7 +152,6 @@ columns = ["PID", "User", "State", "CPU%", "Mem%", "Name", "R/s", "W/s", "T.Read
  [[row.child.child]]
  ratio=3
  type="proc"
- default=true
 
 # Filters - you can hide specific temperature sensors, network interfaces, and disks using filters. This is admittedly
 # a bit hard to use as of now, and there is a planned in-app interface for managing this in the future:
