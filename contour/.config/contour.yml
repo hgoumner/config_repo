@@ -215,7 +215,7 @@ profiles:
 
         # When this profile is *activated*, this flag decides
         # whether or not to put the window into maximized mode.
-        maximized: true
+        maximized: false
 
         bell:
             # There is no sound for BEL character if set to "off".
@@ -226,7 +226,7 @@ profiles:
 
             # Bell volume, a normalized value between 0.0 (silent) and 1.0 (loudest).
             # Default: 1.0
-            volume: 1.0
+            volume: 0.2
 
             # If this boolean is true, a window alert will be raised with each bell
             alert: true
@@ -287,8 +287,8 @@ profiles:
 
         # Determines the initial terminal size in characters.
         terminal_size:
-            columns: 80
-            lines: 25
+            columns: 200
+            lines: 50
 
         # Window margins
         #
