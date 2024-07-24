@@ -1,7 +1,7 @@
 return {
     "lukoshkin/highlight-whitespace",
-    lazy = false,
-    -- config=true,
+    -- lazy = true,
+    keys = {'<leader>hw'},
     opts = {
         tws = "\\s\\+$",
         clear_on_winleave = false,
