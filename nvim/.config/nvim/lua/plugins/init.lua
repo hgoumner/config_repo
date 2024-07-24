@@ -29,7 +29,6 @@ return {
     -- Navigating
     {
         'kyazdani42/nvim-tree.lua',
-        -- lazy = false,
         dependencies = {
             'kyazdani42/nvim-web-devicons'
         },
@@ -101,6 +100,22 @@ return {
         end,
     },
 
+    {
+       'hiphish/rainbow-delimiters.nvim',
+        lazy = false,
+    },
+
+    {
+        "hedyhli/outline.nvim",
+        cmd = { "Outline", "OutlineOpen" },
+        keys = { -- Example mapping to toggle outline
+            { "<leader>o", "<cmd>Outline<CR>", desc = "Toggle outline" },
+        },
+        opts = {
+            -- Your setup opts here
+        },
+    },
+
     -------------------------------
     -- Language specific plugins --
     -------------------------------
@@ -119,20 +134,4 @@ return {
     -- Testing -
     -------------------------------
 
-    {
-        "hedyhli/outline.nvim",
-        lazy = true,
-        cmd = { "Outline", "OutlineOpen" },
-        keys = { -- Example mapping to toggle outline
-            { "<leader>o", "<cmd>Outline<CR>", desc = "Toggle outline" },
-        },
-        opts = {
-            -- Your setup opts here
-        },
-    },
-
-    {
-        'imsnif/kdl.vim',
-        ft = { 'kdl' },
-    },
 }

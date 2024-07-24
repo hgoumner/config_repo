@@ -1,6 +1,6 @@
 return {
     'azabiong/vim-highlighter',
-    lazy = false,
+    keys = {"<leader>hh"},
     config = function ()
         vim.cmd([[
                 " default key mappings

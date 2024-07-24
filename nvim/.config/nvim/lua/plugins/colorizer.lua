@@ -1,6 +1,5 @@
 return {
     'NvChad/nvim-colorizer.lua',
-    lazy = true,
     ft = { 'css', 'tex', 'cls', 'sty' },
     config = function()
         local colorizer = require('colorizer')
