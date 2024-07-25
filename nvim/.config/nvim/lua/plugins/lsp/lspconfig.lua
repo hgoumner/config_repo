@@ -75,6 +75,7 @@ return {
                     plugins = {
                         pycodestyle = {
                             ignore = {
+                                'E221',
                                 'E402',
                                 'W391'
                             },
@@ -96,6 +97,7 @@ return {
                             exclude = { "__about__.py" },  -- Files to be excluded by ruff checking
                             select = { "F" },  -- Rules to be enabled by ruff
                             ignore = {
+                                'E221',
                                 'E402',
                                 'W391',
                                 "D210"
