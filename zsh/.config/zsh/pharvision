@@ -1,50 +1,9 @@
 #!/usr/bin/bash
 
 # ----------------------------------------
-### export variables and source files
-# ----------------------------------------
-
-# npm and node
-export NVM_DIR="$HOME/.config/nvm"
-
-# rust
-source "$HOME/.cargo/env"
-
-# CDPATH for bookmarks
-export CDPATH=.:~/.bookmarks/
-
-# ----------------------------------------
-### functions
-# ----------------------------------------
-
-# create new bookmark
-function mark {
-    ln -sr "$(pwd)" ~/.bookmarks/"$1"
-}
-
-# remove bookmark
-function unmark {
-    rm ~/.bookmarks/"$1"
-}
-
-# list bookmarks
-function lb {
-    eza -l ~/.bookmarks/
-}
-
-# ----------------------------------------
 ### ALIASES
 # ----------------------------------------
 
 # zellij
 alias zem='zellij attach monitor'
 alias zeo='zellij attach ops'
-
-# lsd
-alias lsd='lsd -la'
-
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
