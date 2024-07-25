@@ -78,6 +78,21 @@ function clear_prompt() {
     clear
 }
 
+# create new bookmark
+function mark {
+    ln -sr "$(pwd)" ~/.bookmarks/"$1"
+}
+
+# remove bookmark
+function unmark {
+    rm ~/.bookmarks/"$1"
+}
+
+# list bookmarks
+function lb {
+    lsd ~/.bookmarks/
+}
+
 function yy() {
     local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
     yazi "$@" --cwd-file="$tmp"

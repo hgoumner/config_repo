@@ -1,26 +1,8 @@
 #!/usr/bin/bash
 
-export NVM_DIR="$HOME/.config/nvm"
-
-# CDPATH for bookmarks
-export CDPATH=.:~/.bookmarks/
-
-# create new bookmark
-function mark {
-    ln -sr "$(pwd)" ~/.bookmarks/"$1"
-}
-
-# remove bookmark
-function unmark {
-    rm ~/.bookmarks/"$1"
-}
-
-# list bookmarks
-function lb {
-    ls -la ~/.bookmarks/
-}
-
-# ALIASES
+# ----------------------------------------
+### ALIASES
+# ----------------------------------------
 
 # zellij
 alias zem='zellij attach monitor'

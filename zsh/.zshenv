@@ -4,7 +4,7 @@
 # DOTFILES
 # -----------------------------------------------------------------
 
-export DOTFILES="$HOME/.dotfiles"
+[ -f "$HOME/.dotfiles" ] && export DOTFILES="$HOME/.dotfiles"
 
 # -----------------------------------------------------------------
 # XDG VARIABLES
@@ -44,13 +44,22 @@ export LS_COLORS
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
 # -----------------------------------------------------------------
+# PYTHON
+# -----------------------------------------------------------------
+
+# pyenv
+[ -f "$HOME/.pyenv" ] && export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# -----------------------------------------------------------------
 # FZF
 # -----------------------------------------------------------------
 
-export PATH=$PATH:~/.fzf/bin/
+[ -d "$HOME/.fzf/bin" ] && export PATH=$PATH:~/.fzf/bin/
 export FZF_TMUX_HEIGHT='100%'
 
-source "/home/$(whoami)/.fzf/shell/key-bindings.zsh"
+[ -f "$HOME/.fzf/shell/key-bindings.zsh" ] && source "/home/$(whoami)/.fzf/shell/key-bindings.zsh"
 
 export FZF_DEFAULT_COMMAND='fd --hidden --follow --exclude Brave --exclude .git'
 
@@ -69,19 +78,24 @@ export MANWIDTH=999
 # ----------------------------------
 
 # nodejs
-export PATH=$PATH:'~/node-v17.3.0-linux-x64/bin'
+[ -d "$HOME/node-v17.3.0-linux-x64/bin" ] && export PATH=$PATH:'~/node-v17.3.0-linux-x64/bin'
 
 # texlive
-export PATH=$PATH:'/usr/local/texlive/2022/bin/x86_64'
+[ -d "/usr/local/texlive/2022/bin/x86_64" ] && export PATH=$PATH:'/usr/local/texlive/2022/bin/x86_64'
 
 # flatpak apps
-export PATH=$PATH:'/var/lib/flatpak/exports/bin/'
+[ -d "/var/lib/flatpak/exports/bin/" ] && export PATH=$PATH:'/var/lib/flatpak/exports/bin/'
 
 # bookmarks
-export CDPATH=.:~/.bookmarks
+[ -d "$HOME/.bookmarks" ] && export CDPATH=.:~/.bookmarks
 
 # bat theme
 export BAT_THEME=gruvbox-dark
 
 # keytimeout
 export KEYTIMEOUT=50
+
+# npm and node
+[ -d "$HOME/.config/nvm" ] && export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+

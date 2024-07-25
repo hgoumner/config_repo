@@ -25,7 +25,6 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # PharVision
 zsh_add_file "pharvision"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
 HISTSIZE=10000                   # Maximum events for internal history
