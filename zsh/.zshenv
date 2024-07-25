@@ -42,6 +42,7 @@ export LS_COLORS
 # -----------------------------------------------------------------
 
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+[ -d "$HOME/.cargo/bin/" ] && export PATH="$HOME/.cargo/bin:$PATH"
 
 # -----------------------------------------------------------------
 # PYTHON
