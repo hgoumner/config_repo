@@ -79,7 +79,18 @@ suppress_preload = false
 
 [plugin]
 prepend_previewers = [
-  { name = "*.md", run = "glow" },
+    { name = "*.md", run = "glow" },
+    { name = "*.ipynb", run = "nbpreview" },
+    # Archive previewer
+    { mime = "application/*zip",            run = "ouch" },
+    { mime = "application/x-tar",           run = "ouch" },
+    { mime = "application/x-bzip2",         run = "ouch" },
+    { mime = "application/x-7z-compressed", run = "ouch" },
+    { mime = "application/x-rar",           run = "ouch" },
+    { mime = "application/x-xz",            run = "ouch" },
+]
+append_previewers = [
+  { name = "*", run = "hexyl" },
 ]
 preloaders = [
     { name = "*", cond = "!mime", run = "mime", multi = true, prio = "high" },
