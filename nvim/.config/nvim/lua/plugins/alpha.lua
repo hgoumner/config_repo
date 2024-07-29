@@ -57,6 +57,7 @@ return {
             dashboard.button("u", "  Update plugins", "<CMD>Lazy update<CR>"),
             dashboard.button("l", "力 LSP servers",    "<CMD>Mason<CR>"),
             dashboard.button("c", "  nvim config",    "<CMD>e ~/.config/nvim/init.lua <CR>"),
+            dashboard.button("k", "  kitty config",   "<CMD>e ~/.config/kitty/kitty.conf <CR>"),
             dashboard.button("z", "  zsh config",     "<CMD>e $ZDOTDIR/.zshrc <CR>"),
             dashboard.button("q", "  Quit",           "<CMD>qa!<CR>"),
         }
