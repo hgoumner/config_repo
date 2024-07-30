@@ -12,7 +12,7 @@ local options = {
     encoding = 'utf-8',
     expandtab = true,                                                                   -- convert tabs to spaces
     fileencoding = 'utf-8',                                                             -- the encoding written to a file
-    hlsearch = false,                                                                    -- highlight all matches on previous search pattern
+    hlsearch = false,                                                                   -- highlight all matches on previous search pattern
     ignorecase = true,                                                                  -- ignore case in search patterns
     laststatus = 3,
     listchars = { eol='¬', tab='>·', trail='~', extends='>', precedes='<', space='␣' },
@@ -37,8 +37,8 @@ local options = {
     textwidth = 80,
     timeoutlen = 1000,                                                                  -- time to wait for a mapped sequence to complete (in milliseconds)
     undofile = true,                                                                    -- enable persistent undo
-    updatetime = 1000,                                                                   -- faster completion (4000ms default)
-    wrap = false,                                                                       -- display lines as one long line
+    updatetime = 1000,                                                                  -- faster completion (4000ms default)
+    wrap = true,                                                                        -- display lines as one long line
     writebackup = false,                                                                -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 }
 
