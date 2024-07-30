@@ -9,6 +9,7 @@ nvim/.config/nvim/plugin/packer_compiled.lua
 vim/.vim/vim-plugged
 zsh/.config/zsh/plugins
 yazi/.config/yazi/plugins
+yazi/.config/yazi/package.toml
 
 # ZSH
 zsh/.config/cache
