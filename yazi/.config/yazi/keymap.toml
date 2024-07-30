@@ -3,7 +3,6 @@
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
 [[manager.prepend_keymap]]
-
 on = [ "m", "v" ]
 run = "plugin --sync max-preview"
 desc = "Maximize or restore preview"
@@ -27,6 +26,11 @@ desc = "Delete a bookmark"
 on = [ "b", "D" ]
 run = "plugin bookmarks --args=delete_all"
 desc = "Delete all bookmarks"
+
+[[manager.prepend_keymap]]
+on = [ "f" ]
+run = "plugin jump-to-char"
+desc = "Jump to char"
 
 [manager]
 
@@ -122,8 +126,8 @@ keymap = [
 	{ on = [ "c", "f" ], run = "copy filename",         desc = "Copy the name of the file" },
 	{ on = [ "c", "n" ], run = "copy name_without_ext", desc = "Copy the name of the file without the extension" },
 
-	# Filter
-	{ on = [ "f" ], run = "filter --smart", desc = "Filter the files" },
+    # Filter
+    { on = [ "F" ], run = "filter --smart", desc = "Filter the files" },
 
 	# Find
 	{ on = [ "/" ], run = "find --smart",            desc = "Find next file" },
