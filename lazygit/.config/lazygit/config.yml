@@ -64,6 +64,7 @@ git:
     colorArg: always
     useConfig: false
     pager: delta --dark --paging=never
+    externalDiffCommand: difft --color=always
   commit:
     signOff: false
     autoWrapCommitMessage: true # automatic WYSIWYG wrapping of the commit message as you type

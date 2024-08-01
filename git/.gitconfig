@@ -22,6 +22,8 @@
 
 [diff]
     colorMoved = default
+    tool = difft
+    external = difft
 
 [alias]
     bl = blame -w --
@@ -32,3 +34,12 @@
     rh = reset --hard
     st = status
     sw = switch
+
+[difftool]
+    prompt = false
+
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+    difftool = true
