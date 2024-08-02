@@ -67,6 +67,7 @@ alias c='clear'
 ###################################
 
 alias lg='lazygit'
+alias br='br -w --sort-by-type'
 
 ###################################
 # listing
@@ -84,6 +85,4 @@ alias lsa='lsd ~/.local/bin/'
 ###################################
 # other
 ###################################
-
-alias br='br -w --sort-by-type'
 
