@@ -33,7 +33,7 @@ vim.g.maplocalleader = ' '
 -- NORMAL --
 nmap('gg',         'gg0',                           'Go to first character in buffer')
 nmap('G',          'G0',                            'Go to first character in last line in buffer')
-nmap('Q',          '<nop>',                         'Disable Ex mode')
+-- nmap('Q',          '<nop>',                         'Disable Ex mode')
 nmap('n',          'nzz',                           'Navigate to next search match and center screen')
 nmap('N',          'Nzz',                           'Navigate to previous search match and center screen')
 nmap('#',          '#zz',                           'Navigate to previous search match and center screen')
