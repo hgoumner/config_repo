@@ -113,6 +113,7 @@ previewers = [
     # Image
     { mime = "image/vnd.djvu", run = "noop" },
     { mime = "image/*",        run = "image" },
+    { mime = "image/*svg",     run = "magick" },
     # Video
     { mime = "video/*", run = "video" },
     # PDF
