@@ -10,10 +10,11 @@ return {
         config = function()
             -- load the colorscheme here
             vim.cmd('set background=dark')
-            vim.cmd('let g:gruvbox_material_background = "soft"')
+            vim.cmd('let g:gruvbox_material_background = "hard"')
             vim.cmd('let g:gruvbox_material_better_performance = 1')
             vim.cmd('let g:gruvbox_material_transparent_background = 2')
             vim.cmd('let g:gruvbox_material_current_word = "bold"')
+            vim.cmd('let g:gruvbox_material_enable_italic = 1')
             vim.cmd('colorscheme gruvbox-material')
         end,
     },
