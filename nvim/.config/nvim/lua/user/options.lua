@@ -37,7 +37,7 @@ local options = {
     textwidth = 80,
     timeoutlen = 1000,                                                                  -- time to wait for a mapped sequence to complete (in milliseconds)
     undofile = true,                                                                    -- enable persistent undo
-    updatetime = 1000,                                                                  -- faster completion (4000ms default)
+    updatetime = 500,                                                                   -- faster completion (4000ms default)
     wrap = true,                                                                        -- display lines as one long line
     writebackup = false,                                                                -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 }
@@ -56,20 +56,20 @@ vim.opt.scrollopt:append('hor')
 vim.scriptencoding = 'utf-8'
 vim.wo.colorcolumn = '80'
 
-vim.api.nvim_create_autocmd(
-    {'Cursorhold', 'CursorHoldI'},
-        {
-          buffer = bufnr,
-          callback = function()
-            local opts = {
-              focusable = false,
-              close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-              border = 'rounded',
-              source = 'always',
-              prefix = ' ',
-              scope = 'cursor',
-            }
-            vim.diagnostic.open_float(nil, opts)
-          end
-        }
-)
+-- vim.api.nvim_create_autocmd(
+--     {'Cursorhold', 'CursorHoldI'},
+--         {
+--           buffer = bufnr,
+--           callback = function()
+--             local opts = {
+--               focusable = false,
+--               close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+--               border = 'rounded',
+--               source = 'always',
+--               prefix = ' ',
+--               scope = 'cursor',
+--             }
+--             vim.diagnostic.open_float(nil, opts)
+--           end
+--         }
+-- )
