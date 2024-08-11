@@ -84,7 +84,6 @@ nmap('<leader>ft', '<CMD>lua live_grep_from_project_git_root()<CR>',  'Search st
 nmap('<leader>?',  '<CMD>Telescope oldfiles<CR>',                     'Search recently opened files')
 nmap('<leader>/',  '<CMD>Telescope current_buffer_fuzzy_find<CR>',    'Search in current buffer')
 nmap('<leader>sh', '<CMD>Telescope diagnostics<CR>',                  'Search diagnostics')
-nmap('<leader>fb', '<CMD>Telescope file_browser<CR>',                 'Toggle file browser')
 
 -- EASY-ALIGN --
 xmap('ga=', ':EasyAlign =<CR>',            'Align to =')
