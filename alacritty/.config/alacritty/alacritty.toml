@@ -2,7 +2,7 @@
 size = 14.0
 
 [font.normal]
-family = "MesloLGS NF"
+family = "MesloLGS Nerd Font Mono"
 style = "Regular"
 
 [selection]
@@ -12,7 +12,7 @@ save_to_clipboard = true
 opacity = 1
 
 [window.dimensions]
-columns = 120
+columns = 50
 lines = 50
 
 [window.padding]
