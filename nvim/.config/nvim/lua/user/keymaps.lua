@@ -40,6 +40,8 @@ nmap('#',          '#zz',                           'Navigate to previous search
 nmap('*',          '*zz',                           'Navigate to previous search match and center screen')
 nmap('<leader>bd', '<CMD>bd!<CR>',                  'Close buffer')
 nmap('<leader>c',  '<CMD>set list!<CR>',            'Toggle display of all characters')
+nmap('<leader>co',  '<CMD>copen<CR>',               'Open QuickFix list')
+nmap('<leader>cc',  '<CMD>cclose<CR>',              'Close QuickFix list')
 nmap('<leader>cl', '<CMD>%s/\\s\\+$//g<CR>',        'Remove spaces in blank lines or trailing spaces')
 nmap('<leader>h',  '<CMD>set hlsearch!<CR>',        'Toggle search highlighting')
 nmap('<leader>p',  '<CMD>let @+=expand("%:p")<CR>', 'Copy full filename to clipboard')
