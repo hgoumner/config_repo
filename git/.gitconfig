@@ -25,16 +25,6 @@
     tool = difft
     external = difft
 
-[alias]
-    bl = blame -w --
-    br = branch
-    cm = commit
-    lg = log --graph --oneline --abbrev-commit --decorate --pretty=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
-    log = log --follow
-    rh = reset --hard
-    st = status
-    sw = switch
-
 [difftool]
     prompt = false
 
@@ -43,3 +33,14 @@
 
 [pager]
     difftool = true
+
+[alias]
+    bl = blame -w --
+    br = branch
+    cm = commit
+    lg = log --graph --oneline --abbrev-commit --decorate --pretty=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
+    log = log --follow
+    logd = "-c diff.external=difft log -p --ext-diff"
+    rh = reset --hard
+    st = status
+    sw = switch
