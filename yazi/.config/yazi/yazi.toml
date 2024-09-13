@@ -78,6 +78,10 @@ image_bound      = [ 0, 0 ]
 suppress_preload = false
 
 [plugin]
+prepend_fetchers = [
+    { id   = "git", name = "*", run  = "git" },
+    { id   = "git", name = "*/", run  = "git" },
+]
 prepend_previewers = [
     # { name = "*.md", run = "glow" },
     # Archive previewer
