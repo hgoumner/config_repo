@@ -1,0 +1,15 @@
+snippet imp
+	    import polars as pl
+     import phar.signals  # noqa F401
+
+snippet di
+        data = (
+            pl.from_pandas(data, include_index=True)
+            .fill_nan(None)
+            .with_columns(
+                pl.selectors.float().replace({-np.inf: None, np.inf: None})
+                )
+            .phar.cs.ppfrank(col="alpha", savein="alpha")
+            .phar.scale_to_book(col="alpha")
+            .phar.truncate(col="alpha", max_percent=0.01)
+        )
