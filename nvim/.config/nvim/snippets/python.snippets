@@ -4,12 +4,19 @@ snippet imp
 
 snippet di
         data = (
-            pl.from_pandas(data, include_index=True)
-            .fill_nan(None)
-            .with_columns(
-                pl.selectors.float().replace({-np.inf: None, np.inf: None})
-                )
+            data
+            .with_columns(pl.selectors.float().replace({-np.inf: None, np.inf: None}))
             .phar.cs.ppfrank(col="alpha", savein="alpha")
             .phar.scale_to_book(col="alpha")
             .phar.truncate(col="alpha", max_percent=0.01)
+            .phar.to_pandas()
         )
+
+snippet fs
+            .with_columns(pl.col("alpha").neg())
+
+snippet sa
+    savein="alpha"
+
+snippet ewm
+            .phar.ts.ewm_mean(col="alpha", half_life=$1, savein="alpha")
