@@ -10,6 +10,7 @@ vim/.vim/vim-plugged
 zsh/.config/zsh/plugins
 yazi/.config/yazi/plugins
 yazi/.config/yazi/package.toml
+yazi/.config/yazi/bookmark
 
 # ZSH
 zsh/.config/cache
