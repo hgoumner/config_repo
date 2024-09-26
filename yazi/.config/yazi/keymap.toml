@@ -3,6 +3,11 @@
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
 [[manager.prepend_keymap]]
+on = "<A-y>"
+run = ["plugin copy-file-contents"]
+desc = "Copy contents of file"
+
+[[manager.prepend_keymap]]
 on   = "<C-s>"
 run  = 'shell "$SHELL" --block --confirm'
 desc = "Open shell here"
