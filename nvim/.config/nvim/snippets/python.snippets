@@ -1,3 +1,6 @@
+snippet aa
+    alias("alpha")
+
 snippet imp
 	    import polars as pl
      import phar.signals  # noqa F401
@@ -17,6 +20,9 @@ snippet fs
 
 snippet sa
     savein="alpha"
+
+snippet si
+    savein="$1"
 
 snippet ewm
             .phar.ts.ewm_mean(col="alpha", half_life=$1, savein="alpha")
