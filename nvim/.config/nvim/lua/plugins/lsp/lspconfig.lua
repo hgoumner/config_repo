@@ -67,47 +67,27 @@ return {
           vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
         end
 
-        lspconfig["pylsp"].setup {
-            capabilities = capabilities,
-            on_attach = on_attach,
-            settings = {
-                pylsp = {
-                    plugins = {
-                        pycodestyle = {
-                            ignore = {
-                                'E402',
-                                'W391'
-                            },
-                            maxLineLength = 120
-                        },
-                        ruff = {
-                            enabled = true,  -- Enable the plugin
-                            formatEnabled = true,  -- Enable formatting using ruffs formatter
-                            executable = "/usr/local/bin/ruff",  -- Custom path to ruff
-                            config = "/home/hristo/pipeline/ruff.toml",  -- Custom config for ruff to use
-                            extendSelect = { "I" },  -- Rules that are additionally used by ruff
-                            extendIgnore = { "C90" },  -- Rules that are additionally ignored by ruff
-                            format = { "I" },  -- Rules that are marked as fixable by ruff that should be fixed when running textDocument/formatting
-                            severities = { ["D212"] = "I" },  -- Optional table of rules where a custom severity is desired
-                            unsafeFixes = false,  -- Whether or not to offer unsafe fixes as code actions. Ignored with the "Fix All" action
-
-                            -- Rules that are ignored when a pyproject.toml or ruff.toml is present:
-                            lineLength = 120,  -- Line length to pass to ruff checking and formatting
-                            exclude = { "__about__.py" },  -- Files to be excluded by ruff checking
-                            select = { "F" },  -- Rules to be enabled by ruff
-                            ignore = {
-                                'E402',
-                                'W391',
-                                "D210"
-                            },  -- Rules to be ignored by ruff
-                            perFileIgnores = { ["__init__.py"] = "CPY001" },  -- Rules that should be ignored for specific files
-                            preview = true,  -- Whether to enable the preview style linting and formatting.
-                            targetVersion = "py310",  -- The minimum python version to target (applies for both linting and formatting).
-                        },
-                    }
+        -- Configure `ruff-lsp`.
+        -- See: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ruff_lsp
+        -- For the default config, along with instructions on how to customize the settings
+        lspconfig["ruff"].setup {
+            trace = "messages",
+            init_options = {
+                settings = {
+                    configuration = "~/.config/ruff/ruff.toml",
+                    configurationPreference = "filesystemFirst",
+                    showSyntaxErrors = true,
+                    logLevel = "debug",
+                    logFile = "/tmp/ruff.log",
+                    lint = {
+                        extendIgnore = {"F401"}
+                    },
+                    -- Any extra CLI arguments for `ruff` go here.
+                    args = {},
                 }
             }
         }
+
 
         lspconfig["lua_ls"].setup({
             capabilities = capabilities,
