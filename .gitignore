@@ -14,6 +14,9 @@ yazi/.config/yazi/package.toml
 # ZSH
 zsh/.config/cache
 zsh/.config/local
-zsh/.config/zsh/.zcompdump
+zsh/.config/zsh/.zcompdump*
 zsh/.config/zsh/.zhistory
 zsh/.config/zsh/.zsh_history
+
+# Extensions
+*.tar.gz
