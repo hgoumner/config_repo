@@ -66,7 +66,7 @@ alias c='clear'
 # git
 ###################################
 
-alias lg='lazygit'
+alias lg='$(which lazygit)'
 alias br='br -w --sort-by-type'
 
 ###################################
