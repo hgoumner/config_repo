@@ -10,6 +10,11 @@
 --   command_mode = 'c',
 
 -- Shorten function name
+local imap = function (keys, func, desc)
+    vim.keymap.set('i', keys, func, { buffer = bufnr, noremap = true, desc = desc })
+end
+
+-- Shorten function name
 local nmap = function (keys, func, desc)
     vim.keymap.set('n', keys, func, { buffer = bufnr, noremap = true, desc = desc })
 end
@@ -70,6 +75,9 @@ nmap('<C-l>', '<C-w>l', 'Move to right buffer')
 vmap('<', '<gv', 'Left indent')
 vmap('>', '>gv', 'Right indent')
 
+-- Vimgrep --
+nmap('<leader>v',  '<CMD>vimgrep <cword> % | copen<CR>', 'Search in current buffer and open QuickFix list')
+
 -- VISUAL BLOCK --
 -- Move text up and down
 xmap('<A-j>', "<CMD>move '>+1<CR>gv=gv", 'Move line down one line')
@@ -102,3 +110,7 @@ nmap('<leader>hd', '<CMD>Gitsigns diffthis<CR>',                  'Diff this')
 
 -- LSP --
 nmap('<leader>ca', '<CMD>lua vim.lsp.buf.code_action()<CR>', 'Code Actions')
+
+-- Snippets --
+-- imap('<C-p>', '<CMD>lua require("luasnip").jump(-1)<CR>)', 'Snippet jump to previous parameter')
+imap('<S-Tab>', '<CMD>lua require("luasnip").jump(1)<CR>', 'Snippet jump to next parameter')
