@@ -1,6 +1,9 @@
 snippet aa
     alias("alpha")
 
+snippet ai
+    alias("$1")
+
 snippet imp
 	    import polars as pl
      import phar.signals  # noqa F401
@@ -25,4 +28,19 @@ snippet si
     savein="$1"
 
 snippet ewm
-            .phar.ts.ewm_mean(col="alpha", half_life=$1, savein="alpha")
+            .phar.ts.ewm_mean(col="$1", half_life=$2, savein="$1")
+
+snippet neu
+            .phar.cs.neutralize(col="$1", savein="$1")
+
+snippet per
+            .phar.cs.percentile(col="$1", savein="$1")
+
+snippet csm
+            .phar.cs.mean(col="$1", over="$2", savein="$1")
+
+snippet tsm
+            .phar.ts.mean(col="$1", window_size=$2, savein="$1")
+
+snippet qua
+            .phar.cs.quantile(col="$1", num_quantiles=$2, savein="$1")
