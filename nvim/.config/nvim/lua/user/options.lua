@@ -21,11 +21,11 @@ local options = {
     numberwidth = 4,                                                                    -- set number column width to 2 {default 4}
     pumheight = 10,                                                                     -- pop up menu height
     relativenumber = true,                                                              -- set relative numbered lines
-    scrolloff = 8,                                                                      -- is one of my fav
+    scrolloff = 2,                                                                      -- is one of my fav
     shiftwidth = 4,                                                                     -- the number of spaces inserted for each indentation
     showmode = false,                                                                   -- we don't need to see things like -- INSERT -- anymore
     showtabline = 2,                                                                    -- always show tabs
-    sidescrolloff = 8,
+    sidescrolloff = 2,
     signcolumn = 'yes',                                                                 -- always show the sign column, otherwise it would shift the text each time
     smartcase = true,                                                                   -- smart case
     smartindent = true,                                                                 -- make indenting smarter again
@@ -54,22 +54,4 @@ vim.opt.whichwrap:append('<,>,[,],h,l')
 vim.opt.scrollopt:append('hor')
 
 vim.scriptencoding = 'utf-8'
-vim.wo.colorcolumn = '80'
-
--- vim.api.nvim_create_autocmd(
---     {'Cursorhold', 'CursorHoldI'},
---         {
---           buffer = bufnr,
---           callback = function()
---             local opts = {
---               focusable = false,
---               close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
---               border = 'rounded',
---               source = 'always',
---               prefix = ' ',
---               scope = 'cursor',
---             }
---             vim.diagnostic.open_float(nil, opts)
---           end
---         }
--- )
+vim.wo.colorcolumn = '120'
