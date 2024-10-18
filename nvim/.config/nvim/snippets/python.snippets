@@ -7,6 +7,7 @@ snippet ai
 snippet imp
 	    import polars as pl
      import phar.signals  # noqa F401
+     import numpy as np
 
 snippet di
         data = (
@@ -29,6 +30,9 @@ snippet si
 
 snippet ewm
             .phar.ts.ewm_mean(col="$1", half_life=$2, savein="$1")
+
+snippet nor
+            .phar.normalize_alpha(col="alpha", savein="alpha")
 
 snippet neu
             .phar.cs.neutralize(col="$1", savein="$1")
