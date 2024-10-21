@@ -29,41 +29,6 @@ return {
                     enable = true,
                     disable = { "yaml" }
                 },
-                -- textobjects = {
-                --     select = {
-                --         enable = true,
-                --         lookahead = true, -- automatically jump forward to textobj, similar to targets.vim
-                --         keymaps = {
-                --             -- you can use the capture groups defined in textobjects.scm
-                --             ['aa'] = '@parameter.outer',
-                --             ['ia'] = '@parameter.inner',
-                --             ['af'] = '@function.outer',
-                --             ['if'] = '@function.inner',
-                --             ['ac'] = '@class.outer',
-                --             ['ic'] = '@class.inner',
-                --         },
-                --     },
-                --     move = {
-                --         enable = true,
-                --         set_jumps = true, -- whether to set jumps in the jumplist
-                --         goto_next_start = {
-                --             [']m'] = '@function.outer',
-                --             [']]'] = '@class.outer',
-                --         },
-                --         goto_next_end = {
-                --             [']m'] = '@function.outer',
-                --             [']['] = '@class.outer',
-                --         },
-                --         goto_previous_start = {
-                --             ['[m'] = '@function.outer',
-                --             ['[['] = '@class.outer',
-                --         },
-                --         goto_previous_end = {
-                --             ['[m'] = '@function.outer',
-                --             ['[]'] = '@class.outer',
-                --         },
-                --     },
-                -- },
             }
         end,
     },
