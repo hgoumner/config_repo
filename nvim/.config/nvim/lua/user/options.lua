@@ -47,7 +47,7 @@ for k, v in pairs(options) do
 end
 
 vim.opt.formatoptions:remove('cro')
-vim.opt.iskeyword:append('-')
+vim.opt.iskeyword:remove('_')
 vim.opt.shortmess:append('c')
 vim.opt.whichwrap:append('<,>,[,],h,l')
 
