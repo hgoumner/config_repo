@@ -46,6 +46,10 @@ zsh_add_file ".zsh_options"
 # Broot
 [ -f ~/.config/broot/launcher/bash/br ] && source ~/.config/broot/launcher/bash/br
 
+# atuin
+[ -f "$HOME/.atuin/bin/env" ] && source "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh)"
+
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.config/local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -74,6 +78,7 @@ zinit light zsh-users/zsh-completions
 zinit light hlissner/zsh-autopair
 zinit light Aloxaf/fzf-tab
 zinit light wfxr/forgit
+zinit light atuinsh/atuin
 
 ### End of Zinit's installer chunk
 
@@ -86,4 +91,3 @@ zinit light wfxr/forgit
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
 tput cup $LINES 0
-
