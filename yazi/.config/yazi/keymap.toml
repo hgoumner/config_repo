@@ -3,6 +3,18 @@
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
 [[manager.prepend_keymap]]
+on   = "T"
+run  = "plugin --sync hide-preview"
+# For upcoming Yazi 0.4 (nightly version):
+# run  = "plugin hide-preview"
+desc = "Hide or show preview"
+
+[[manager.prepend_keymap]]
+on = "<A-y>"
+run = ["plugin copy-file-contents"]
+desc = "Copy contents of file"
+
+[[manager.prepend_keymap]]
 on   = "<C-s>"
 run  = 'shell "$SHELL" --block --confirm'
 desc = "Open shell here"
