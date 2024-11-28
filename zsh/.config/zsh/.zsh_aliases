@@ -26,7 +26,7 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 # ripgrep
-alias rg='rg --hidden --follow --glob "!.git"'
+alias rg='rg --hyperlink-format=kitty --hidden --follow --glob "!.git"'
 
 # find
 alias fd='fd --hidden --follow --exclude ".git"'
@@ -69,7 +69,7 @@ alias br='br -w --sort-by-type'
 # listing
 ###################################
 
-alias ls='ls --color=auto --group-directories-first'
+alias ls='ls --hyperlink=auto --color=auto --group-directories-first'
 alias lsd='lsd --all --long --color=auto --group-directories-first'
 
 # tree
