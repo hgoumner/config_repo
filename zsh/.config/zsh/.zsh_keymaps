@@ -55,3 +55,6 @@ bindkey '^F' rga-fzf
 
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
+
+# atuin
+bindkey '^r' atuin-search
