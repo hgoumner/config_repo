@@ -107,3 +107,5 @@ export FORGIT_FZF_DEFAULT_OPTS="
 "
 
 export FORGIT_COPY_CMD='xclip -selection clipboard'
+
+export ATUIN_NOBIND="true"
