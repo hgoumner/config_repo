@@ -30,15 +30,6 @@ HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
 HISTSIZE=10000                   # Maximum events for internal history
 SAVEHIST=10000                   # Maximum events in history file
 
-# Normal files to source
-zsh_add_file ".zsh_completions"
-
-# ZSH files
-zsh_add_file ".zsh_vim-mode"
-zsh_add_file ".zsh_aliases"
-zsh_add_file ".zsh_keymaps"
-zsh_add_file ".zsh_options"
-
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/fzf-git.sh/fzf-git.sh ] && source ~/fzf-git.sh/fzf-git.sh
@@ -49,6 +40,15 @@ zsh_add_file ".zsh_options"
 # atuin
 [ -f "$HOME/.atuin/bin/env" ] && source "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh)"
+
+# Normal files to source
+zsh_add_file ".zsh_completions"
+
+# ZSH files
+zsh_add_file ".zsh_vim-mode"
+zsh_add_file ".zsh_aliases"
+zsh_add_file ".zsh_keymaps"
+zsh_add_file ".zsh_options"
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.config/local/share/zinit/zinit.git/zinit.zsh ]]; then
