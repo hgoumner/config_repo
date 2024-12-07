@@ -3,10 +3,9 @@ return {
     event = { 'BufReadPre', 'BufNewfile' },
     dependencies = {
         'hrsh7th/cmp-nvim-lsp',
-    { 'antosha417/nvim-lsp-file-operations', config = true },
+        { 'antosha417/nvim-lsp-file-operations', config = true },
     },
-    config = function ()
-
+    config = function()
         local lspconfig = require('lspconfig')
 
         local cmp_nvim_lsp = require('cmp_nvim_lsp')
@@ -14,7 +13,15 @@ return {
         local keymap = vim.keymap
 
         local opts = { noremap = true, silent = true }
-        local on_attach = function (client, bufnr)
+
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            pattern = "*",
+            callback = function()
+                vim.lsp.buf.format({ async = false })
+            end,
+        })
+
+        local on_attach = function(client, bufnr)
             opts.buffer = bufnr
 
             opts.desc = 'LSP references'
@@ -63,13 +70,13 @@ return {
         -- (not in youtube nvim video)
         local signs = { Error = " ", Warn = " ", Hint = "󰌶 ", Info = " " }
         for type, icon in pairs(signs) do
-          local hl = "DiagnosticSign" .. type
-          vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+            local hl = "DiagnosticSign" .. type
+            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
         end
 
         -- Configure `ruff-lsp`.
         -- See: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ruff_lsp
-        -- For the default config, along with instructions on how to customize the settings
+        -- -- For the default config, along with instructions on how to customize the settings
         lspconfig["ruff"].setup {
             trace = "messages",
             init_options = {
@@ -80,7 +87,7 @@ return {
                     logLevel = "debug",
                     logFile = "/tmp/ruff.log",
                     lint = {
-                        extendIgnore = {"F401"}
+                        extendIgnore = { "F401" }
                     },
                     -- Any extra CLI arguments for `ruff` go here.
                     args = {},
@@ -88,30 +95,47 @@ return {
             },
             commands = {
                 RuffAutofix = {
-                  function()
-                    vim.lsp.buf.execute_command {
-                      command = 'ruff.applyAutofix',
-                      arguments = {
-                        { uri = vim.uri_from_bufnr(0) },
-                      },
-                    }
-                  end,
-                  description = 'Ruff: Fix all auto-fixable problems',
+                    function()
+                        vim.lsp.buf.execute_command {
+                            command = 'ruff.applyAutofix',
+                            arguments = {
+                                { uri = vim.uri_from_bufnr(0) },
+                            },
+                        }
+                    end,
+                    description = 'Ruff: Fix all auto-fixable problems',
                 },
                 RuffOrganizeImports = {
-                  function()
-                    vim.lsp.buf.execute_command {
-                      command = 'ruff.applyOrganizeImports',
-                      arguments = {
-                        { uri = vim.uri_from_bufnr(0) },
-                      },
-                    }
-                  end,
-                  description = 'Ruff: Format imports',
+                    function()
+                        vim.lsp.buf.execute_command {
+                            command = 'ruff.applyOrganizeImports',
+                            arguments = {
+                                { uri = vim.uri_from_bufnr(0) },
+                            },
+                        }
+                    end,
+                    description = 'Ruff: Format imports',
                 }
             }
         }
 
+        lspconfig["pyright"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            filetypes = { "python" },
+            settings = {
+                pyright = {
+                    -- Using Ruff's import organizer
+                    disableOrganizeImports = true,
+                },
+                python = {
+                    analysis = {
+                        -- Ignore all files for analysis to exclusively use Ruff for linting
+                        ignore = { '*' },
+                    },
+                },
+            },
+        })
 
         lspconfig["lua_ls"].setup({
             capabilities = capabilities,
@@ -132,6 +156,5 @@ return {
                 },
             },
         })
-
     end,
 }
