@@ -41,8 +41,8 @@ require("yatline"):setup({
     header_line = {
         left = {
             section_a = {
-                    -- {type = "line", custom = false, name = "tabs", params = {"left"}},
-                    {type = "coloreds", custom = false, name = "githead"},
+                -- {type = "line", custom = false, name = "tabs", params = {"left"}},
+                { type = "coloreds", custom = false, name = "githead" },
             },
             section_b = {
             },
@@ -51,10 +51,10 @@ require("yatline"):setup({
         },
         right = {
             section_a = {
-                    {type = "string", custom = false, name = "date", params = {"%A, %d %B %Y"}},
+                { type = "string", custom = false, name = "date", params = { "%A, %d %B %Y" } },
             },
             section_b = {
-                    {type = "string", custom = false, name = "date", params = {"%X"}},
+                { type = "string", custom = false, name = "date", params = { "%X" } },
             },
             section_c = {
             }
@@ -64,26 +64,26 @@ require("yatline"):setup({
     status_line = {
         left = {
             section_a = {
-                    {type = "string", custom = false, name = "tab_mode"},
+                { type = "string", custom = false, name = "tab_mode" },
             },
             section_b = {
-                    {type = "string", custom = false, name = "hovered_size"},
+                { type = "string", custom = false, name = "hovered_size" },
             },
             section_c = {
-                    {type = "string", custom = false, name = "hovered_name"},
-                    {type = "coloreds", custom = false, name = "count"},
+                { type = "string",   custom = false, name = "hovered_name" },
+                { type = "coloreds", custom = false, name = "count" },
             }
         },
         right = {
             section_a = {
-                    {type = "string", custom = false, name = "cursor_position"},
+                { type = "string", custom = false, name = "cursor_position" },
             },
             section_b = {
-                    {type = "string", custom = false, name = "cursor_percentage"},
+                { type = "string", custom = false, name = "cursor_percentage" },
             },
             section_c = {
-                    {type = "string", custom = false, name = "hovered_file_extension", params = {true}},
-                    {type = "coloreds", custom = false, name = "permissions"},
+                { type = "string",   custom = false, name = "hovered_file_extension", params = { true } },
+                { type = "coloreds", custom = false, name = "permissions" },
             }
         }
     },
@@ -128,17 +128,17 @@ require("yamb"):setup {
 }
 
 function Linemode:size_and_mtime()
-	local year = os.date("%Y")
-	local time = math.floor(self._file.cha.modified or 0)
+    local year = os.date("%Y")
+    local time = math.floor(self._file.cha.mtime or 0)
 
-	if time > 0 and os.date("%Y", time) == year then
-		time = os.date("%Y-%m-%d %H:%M", time)
-	else
-		time = time and os.date("%Y-%m-%d --:--", time) or ""
-	end
+    if time > 0 and os.date("%Y", time) == year then
+        time = os.date("%Y-%m-%d %H:%M", time)
+    else
+        time = time and os.date("%Y-%m-%d --:--", time) or ""
+    end
 
-	local size = self._file:size()
-	return ui.Line(string.format(" %s %s ", size and ya.readable_size(size) or "-", time))
+    local size = self._file:size()
+    return ui.Line(string.format(" %s %s ", size and ya.readable_size(size) or "-", time))
 end
 
 require("git"):setup()
