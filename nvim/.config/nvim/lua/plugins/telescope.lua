@@ -6,9 +6,9 @@ return {
         dependencies = {
             'nvim-lua/plenary.nvim',
             'nvim-tree/nvim-web-devicons',
+            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
         },
         config = function()
-
             local telescope = require('telescope')
             local actions   = require('telescope.actions')
 
@@ -104,13 +104,16 @@ return {
                     -- Now the picker_config_key will be applied every time you call this
                     -- builtin picker
                     find_files = {
-                        find_command = { "fd", "--type", "f", "--hidden" }
+                        find_command = { "fd", "--type", "f", "--hidden" },
+                        theme = 'ivy'
                     },
                     live_grep = {
-                        glob_pattern = { "!*.git"}
+                        glob_pattern = { "!*.git" },
+                        theme = 'ivy'
                     }
                 },
                 extensions = {
+                    fzf = {}
                     -- media_files = {
                     --     -- filetypes whitelist
                     --     -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
