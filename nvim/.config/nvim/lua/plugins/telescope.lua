@@ -107,6 +107,9 @@ return {
                         find_command = { "fd", "--type", "f", "--hidden" },
                         theme = 'ivy'
                     },
+                    git_files = {
+                        theme = 'ivy'
+                    },
                     live_grep = {
                         glob_pattern = { "!*.git" },
                         theme = 'ivy'
