@@ -3,15 +3,14 @@ return {
     event = { 'BufReadPre', 'BufNewfile' },
     dependencies = {
         'hrsh7th/cmp-nvim-lsp',
+        'saghen/blink.cmp',
         { 'antosha417/nvim-lsp-file-operations', config = true },
     },
     config = function()
         local lspconfig = require('lspconfig')
-
-        local cmp_nvim_lsp = require('cmp_nvim_lsp')
-
+        -- local cmp_nvim_lsp = require('cmp_nvim_lsp')
+        local capabilities = require('blink.cmp').get_lsp_capabilities()
         local keymap = vim.keymap
-
         local opts = { noremap = true, silent = true }
 
         vim.api.nvim_create_autocmd("BufWritePre", {
@@ -63,8 +62,6 @@ return {
             opts.desc = "Restart LSP"
             keymap.set("n", "<leader>rs", "<CMD>LspRestart<CR>", opts) -- mapping to restart lsp if necessary
         end
-
-        local capabilities = cmp_nvim_lsp.default_capabilities()
 
         -- Change the Diagnostic symbols in the sign column (gutter)
         -- (not in youtube nvim video)
