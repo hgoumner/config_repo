@@ -79,6 +79,7 @@ zinit light hlissner/zsh-autopair
 zinit light Aloxaf/fzf-tab
 zinit light wfxr/forgit
 zinit light atuinsh/atuin
+zinit light ocodo/ollama_zsh_completion
 
 ### End of Zinit's installer chunk
 
