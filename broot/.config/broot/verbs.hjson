@@ -117,6 +117,13 @@
             execution: ":toggle_sizes"
         }
 
+        # Toggle preview
+        # {
+        #     invocation: toggle_preview
+        #     key: alt+p
+        #     execution: ":toggle_preview"
+        # }
+
         # You can reproduce the bindings of Norton Commander
         # on copying or moving to the other panel:
         # {

@@ -4,6 +4,9 @@
 ### ALIASES
 # ----------------------------------------
 
-# zellij
-alias zem='zellij attach monitor'
-alias zeo='zellij attach ops'
+# kitty sessions
+alias km='kitty --session monitor.conf &'
+alias ko='kitty --session ops.conf &'
+
+# TZ
+export TZ='Europe/Sofia'

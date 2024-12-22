@@ -83,7 +83,8 @@ color = "gruvbox"
 # These are flags around the process widget.
 
 [processes]
-columns = ["PID", "User", "State", "CPU%", "Mem%", "Name", "R/s", "W/s", "T.Read", "T.Write"]
+# columns = ["PID", "User", "State", "CPU%", "Mem%", "Name", "R/s", "W/s", "T.Read", "T.Write"]
+columns = ["PID", "User", "State", "CPU%", "Mem%", "Name"]
 
 # These are all the components that support custom theming. Note that colour support
 # will depend on terminal support.
@@ -143,14 +144,11 @@ columns = ["PID", "User", "State", "CPU%", "Mem%", "Name", "R/s", "W/s", "T.Read
 [[row]]
  ratio=2
  [[row.child]]
- type="temp"
- [[row.child]]
- ratio=3
  [[row.child.child]]
- ratio=2
+ ratio=1
  type="disk"
  [[row.child.child]]
- ratio=3
+ ratio=2
  type="proc"
 
 # Filters - you can hide specific temperature sensors, network interfaces, and disks using filters. This is admittedly

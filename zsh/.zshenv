@@ -103,7 +103,7 @@ export FORGIT_FZF_DEFAULT_OPTS="
 --exact
 --border
 --cycle
---height '80%'
+--height '100%'
 "
 
 export FORGIT_COPY_CMD='xclip -selection clipboard'
