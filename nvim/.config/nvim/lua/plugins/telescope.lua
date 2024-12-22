@@ -6,7 +6,8 @@ return {
         dependencies = {
             'nvim-lua/plenary.nvim',
             'nvim-tree/nvim-web-devicons',
-            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
+            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+            'nvim-telescope/telescope-ui-select.nvim'
         },
         config = function()
             local telescope = require('telescope')
@@ -116,7 +117,10 @@ return {
                     }
                 },
                 extensions = {
-                    fzf = {}
+                    fzf = {},
+                    ["ui-select"] = {
+                        require("telescope.themes").get_dropdown {}
+                    }
                     -- media_files = {
                     --     -- filetypes whitelist
                     --     -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
@@ -128,10 +132,14 @@ return {
                     --   extension_config_key = value,
                     -- }
                     -- please take a look at the readme of the extension you want to configure
-                },
+                }
             }
 
             require('telescope').load_extension('fzf')
+
+            -- To get ui-select loaded and working with telescope, you need to call
+            -- load_extension, somewhere after setup function:
+            require("telescope").load_extension("ui-select")
         end,
     },
 }
