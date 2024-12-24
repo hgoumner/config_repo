@@ -1,0 +1,47 @@
+---
+version: 1.4.2
+commands:
+  - name: Lazygit
+    namespace: Git
+    tags:
+      - git
+      - tui
+    command: lg
+    description: TUI for git
+  - name: Yazi
+    namespace: Productivity
+    tags:
+      - explorer
+      - tui
+      - rust
+    command: yy
+    description: File explorer TUI
+  - name: Broot
+    namespace: Productivity
+    tags:
+      - explorer
+      - tui
+      - rust
+    command: br
+    description: File explorer TUI
+  - name: Difftastic
+    namespace: Git
+    tags:
+      - difftool
+    command: difft
+    description: Syntax oriented difftool
+  - name: LNAV
+    namespace: Productivity
+    tags:
+      - logging
+      - tui
+    command: lnav
+    description: Log file navigator
+  - name: Ripgrep
+    namespace: Productivity
+    tags:
+      - search
+      - regex
+      - rust
+    command: rg
+    description: Search tool
