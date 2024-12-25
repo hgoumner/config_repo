@@ -1,0 +1,7 @@
+rules:
+  document-start:
+    present: false
+  comments:
+    require-starting-space: false
+    ignore-shebangs: true
+    min-spaces-from-content: 0
