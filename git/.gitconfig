@@ -1,6 +1,7 @@
 [user]
     email = hristo.g@pharvision.ai
     name = Hristo Goumnerov
+	signingkey = 3A0C4DF120452972
 
 [core]
     pager = delta
@@ -44,3 +45,9 @@
     rh = reset --hard
     st = status
     sw = switch
+
+[commit]
+	gpgsign = true
+
+[tag]
+	gpgSign = true
