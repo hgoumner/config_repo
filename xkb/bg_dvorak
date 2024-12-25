@@ -56,4 +56,3 @@ xkb_symbols "dvorak" {
   key <SPCE> {[ space,             space,             nobreakspace,      nobreakspace  ]};
 
 };
-

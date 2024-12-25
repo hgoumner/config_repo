@@ -1,8 +1,8 @@
 return {
-    'azabiong/vim-highlighter',
-    keys = {"<leader>hh"},
-    config = function ()
-        vim.cmd([[
+	"azabiong/vim-highlighter",
+	keys = { "<leader>hh" },
+	config = function()
+		vim.cmd([[
                 " default key mappings
                 " let HiSet   = 'f<CR>'
                 " let HiErase = 'f<BS>'
@@ -25,5 +25,5 @@ return {
                 " directory to store highlight files
                 " let HiKeywords = '~/.vim/after/vim-highlighter'
             ]])
-    end,
+	end,
 }

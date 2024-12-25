@@ -69,4 +69,3 @@ zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 _comp_options+=(globdots)       # Include hidden files.
-

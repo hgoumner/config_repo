@@ -1,4 +1,3 @@
----
 version: 1.4.2
 default_namespace: git
 config_home_path: /home/hristo/.config/hoard

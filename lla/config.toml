@@ -2,7 +2,7 @@
 # This file controls the behavior and appearance of the lla command
 
 # Default sorting method for file listings
-# Possible values: 
+# Possible values:
 #   - "name": Sort alphabetically by filename (default)
 #   - "size": Sort by file size, largest first
 #   - "date": Sort by modification time, newest first
