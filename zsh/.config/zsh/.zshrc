@@ -23,9 +23,6 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 [ -f "$HOME/.zshenv" ] && source "$HOME/.zshenv"
 
-# PharVision
-zsh_add_file "pharvision"
-
 HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
 HISTSIZE=10000                   # Maximum events for internal history
 SAVEHIST=10000                   # Maximum events in history file
@@ -40,6 +37,9 @@ SAVEHIST=10000                   # Maximum events in history file
 # atuin
 [ -f "$HOME/.atuin/bin/env" ] && source "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh)"
+
+# uv
+source "$HOME/.config/local/share/../bin/env"
 
 # Normal files to source
 zsh_add_file ".zsh_completions"
