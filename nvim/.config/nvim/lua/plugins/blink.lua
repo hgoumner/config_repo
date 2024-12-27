@@ -19,7 +19,24 @@ return {
 			-- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
 			-- see the "default configuration" section below for full documentation on how to define
 			-- your own keymap.
-			keymap = { preset = "default" },
+			keymap = {
+				preset = "default",
+
+				["<Up>"] = { "select_prev", "fallback" },
+				["<Down>"] = { "select_next", "fallback" },
+
+				["<Enter>"] = { "select_and_accept", "fallback" },
+
+				-- disable a keymap from the preset
+				["<C-e>"] = {},
+
+				-- show with a list of providers
+				["<C-space>"] = {
+					function(cmp)
+						cmp.show({ providers = { "snippets" } })
+					end,
+				},
+			},
 
 			appearance = {
 				-- Sets the fallback highlight groups to nvim-cmp's highlight groups
@@ -41,6 +58,8 @@ return {
 
 			-- experimental signature help support
 			signature = { enabled = true },
+
+			completion = { list = { selection = "preselect" } },
 		},
 		-- allows extending the providers array elsewhere in your config
 		-- without having to redefine it
