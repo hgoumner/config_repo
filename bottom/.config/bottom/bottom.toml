@@ -136,20 +136,20 @@ columns = ["PID", "User", "State", "CPU%", "Mem%", "Name"]
 # All layout components have a ratio value - if this is not set, then it defaults to 1.
 # The default widget layout:
 [[row]]
- [[row.child]]
- type="mem"
- [[row.child]]
- type="cpu"
- default=true
+[[row.child]]
+type = "mem"
+[[row.child]]
+type = "cpu"
+default = true
 [[row]]
- ratio=2
- [[row.child]]
- [[row.child.child]]
- ratio=1
- type="disk"
- [[row.child.child]]
- ratio=2
- type="proc"
+ratio = 2
+[[row.child]]
+[[row.child.child]]
+ratio = 1
+type = "disk"
+[[row.child.child]]
+ratio = 2
+type = "proc"
 
 # Filters - you can hide specific temperature sensors, network interfaces, and disks using filters. This is admittedly
 # a bit hard to use as of now, and there is a planned in-app interface for managing this in the future:
