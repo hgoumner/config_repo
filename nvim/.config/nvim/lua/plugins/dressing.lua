@@ -16,11 +16,8 @@ return {
 				-- Can be 'left', 'right', or 'center'
 				title_pos = "left",
 
-				-- When true, <Esc> will close the modal
-				insert_only = true,
-
-				-- When true, input will start in insert mode.
-				start_in_insert = true,
+				-- The initial mode when the window opens (insert|normal|visual|select).
+				start_mode = "insert",
 
 				-- These are passed to nvim_open_win
 				border = "rounded",
@@ -134,6 +131,10 @@ return {
 					win_options = {
 						cursorline = true,
 						cursorlineopt = "both",
+						-- disable highlighting for the brackets around the numbers
+						winhighlight = "MatchParen:",
+						-- adds padding at the left border
+						statuscolumn = " ",
 					},
 
 					-- These can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
