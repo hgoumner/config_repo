@@ -44,3 +44,10 @@ commands:
       - rust
     command: rg
     description: Search tool
+  - name: Systemctl-tui
+    namespace: Administration
+    tags:
+      - systemctl
+      - rust
+    command: systemctl-tui
+    description: TUI for system services
