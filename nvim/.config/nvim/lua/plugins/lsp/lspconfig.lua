@@ -78,8 +78,8 @@ return {
 			trace = "messages",
 			init_options = {
 				settings = {
-					configuration = "~/.config/ruff/ruff.toml",
-					configurationPreference = "filesystemFirst",
+					-- configuration = "~/.config/ruff/ruff.toml",
+					-- configurationPreference = "filesystemFirst",
 					showSyntaxErrors = true,
 					logLevel = "debug",
 					logFile = "/tmp/ruff.log",
