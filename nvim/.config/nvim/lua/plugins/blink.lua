@@ -25,7 +25,7 @@ return {
 				["<Up>"] = { "select_prev", "fallback" },
 				["<Down>"] = { "select_next", "fallback" },
 
-				["<Enter>"] = { "select_and_accept", "fallback" },
+				["<C-x>"] = { "select_and_accept", "fallback" },
 
 				-- disable a keymap from the preset
 				["<C-e>"] = {},
