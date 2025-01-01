@@ -20,6 +20,15 @@ return {
 			end,
 		})
 
+		vim.lsp.set_log_level("debug")
+
+		vim.diagnostic.config({
+			float = {
+				-- source = 'if_many'
+				source = true,
+			},
+		})
+
 		local on_attach = function(client, bufnr)
 			opts.buffer = bufnr
 
