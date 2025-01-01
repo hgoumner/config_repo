@@ -114,6 +114,40 @@ return {
 		lazy = false,
 	},
 
+	{
+		"mikesmithgh/kitty-scrollback.nvim",
+		enabled = true,
+		lazy = true,
+		cmd = { "KittyScrollbackGenerateKittens", "KittyScrollbackCheckHealth" },
+		event = { "User KittyScrollbackLaunch" },
+		-- version = '*', -- latest stable version, may have breaking changes if major version changed
+		-- version = '^5.0.0', -- pin major version, include fixes and features that do not have breaking changes
+		config = function()
+			require("kitty-scrollback").setup()
+		end,
+	},
+
+	{
+		"tzachar/local-highlight.nvim",
+		config = function()
+			require("local-highlight").setup({
+				file_types = { "python" }, -- If this is given only attach to this
+				hlgroup = "Search",
+				cw_hlgroup = nil,
+				-- Whether to display highlights in INSERT mode or not
+				insert_mode = true,
+				min_match_len = 1,
+				max_match_len = math.huge,
+				highlight_single_match = true,
+			})
+		end,
+	},
+
+	{
+		"kevinhwang91/nvim-bqf",
+		ft = { "qf" },
+	},
+
 	-------------------------
 	-- Appearance settings --
 	-------------------------
@@ -154,37 +188,11 @@ return {
 	-------------------------------
 	-- Testing -
 	-------------------------------
-	{
-		"mikesmithgh/kitty-scrollback.nvim",
-		enabled = true,
-		lazy = true,
-		cmd = { "KittyScrollbackGenerateKittens", "KittyScrollbackCheckHealth" },
-		event = { "User KittyScrollbackLaunch" },
-		-- version = '*', -- latest stable version, may have breaking changes if major version changed
-		-- version = '^5.0.0', -- pin major version, include fixes and features that do not have breaking changes
-		config = function()
-			require("kitty-scrollback").setup()
-		end,
-	},
 
 	{
-		"tzachar/local-highlight.nvim",
-		config = function()
-			require("local-highlight").setup({
-				file_types = { "python" }, -- If this is given only attach to this
-				hlgroup = "Search",
-				cw_hlgroup = nil,
-				-- Whether to display highlights in INSERT mode or not
-				insert_mode = true,
-				min_match_len = 1,
-				max_match_len = math.huge,
-				highlight_single_match = true,
-			})
-		end,
-	},
-
-	{
-		"kevinhwang91/nvim-bqf",
-		ft = { "qf" },
+		"danymat/neogen",
+		ft = { "python" },
+		config = true,
+		version = "*",
 	},
 }
