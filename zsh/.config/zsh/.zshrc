@@ -4,15 +4,6 @@
 # -------- Theme --------
 # -----------------------
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-# [[ ! -f "$ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme" ]] || source "$ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme"
-
 # --------------------------------
 # -------- External files --------
 # --------------------------------
@@ -72,7 +63,7 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust \
     zdharma-continuum/fast-syntax-highlighting
 
-zinit light romkatv/powerlevel10k
+# zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light hlissner/zsh-autopair
@@ -87,8 +78,6 @@ zinit light ocodo/ollama_zsh_completion
 # -------- Theme --------
 # -----------------------
 
-# # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+eval "$(starship init zsh)"
 
 tput cup $LINES 0
