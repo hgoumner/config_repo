@@ -59,7 +59,11 @@ return {
 			-- experimental signature help support
 			signature = { enabled = true },
 
-			completion = { list = { selection = "preselect" } },
+			completion = {
+				list = {
+					selection = { preselect = true },
+				},
+			},
 		},
 		-- allows extending the providers array elsewhere in your config
 		-- without having to redefine it
