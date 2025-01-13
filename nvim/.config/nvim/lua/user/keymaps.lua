@@ -108,9 +108,6 @@ nmap("<leader>hp", "<CMD>Gitsigns preview_hunk_inline<CR>", "Preview hunk")
 nmap("<leader>hb", "<CMD>Gitsigns toggle_current_line_blame<CR>", "Line blame")
 nmap("<leader>hd", "<CMD>Gitsigns diffthis<CR>", "Diff this")
 
--- LSP --
-nmap("<leader>ca", "<CMD>lua vim.lsp.buf.code_action()<CR>", "Code Actions")
-
 -- Snippets --
 -- imap('<C-p>', '<CMD>lua require("luasnip").jump(-1)<CR>)', 'Snippet jump to previous parameter')
 imap("<S-Tab>", '<CMD>lua require("luasnip").jump(1)<CR>', "Snippet jump to next parameter")
