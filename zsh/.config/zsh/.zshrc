@@ -1,9 +1,5 @@
 #!/usr/bin/env zsh
 
-# -----------------------
-# -------- Theme --------
-# -----------------------
-
 # --------------------------------
 # -------- External files --------
 # --------------------------------
@@ -63,7 +59,6 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust \
     zdharma-continuum/fast-syntax-highlighting
 
-# zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light hlissner/zsh-autopair
