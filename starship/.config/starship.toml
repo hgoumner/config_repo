@@ -23,6 +23,8 @@ $python\
 $docker_context\
 $conda\
 [](fg:color_bg3 bg:color_bg1)\
+$memory_usage\
+${custom.harddrive_usage}\
 $time\
 [ ](fg:color_bg1)\
 $line_break$character"""
@@ -153,9 +155,23 @@ format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
 style = "bg:color_bg3"
 format = '[[ $symbol( $environment) ](fg:#83a598 bg:color_bg3)]($style)'
 
+[memory_usage]
+disabled = false
+threshold = -1
+symbol = '🐏'
+style = "bg:color_bg1"
+format = '[ $symbol RAM: $ram_pct]($style)'
+
+[custom.harddrive_usage]
+disabled = false
+when = "true"
+command = 'df -h | rg --word-regexp "/" | rg --only-matching "\d{0,3}%"'
+style = "bg:color_bg1"
+format = '[ HDD: $output ]($style)'
+
 [time]
 disabled = false
-time_format = "%R"
+time_format = "%F %T"
 style = "bg:color_bg1"
 format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
 
