@@ -52,11 +52,13 @@ alias psmem='ps auxf | sort -nr -k 4 | head -5'
 # get top process eating cpu ##
 alias pscpu='ps auxf | sort -nr -k 3 | head -5'
 
-# clear and move prompt to bottom
-alias clear="clear && tput cup $LINES 0"
+function __to_bottom(){
+    tput cup $LINES
+}
 
-# clear
-alias c='clear'
+
+# clear and move prompt to bottom
+alias c="clear && __to_bottom"
 
 # -----------------------------------------------
 # --------------- Applications ------------------
