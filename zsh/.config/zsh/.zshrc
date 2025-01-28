@@ -25,6 +25,9 @@ SAVEHIST=10000                   # Maximum events in history file
 [ -f "$HOME/.atuin/bin/env" ] && source "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh)"
 
+# direnv
+eval "$(direnv hook zsh)"
+
 # uv
 source "$HOME/.config/local/share/../bin/env"
 
