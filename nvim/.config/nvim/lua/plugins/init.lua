@@ -195,4 +195,6 @@ return {
 		config = true,
 		version = "*",
 	},
+
+	{ "echasnovski/mini.nvim", version = "*" },
 }
