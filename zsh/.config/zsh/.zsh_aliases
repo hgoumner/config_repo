@@ -82,7 +82,7 @@ alias lsd='lsd --all --long --color=auto --group-directories-first'
 alias tree='tree -C --dirsfirst'
 
 # list locally installed programs
-alias lsa='lsd ~/.local/bin/'
+alias lsa='lla ~/.local/bin/ | rg "^l"'
 
 ###################################
 # other
