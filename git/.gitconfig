@@ -1,39 +1,7 @@
 [user]
-    email = hristo.g@pharvision.ai
+    email = hgoumnerov@tuta.io
     name = Hristo Goumnerov
 	signingkey = 3A0C4DF120452972
-
-[core]
-    pager = delta
-
-[interactive]
-    diffFilter = delta --color-only
-
-[delta]
-    dark = true
-    navigate = true
-    side-by-side = false
-    line-numbers = true
-
-[pull]
-    rebase = true
-
-[merge]
-	conflictStyle = zdiff3
-
-[diff]
-    colorMoved = default
-    tool = difft
-    external = difft
-
-[difftool]
-    prompt = false
-
-[difftool "difftastic"]
-    cmd = difft "$LOCAL" "$REMOTE"
-
-[pager]
-    difftool = true
 
 [alias]
     bl = blame -w --
@@ -46,8 +14,62 @@
     st = status
     sw = switch
 
+[branch]
+    sort = -committerdate
+
 [commit]
 	gpgsign = true
 
+[core]
+    pager = delta
+
+[delta]
+    dark = true
+    navigate = true
+    side-by-side = false
+    line-numbers = true
+
+[diff]
+    colorMoved = default
+    tool = difft
+    external = difft
+
+[difftool]
+    prompt = false
+
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
+
+[commit]
+    verbose = true
+
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
+
+[interactive]
+    diffFilter = delta --color-only
+
+[merge]
+	conflictStyle = zdiff3
+
+[pull]
+    rebase = true
+
+[push]
+    default = simple
+    autoSetupRemote = true
+    followTags = true
+
+[pager]
+    difftool = true
+
+[rebase]
+    autoSquash = true
+    autoStash = true
+    updateRefs = true
+
 [tag]
 	gpgSign = true
+    sort = version:refname
