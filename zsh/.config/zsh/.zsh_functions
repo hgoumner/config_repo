@@ -114,5 +114,10 @@ function yy() {
 }
 
 function check_new_files() {
-    /bin/fd --changed-within='1d' --type f -X lsd -lSr 2> /dev/null
+    echo "### $1 ###"
+    /bin/fd . $1 --changed-within='1d' --type f -X lsd -lSr 2> /dev/null | tail --lines $2
+}
+
+function debase() {
+    echo $1 | base64 --decode
 }
