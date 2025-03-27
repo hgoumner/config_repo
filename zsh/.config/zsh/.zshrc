@@ -31,6 +31,9 @@ eval "$(direnv hook zsh)"
 # uv
 source "$HOME/.config/local/share/../bin/env"
 
+# tv
+eval "$(tv init zsh)"
+
 # Normal files to source
 zsh_add_file ".zsh_completions"
 
