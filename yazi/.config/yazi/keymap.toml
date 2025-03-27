@@ -2,11 +2,14 @@
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
+# [[manager.prepend_keymap]]
+# on = "T"
+# run = "plugin toggle-pane min-preview"
+# desc = "Hide or show preview"
+
 [[manager.prepend_keymap]]
 on = "T"
-run = "plugin hide-preview"
-# For upcoming Yazi 0.4 (nightly version):
-# run  = "plugin hide-preview"
+run = "plugin toggle-pane max-preview"
 desc = "Hide or show preview"
 
 [[manager.prepend_keymap]]
@@ -23,11 +26,6 @@ desc = "Open shell here"
 on = ["l", "g"]
 run = "plugin lazygit"
 desc = "run lazygit"
-
-[[manager.prepend_keymap]]
-on = ["m", "v"]
-run = "plugin max-preview"
-desc = "Maximize or restore preview"
 
 [[manager.prepend_keymap]]
 on = ["f"]
