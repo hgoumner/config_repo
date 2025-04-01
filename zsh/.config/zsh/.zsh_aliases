@@ -85,6 +85,13 @@ alias tree='tree -C --dirsfirst'
 alias lsa='lla ~/.local/bin/ | rg "^l"'
 
 ###################################
+# Docker
+###################################
+
+alias dcd="docker compose down"
+alias dcu="docker compose up --detach"
+
+###################################
 # other
 ###################################
 
