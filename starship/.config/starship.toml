@@ -8,6 +8,7 @@ $git_status\
 $python\
 $docker_context\
 $fill\
+$hostname\
 $memory_usage\
 ${custom.harddrive_usage}\
 $time\
@@ -59,10 +60,15 @@ RedHatEnterprise = "󱄛"
 Pop = ""
 
 [username]
-show_always = false
+show_always = true
 style_user = "bg:color_orange fg:color_fg0"
 style_root = "bg:color_orange fg:color_fg0"
 format = '[ $user ]($style)'
+
+[hostname]
+ssh_only = false
+format = '[$hostname](bold red) '
+disabled = false
 
 [directory]
 style = "fg:color_blue"
