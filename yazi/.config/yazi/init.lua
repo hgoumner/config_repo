@@ -139,6 +139,7 @@ function Linemode:size_and_mtime()
 end
 
 -- require("git"):setup()
+require("git"):setup()
 
 require("copy-file-contents"):setup({
 	clipboard_cmd = "linux",
