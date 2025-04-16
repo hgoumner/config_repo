@@ -149,3 +149,5 @@ require("copy-file-contents"):setup({
 
 -- DuckDB plugin configuration
 require("duckdb"):setup()
+
+require("simple-status"):setup()
