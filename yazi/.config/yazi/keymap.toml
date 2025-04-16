@@ -2,10 +2,15 @@
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
-# [[manager.prepend_keymap]]
-# on = "T"
-# run = "plugin toggle-pane min-preview"
-# desc = "Hide or show preview"
+[[manager.prepend_keymap]]
+on   = [ ".", "s" ]
+run  = "plugin what-size -- '-c'"
+desc = "Calc size of selection or cwd"
+
+[[manager.prepend_keymap]]
+on   = "<A-d>"
+run  = "plugin cdhist -- _ --fuzzy=fzf"
+desc = "Select a directory from history using cdhist"
 
 [[manager.prepend_keymap]]
 on = "T"
