@@ -79,6 +79,7 @@ require("yatline"):setup({
 				{ type = "string", custom = false, name = "cursor_percentage" },
 			},
 			section_c = {
+				{ type = "string", custom = false, name = "hovered_ownership" },
 				{ type = "string", custom = false, name = "hovered_file_extension", params = { true } },
 				{ type = "coloreds", custom = false, name = "permissions" },
 			},
@@ -138,7 +139,6 @@ function Linemode:size_and_mtime()
 	return ui.Line(string.format(" %s %s ", size and ya.readable_size(size) or "-", time))
 end
 
--- require("git"):setup()
 require("git"):setup()
 
 require("copy-file-contents"):setup({
