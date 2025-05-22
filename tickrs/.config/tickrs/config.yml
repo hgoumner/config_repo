@@ -10,6 +10,7 @@ symbols:
   - RUBUSD=X
   - CNHUSD=X
   - BTC-USD
+  - ETH-USD
 # Chart type to start app with
 # Default is line
 # Possible values: line, candle, kagi
