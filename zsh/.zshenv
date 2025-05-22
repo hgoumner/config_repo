@@ -62,7 +62,14 @@ export MANWIDTH=999
 # Docker
 # -----------------------------------------------------------------
 
-export DOCKER_CONTENT_TRUST=1
+export DOCKER_CONTENT_TRUST=0
+
+# ----------------------------------
+# -------- AI Settings --------
+# ----------------------------------
+
+export OPENROUTER_API_KEY='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'
+export OPENAI_API_KEY=$OPENROUTER_API_KEY
 
 # ----------------------------------
 # -------- Export variables --------
