@@ -14,9 +14,10 @@ HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
 HISTSIZE=10000                   # Maximum events for internal history
 SAVEHIST=10000                   # Maximum events in history file
 
-# FZF
+# FZF & Skim
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/fzf-git.sh/fzf-git.sh ] && source ~/fzf-git.sh/fzf-git.sh
+source <(sk --shell zsh)
 
 # Broot
 [ -f ~/.config/broot/launcher/bash/br ] && source ~/.config/broot/launcher/bash/br
