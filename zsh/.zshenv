@@ -68,8 +68,7 @@ export DOCKER_CONTENT_TRUST=0
 # -------- AI Settings --------
 # ----------------------------------
 
-export OPENROUTER_API_KEY='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'
-export OPENAI_API_KEY=$OPENROUTER_API_KEY
+export OPENROUTER_API_KEY='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'
 
 # ----------------------------------
 # -------- Export variables --------
