@@ -2,82 +2,82 @@
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on   = "<A-d>"
 run  = "plugin cdhist -- _ --fuzzy=fzf"
 desc = "Select a directory from history using cdhist"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "T"
 run = "plugin toggle-pane max-preview"
 desc = "Hide or show preview"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "<A-y>"
 run = ["plugin copy-file-contents"]
 desc = "Copy contents of file"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "<C-s>"
 run = 'shell "$SHELL" --block'
 desc = "Open shell here"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["l", "g"]
 run = "plugin lazygit"
 desc = "run lazygit"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["f"]
 run = "plugin jump-to-char"
 desc = "Jump to char"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "F"
 run = "plugin smart-filter"
 desc = "Smart filter"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["u", "a"]
 run = "plugin yamb save"
 desc = "Add bookmark"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["u", "k"]
 run = "plugin yamb jump_by_key"
 desc = "Jump bookmark by key"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["u", "G"]
 run = "plugin yamb jump_by_fzf"
 desc = "Jump bookmark by fzf"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["u", "d"]
 run = "plugin yamb delete_by_key"
 desc = "Delete bookmark by key"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["u", "D"]
 run = "plugin yamb delete_by_fzf"
 desc = "Delete bookmark by fzf"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["u", "A"]
 run = "plugin yamb delete_all"
 desc = "Delete all bookmarks"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["u", "r"]
 run = "plugin yamb rename_by_key"
 desc = "Rename bookmark by key"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["u", "R"]
 run = "plugin yamb rename_by_fzf"
 desc = "Rename bookmark by fzf"
 
-[manager]
+[mgr]
 
 keymap = [
   { on = [
