@@ -3,20 +3,6 @@ return {
 	-- Colorscheme settings --
 	--------------------------
 
-	-- {
-	--     'sainnhe/gruvbox-material',
-	--     lazy = false, -- make sure we load this during startup if it is your main colorscheme
-	--     priority = 1000, -- make sure to load this before all the other start plugins
-	--     config = function()
-	--         -- load the colorscheme here
-	--         vim.cmd('set background=dark')
-	--         vim.cmd('let g:gruvbox_material_background = "soft"')
-	--         vim.cmd('let g:gruvbox_material_better_performance = 1')
-	--         vim.cmd('let g:gruvbox_material_transparent_background = 2')
-	--         vim.cmd('let g:gruvbox_material_current_word = "bold"')
-	--         vim.cmd('colorscheme gruvbox-material')
-	--     end,
-	-- },
 	{
 		"ellisonleao/gruvbox.nvim",
 		lazy = false,
@@ -88,15 +74,6 @@ return {
 		lazy = false,
 		config = function()
 			require("nvim-surround").setup()
-		end,
-	},
-
-	-- Registers and marks
-	{
-		"tversteeg/registers.nvim",
-		lazy = false,
-		config = function()
-			require("registers").setup()
 		end,
 	},
 
@@ -174,11 +151,6 @@ return {
 	-------------------------------
 	-- Language specific plugins --
 	-------------------------------
-
-	{
-		"chrisbra/csv.vim",
-		ft = { "csv" },
-	},
 
 	{
 		"imsnif/kdl.vim",
