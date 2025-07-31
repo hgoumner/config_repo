@@ -76,7 +76,7 @@ alias br='br -w --sort-by-type'
 ###################################
 
 alias ls='ls --hyperlink=auto --color=auto --group-directories-first'
-alias lsd='lsd --all --long --color=auto --group-directories-first'
+alias lsd='lsd --almost-all --long --color=auto --group-directories-first'
 
 # tree
 alias tree='tree -C --dirsfirst'
