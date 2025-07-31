@@ -5,7 +5,7 @@ return {
 	version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
 	opts = {
 		provider = "openrouter",
-		vendors = {
+		providers = {
 			openrouter = {
 				__inherited_from = "openai",
 				disable_tools = true,
@@ -14,42 +14,6 @@ return {
 				model = "meta-llama/llama-4-maverick:free",
 			},
 		},
-		-- add any opts here
-		-- provider = "ollama",
-		---@type AvanteProvider
-		-- ollama = {
-		-- 	endpoint = "http://127.0.0.1:11434",
-		-- 	model = "llama3.2:latest",
-		-- 	-- parse_curl_args = function(opts, code_opts)
-		-- 	--     return {
-		-- 	--         url = opts.endpoint .. "/chat",
-		-- 	--         headers = {
-		-- 	--             ["Accept"] = "application/json",
-		-- 	--             ["Content-Type"] = "application/json",
-		-- 	--         },
-		-- 	--         body = {
-		-- 	--             model = opts.model,
-		-- 	--             options = {
-		-- 	--                 num_ctx = 131072,
-		-- 	--             },
-		-- 	--             messages = require("avante.providers").copilot.parse_messages(code_opts),
-		-- 	--             -- you can make your own message, but this is very advanced
-		-- 	--             stream = true,
-		-- 	--         },
-		-- 	--     }
-		-- 	-- end,
-		-- 	-- parse_stream_data = function(data, handler_opts)
-		-- 	--     -- Parse the JSON data
-		-- 	--     local json_data = vim.fn.json_decode(data)
-		-- 	--     -- Check if the response contains a message
-		-- 	--     if json_data and json_data.message and json_data.message.content then
-		-- 	--         -- Extract the content from the message
-		-- 	--         local content = json_data.message.content
-		-- 	--         -- Call the handler with the content
-		-- 	--         handler_opts.on_chunk(content)
-		-- 	--     end
-		-- 	-- end,
-		-- },
 	},
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
 	build = "make",
