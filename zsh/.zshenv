@@ -68,7 +68,10 @@ export DOCKER_CONTENT_TRUST=0
 # -------- AI Settings --------
 # ----------------------------------
 
-export OPENROUTER_API_KEY='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'
+export OPENROUTER_API_KEY=$(cat /xps-other/Personal/Keys/api/openrouter_lenovo_api)
+export GEMINI_API_KEY=$(cat /xps-other/Personal/Keys/api/gemini_key)
+export GOOGLE_AI_API_KEY=$(cat /xps-other/Personal/Keys/api/gemini_key)
+export OPENML_API_KEY=$(cat /xps-other/Personal/Keys/api/openml_key)
 
 # ----------------------------------
 # -------- Export variables --------
@@ -76,6 +79,9 @@ export OPENROUTER_API_KEY='sk-or-v1-7ede231a78f393f9e12fa71aad474abc0b27dc397ab5
 
 # flatpak apps
 [ -d "/var/lib/flatpak/exports/bin/" ] && export PATH=$PATH:'/var/lib/flatpak/exports/bin/'
+
+# cli apps
+export PATH=$PATH:'/home/hristo/Apps/'
 
 # bookmarks
 [ -d "$HOME/.bookmarks" ] && export CDPATH=.:~/.bookmarks
