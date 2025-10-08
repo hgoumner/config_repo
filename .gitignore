@@ -20,3 +20,6 @@ zsh/.config/zsh/.zsh_history
 
 # Extensions
 *.tar.gz
+
+# keys
+llm/.config/io.datasette.llm/keys.json

@@ -121,3 +121,7 @@ function check_new_files() {
 function debase() {
     echo $1 | base64 --decode
 }
+
+function mega_dl() {
+    cd /xps-other/ && /bin/mega-get "$1"
+}
