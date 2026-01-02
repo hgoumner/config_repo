@@ -92,8 +92,9 @@
     "thumb_border": "left_open",
     "current_line_highlight": null
   },
-  "preferred_line_length": 80,
+  "preferred_line_length": 120,
   "soft_wrap": "bounded",
+  "show_whitespaces": "boundary",
   "autosave": {
     "after_delay": {
       "milliseconds": 1000
