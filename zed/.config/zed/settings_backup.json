@@ -7,78 +7,138 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-    "context_servers": {
-        "mcp-server-context7": {
-            "source": "extension",
-            "settings": {
-                "default_minimum_tokens": "10000"
-            }
-        }
-    },
-    "language_models": {
-        "openai": {
-            "api_url": "https://openrouter.ai/api/v1",
-            "available_models": [
-                {
-                    "name": "google/gemma-3-27b-it:free",
-                    "display_name": "Google: Gemma 3 27B (free)",
-                    "max_tokens": 96000
-                },
-                {
-                    "name": "deepseek/deepseek-chat-v3-0324:free",
-                    "display_name": "DeepSeek: DeepSeek V3 0324 (free)",
-                    "max_tokens": 128000
-                }
-            ],
-            "version": "1"
-        }
-    },
-    "agent": {
-        "inline_assistant_model": {
-            "provider": "openrouter",
-            "model": "deepseek/deepseek-chat-v3-0324:free"
+  "language_models": {
+    "openai": {
+      "api_url": "https://openrouter.ai/api/v1",
+      "available_models": [
+        {
+          "name": "deepseek/deepseek-chat-v3-0324:free",
+          "display_name": "DeepSeek: DeepSeek V3 0324 (free)",
+          "max_tokens": 128000
         },
-        "default_model": {
-            "provider": "openrouter",
-            "model": "deepseek/deepseek-chat-v3-0324:free"
-        },
-        "version": "2"
-    },
-    "vim_mode": true,
-    "ui_font_size": 22,
-    "buffer_font_size": 22,
-    "theme": {
-        "mode": "system",
-        "light": "One Light",
-        "dark": "Gruvbox Dark Hard"
-    },
-    "autosave": {
-        "after_delay": {
-            "milliseconds": 1000
+        {
+          "name": "qwen/qwen3-coder:free",
+          "display_name": "Qwen: Qwen V3 Coder (free)",
+          "max_tokens": 128000
         }
+      ]
     },
-    "restore_on_startup": "last_workspace",
-    "diagnostics": {
-        "include_warnings": true,
-        "inline": {
-            "enabled": true
-        },
-        "update_with_cursor": false,
-        "primary_only": false,
-        "use_rendered": false
-    },
-    "formatter": {
-        "language_server": {
-            "name": "biome"
+    "google": {
+      "available_models": [
+        {
+          "name": "gemini-2.5-pro",
+          "display_name": "Gemini 2.5 Pro (gemini)",
+          "max_tokens": 1000000,
+          "mode": {
+            "type": "thinking",
+            "budget_tokens": 24000
+          }
         }
-    },
-    "code_actions_on_format": {
-        "source.fixAll.biome": true,
-        "source.organizeImports.biome": true
-    },
-    "jupyter": {
-        "kernel_selections": {
-          "python": "conda-env"
-        }
+      ]
     }
+  },
+  "agent": {
+    "always_allow_tool_actions": true,
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
+    },
+    "inline_assistant_model": {
+      "provider": "google",
+      "model": "gemini-2.5-pro"
+    },
+    "commit_message_model": {
+      "provider": "google",
+      "model": "gemini-2.5-pro"
+    },
+    "thread_summary_model": {
+      "provider": "google",
+      "model": "gemini-2.5-pro"
+    }
+  },
+  "context_servers": {
+    "mcp-server-context7": {
+      "source": "extension",
+      "enabled": true,
+      "settings": {
+        "default_minimum_tokens": "10000"
+      }
+    },
+    "mcp-server-github": {
+      "source": "extension",
+      "enabled": false,
+      "settings": {
+        "github_personal_access_token": "$GITHUB_PAT"
+      }
+    }
+  },
+  "vim_mode": true,
+  "ui_font_size": 22,
+  "buffer_font_size": 22,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Gruvbox Dark Hard"
+  },
+  "indent_guides": {
+    "line_width": 1,
+    "active_line_width": 5,
+    "coloring": "indent_aware"
+    // "background_coloring": "indent_aware"
+  },
+  "minimap": {
+    "show": "auto",
+    "thumb": "always",
+    "thumb_border": "left_open",
+    "current_line_highlight": null
+  },
+  "preferred_line_length": 120,
+  "soft_wrap": "bounded",
+  "show_whitespaces": "boundary",
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+  "restore_on_startup": "last_workspace",
+  "diagnostics": {
+    "include_warnings": true,
+    "inline": {
+      "enabled": true
+    }
+  },
+  "scrollbar": {
+    "diagnostics": "all"
+  },
+  "tabs": {
+    "show_diagnostics": "errors"
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["ruff"],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "code_actions": {
+            // Fix all auto-fixable lint violations
+            "source.fixAll.ruff": true,
+            // Organize imports
+            "source.organizeImports.ruff": true
+          }
+        }
+      ]
+    },
+    "TypeScript": {
+      "language_servers": ["biome"],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "code_actions": {
+            "source.fixAll.biome": true,
+            "source.organizeImports.biome": true
+          }
+        }
+      ]
+    }
+  }
 }
