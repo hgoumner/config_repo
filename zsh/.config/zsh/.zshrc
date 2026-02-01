@@ -72,10 +72,9 @@ zinit light-mode for \
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light hlissner/zsh-autopair
-zinit light Aloxaf/fzf-tab
-zinit light wfxr/forgit
 zinit light atuinsh/atuin
-zinit light ocodo/ollama_zsh_completion
+zinit light Aloxaf/fzf-tab
+# zinit light wfxr/forgit
 
 zinit ice wait"0" atinit"unalias zi zini zpl zplg"
 zinit snippet /dev/null
