@@ -7,7 +7,6 @@ return {
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 	},
 	config = function()
-		local lspconfig = require("lspconfig")
 		-- local cmp_nvim_lsp = require('cmp_nvim_lsp')
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
 		local keymap = vim.keymap
@@ -19,8 +18,6 @@ return {
 				vim.lsp.buf.format({ async = false })
 			end,
 		})
-
-		vim.lsp.set_log_level("debug")
 
 		vim.diagnostic.config({
 			float = {
@@ -80,11 +77,11 @@ return {
 			vim.diagnostic.config({ signs = { hl, { text = icon, texthl = hl, numhl = "" } } })
 		end
 
-		lspconfig["docker_compose_language_service"].setup({
+		vim.lsp.config("docker_compose_language_service", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
-		lspconfig["dockerls"].setup({
+		vim.lsp.config("dockerls", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
@@ -92,7 +89,7 @@ return {
 		-- Configure `ruff-lsp`.
 		-- See: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ruff_lsp
 		-- -- For the default config, along with instructions on how to customize the settings
-		lspconfig["ruff"].setup({
+		vim.lsp.config("ruff", {
 			trace = "messages",
 			init_options = {
 				settings = {
@@ -110,7 +107,7 @@ return {
 			},
 		})
 
-		lspconfig["pyright"].setup({
+		vim.lsp.config("pyright", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			filetypes = { "python" },
@@ -128,7 +125,7 @@ return {
 			},
 		})
 
-		lspconfig["lua_ls"].setup({
+		vim.lsp.config("lua_ls", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			settings = { -- custom settings for lua
