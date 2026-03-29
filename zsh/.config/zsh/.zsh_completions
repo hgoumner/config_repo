@@ -18,10 +18,6 @@ if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_docker-compose ]; then
     fi
     curl -L https://raw.githubusercontent.com/docker/compose/1.26.0/contrib/completion/zsh/_docker-compose -o $ZDOTDIR/plugins/zsh-completions/src/_docker-compose
 fi
-# conda
-# if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_conda ]; then
-#     curl -L https://raw.githubusercontent.com/esc/conda-zsh-completion/master/_conda -o $ZDOTDIR/plugins/zsh-completions/src/_conda
-# fi
 
 # tldr
 if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_tldr ]; then
@@ -29,6 +25,14 @@ if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_tldr ]; then
         mkdir -p $ZDOTDIR/plugins/zsh-completions/src
     fi
     curl -L https://raw.githubusercontent.com/tldr-pages/tldr-node-client/master/bin/completion/zsh/_tldr -o $ZDOTDIR/plugins/zsh-completions/src/_tldr
+fi
+
+# dbt
+if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_dbt ]; then
+    if [ ! -d $ZDOTDIR/plugins/zsh-completions/src ]; then
+        mkdir -p $ZDOTDIR/plugins/zsh-completions/src
+    fi
+    curl -L https://raw.githubusercontent.com/dbt-labs/dbt-completion.bash/refs/heads/master/_dbt -o $ZDOTDIR/plugins/zsh-completions/src/_dbt
 fi
 
 # zellij
@@ -39,6 +43,14 @@ if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_zellij ]; then
     zellij setup --generate-completion zsh > $ZDOTDIR/plugins/zsh-completions/src/_zellij
 fi
 
+# qsv
+if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_qsv ]; then
+    if [ ! -d $ZDOTDIR/plugins/zsh-completions/src ]; then
+        mkdir -p $ZDOTDIR/plugins/zsh-completions/src
+    fi
+    curl -L https://raw.githubusercontent.com/dathere/qsv/refs/heads/master/contrib/completions/examples/qsv.zsh -o $ZDOTDIR/plugins/zsh-completions/src/_qsv
+fi
+
 # completions
 autoload -U +X bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
@@ -46,6 +58,12 @@ zmodload zsh/complist
 
 # zoxide
 eval "$(zoxide init --cmd z zsh)"
+
+# gonzo
+source <(gonzo completion zsh)
+
+# airflow
+eval "$(register-python-argcomplete airflow)"
 
 # style settings
 zstyle ':completion:*' menu no

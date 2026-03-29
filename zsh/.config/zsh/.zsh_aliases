@@ -33,7 +33,7 @@ alias fgrep='fgrep --color=auto'
 alias rg='rg --hyperlink-format=kitty --hidden --follow --glob "!.git"'
 
 # find
-alias fd='fd --hidden --follow --exclude ".git"'
+alias fd='fd --hidden --no-ignore-vcs --follow --exclude ".git" --exclude ".venv"'
 
 # fzf
 alias fzfp='fzf --preview "bat --style=numbers --color=always {}"'
