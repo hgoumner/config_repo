@@ -86,26 +86,18 @@ return {
 			on_attach = on_attach,
 		})
 
-		-- Configure `ruff-lsp`.
-		-- See: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ruff_lsp
-		-- -- For the default config, along with instructions on how to customize the settings
-		vim.lsp.config("ruff", {
-			trace = "messages",
-			init_options = {
-				settings = {
-					-- configuration = "~/.config/ruff/ruff.toml",
-					-- configurationPreference = "filesystemFirst",
-					showSyntaxErrors = true,
-					logLevel = "debug",
-					logFile = "/tmp/ruff.log",
-					lint = {
-						extendIgnore = { "F401" },
-					},
-					-- Any extra CLI arguments for `ruff` go here.
-					args = {},
-				},
-			},
+		vim.lsp.config("ty", {
+			capabilities = capabilities,
+			on_attach = on_attach,
+			-- settings = {
+			--     ty = {
+			--         -- ty language server settings go here
+			--     }
+			-- }
 		})
+
+		-- Required: Enable the language server
+		vim.lsp.enable("ty")
 
 		vim.lsp.config("pyright", {
 			capabilities = capabilities,

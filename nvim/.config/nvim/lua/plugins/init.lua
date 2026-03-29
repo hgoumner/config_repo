@@ -169,4 +169,41 @@ return {
 	},
 
 	{ "echasnovski/mini.nvim", version = "*" },
+
+	{
+		"fei6409/log-highlight.nvim",
+		ft = { "log" },
+		config = function()
+			require("log-highlight").setup({
+				-- The following options support either a string or a table of strings.
+
+				-- The file extensions.
+				extension = "log",
+
+				-- The file names or the full file paths.
+				filename = {
+					"messages",
+				},
+
+				-- The file path glob patterns, e.g. `.*%.lg`, `/var/log/.*`.
+				-- Note: `%.` is to match a literal dot (`.`) in a pattern in Lua, but most
+				-- of the time `.` and `%.` here make no observable difference.
+				pattern = {
+					"/var/log/.*",
+					"messages%..*",
+				},
+			})
+		end,
+	},
+
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.nvim" }, -- if you use the mini.nvim suite
+		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.icons' },        -- if you use standalone mini plugins
+		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+		---@module 'render-markdown'
+		---@type render.md.UserConfig
+		ft = { "markdown" },
+		opts = {},
+	},
 }
