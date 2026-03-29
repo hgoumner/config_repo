@@ -7,6 +7,11 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "edit_predictions": {
+    "provider": "zed",
+  },
+  "show_edit_predictions": false,
+  "icon_theme": "Catppuccin Frappé",
   "language_models": {
     "openai": {
       "api_url": "https://openrouter.ai/api/v1",
@@ -14,14 +19,14 @@
         {
           "name": "deepseek/deepseek-chat-v3-0324:free",
           "display_name": "DeepSeek: DeepSeek V3 0324 (free)",
-          "max_tokens": 128000
+          "max_tokens": 128000,
         },
         {
           "name": "qwen/qwen3-coder:free",
           "display_name": "Qwen: Qwen V3 Coder (free)",
-          "max_tokens": 128000
-        }
-      ]
+          "max_tokens": 128000,
+        },
+      ],
     },
     "google": {
       "available_models": [
@@ -31,44 +36,46 @@
           "max_tokens": 1000000,
           "mode": {
             "type": "thinking",
-            "budget_tokens": 24000
-          }
-        }
-      ]
-    }
+            "budget_tokens": 24000,
+          },
+        },
+      ],
+    },
   },
   "agent": {
-    "always_allow_tool_actions": true,
+    "tool_permissions": {
+      "default": "allow",
+    },
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "provider": "google",
+      "model": "gemini-3-flash-preview",
     },
     "inline_assistant_model": {
       "provider": "google",
-      "model": "gemini-2.5-pro"
+      "model": "gemini-2.5-pro",
     },
     "commit_message_model": {
       "provider": "google",
-      "model": "gemini-2.5-pro"
+      "model": "gemini-2.5-pro",
     },
     "thread_summary_model": {
       "provider": "google",
-      "model": "gemini-2.5-pro"
-    }
+      "model": "gemini-2.5-pro",
+    },
   },
   "context_servers": {
     "mcp-server-context7": {
       "enabled": true,
       "settings": {
-        "default_minimum_tokens": "10000"
-      }
+        "default_minimum_tokens": "10000",
+      },
     },
     "mcp-server-github": {
       "enabled": false,
       "settings": {
-        "github_personal_access_token": "$GITHUB_PAT"
-      }
-    }
+        "github_personal_access_token": "$GITHUB_PAT",
+      },
+    },
   },
   "vim_mode": true,
   "ui_font_size": 22,
@@ -76,61 +83,75 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Gruvbox Dark Hard"
+    "dark": "Gruvbox Dark Hard",
   },
   "indent_guides": {
     "line_width": 1,
     "active_line_width": 5,
-    "coloring": "indent_aware"
+    "coloring": "indent_aware",
     // "background_coloring": "indent_aware"
   },
   "minimap": {
     "show": "auto",
     "thumb": "always",
     "thumb_border": "left_open",
-    "current_line_highlight": null
+    "current_line_highlight": null,
   },
   "preferred_line_length": 120,
   "soft_wrap": "bounded",
-  "show_whitespaces": "boundary",
+  "show_whitespaces": "none",
   "autosave": {
     "after_delay": {
-      "milliseconds": 1000
-    }
+      "milliseconds": 1000,
+    },
   },
   "restore_on_startup": "last_workspace",
   "diagnostics": {
     "include_warnings": true,
     "inline": {
-      "enabled": true
-    }
+      "enabled": true,
+    },
   },
   "scrollbar": {
-    "diagnostics": "all"
+    "diagnostics": "all",
   },
   "tabs": {
-    "show_diagnostics": "errors"
+    "show_diagnostics": "errors",
   },
   "languages": {
     "Python": {
-      "language_servers": [
-        "ruff",
-        "ty",
-        "!basedpyright"
-      ],
+      "show_edit_predictions": true,
+      "code_actions_on_format": {
+        "source.organizeImports.ruff": true,
+        "source.fixAll.ruff": true,
+      },
+      "formatter": {
+        "language_server": {
+          "name": "ruff",
+        },
+      },
       "format_on_save": "on",
-      "formatter": [
-        { "code_action": "source.fixAll.ruff" },
-        { "code_action": "source.organizeImports.ruff" }
-      ]
+      "language_servers": ["basedpyright", "ruff", "!ty", "!pyright", "..."],
     },
     "TypeScript": {
+      "code_actions_on_format": {
+        "source.organizeImports.biome": true,
+        "source.fixAll.biome": true,
+      },
       "language_servers": ["biome"],
       "format_on_save": "on",
-      "formatter": [
-        { "code_action": "source.fixAll.biome" },
-        { "code_action": "source.organizeImports.biome" }
-      ]
-    }
-  }
+      "formatter": [],
+    },
+    "YAML": {
+      "format_on_save": "on",
+      "formatter": "language_server",
+    },
+    "SQL": {
+      "language_servers": ["sqruff"],
+      "format_on_save": "on",
+      "formatter": {
+        "language_server": { "name": "sqruff" },
+      },
+    },
+  },
 }
