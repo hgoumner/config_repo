@@ -17,6 +17,7 @@ sort_translit = false
 [preview]
 cache_dir = ""
 image_filter = "triangle"
+image_protocol = "kitty"
 image_quality = 75
 max_height = 1500
 max_width = 1200
@@ -121,25 +122,16 @@ prepend_previewers = [
     { url = "*.ipynb", run = "rich-preview" },              # for jupyter notebooks (.ipynb)
     { url = "*.csv", run = "duckdb" },
     { url = "*.tsv", run = "duckdb" },
+    { url = "*.duckdb", run = "duckdb" },
     { url = "*.parquet", run = "duckdb" },
-    # { mime = "application/openxmlformats-officedocument.*", run = "office" },
-    # { mime = "application/oasis.opendocument.*", run = "office" },
-    # { mime = "application/ms-*", run = "office" },
-    # { mime = "application/msword", run = "office" },
-    # { name = "*.docx", run = "office" },
 ]
 prepend_preloaders = [
     { url = "*.csv", run = "duckdb", multi = false },
     { url = "*.tsv", run = "duckdb", multi = false },
     { url = "*.json", run = "duckdb", multi = false },
     { url = "*.parquet", run = "duckdb", multi = false },
-    { url = "*.db", run = "duckdb" },
-    { url = "*.duckdb", run = "duckdb" },
-    # { mime = "application/openxmlformats-officedocument.*", run = "office" },
-    # { mime = "application/oasis.opendocument.*", run = "office" },
-    # { mime = "application/ms-*", run = "office" },
-    # { mime = "application/msword", run = "office" },
-    # { name = "*.docx", run = "office" },
+    { url = "*.db", run = "duckdb", multi = false },
+    { url = "*.duckdb", run = "duckdb", multi = false },
 ]
 append_previewers = [{ name = "*", run = "hexyl" }]
 fetchers = [
