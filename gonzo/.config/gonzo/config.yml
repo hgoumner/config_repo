@@ -10,7 +10,7 @@ update-interval: 500ms
 log-buffer: 2000
 memory-size: 15000
 # UI customization
-skin: dracula # Choose from: default, dracula, nord, monokai, github-light, etc.
+skin: gruvbox # Choose from: default, dracula, nord, monokai, github-light, etc.
 # Additional stop words to filter from analysis
 stop-words:
   - "log"
