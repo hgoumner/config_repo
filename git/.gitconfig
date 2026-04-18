@@ -1,7 +1,7 @@
 [user]
     email = hgoumnerov@tuta.io
     name = Hristo Goumnerov
-	signingkey = 3A0C4DF120452972
+	signingkey = 3A3D6C7748FF2568
 
 [alias]
     bl = blame -w --
@@ -22,6 +22,7 @@
 
 [core]
     pager = delta
+    sshCommand = "ssh -i ~/.ssh/Lenovo"
 
 [delta]
     dark = true
