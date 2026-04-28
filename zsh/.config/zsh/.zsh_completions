@@ -27,28 +27,12 @@ if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_tldr ]; then
     curl -L https://raw.githubusercontent.com/tldr-pages/tldr-node-client/master/bin/completion/zsh/_tldr -o $ZDOTDIR/plugins/zsh-completions/src/_tldr
 fi
 
-# dbt
-if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_dbt ]; then
-    if [ ! -d $ZDOTDIR/plugins/zsh-completions/src ]; then
-        mkdir -p $ZDOTDIR/plugins/zsh-completions/src
-    fi
-    curl -L https://raw.githubusercontent.com/dbt-labs/dbt-completion.bash/refs/heads/master/_dbt -o $ZDOTDIR/plugins/zsh-completions/src/_dbt
-fi
-
 # zellij
 if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_zellij ]; then
     if [ ! -d $ZDOTDIR/plugins/zsh-completions/src ]; then
         mkdir -p $ZDOTDIR/plugins/zsh-completions/src
     fi
     zellij setup --generate-completion zsh > $ZDOTDIR/plugins/zsh-completions/src/_zellij
-fi
-
-# qsv
-if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_qsv ]; then
-    if [ ! -d $ZDOTDIR/plugins/zsh-completions/src ]; then
-        mkdir -p $ZDOTDIR/plugins/zsh-completions/src
-    fi
-    curl -L https://raw.githubusercontent.com/dathere/qsv/refs/heads/master/contrib/completions/examples/qsv.zsh -o $ZDOTDIR/plugins/zsh-completions/src/_qsv
 fi
 
 # completions
@@ -61,9 +45,6 @@ eval "$(zoxide init --cmd z zsh)"
 
 # gonzo
 source <(gonzo completion zsh)
-
-# airflow
-eval "$(register-python-argcomplete airflow)"
 
 # style settings
 zstyle ':completion:*' menu no

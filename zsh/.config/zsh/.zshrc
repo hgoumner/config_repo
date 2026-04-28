@@ -17,20 +17,10 @@ SAVEHIST=10000                   # Maximum events in history file
 # FZF & Skim
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/fzf-git.sh/fzf-git.sh ] && source ~/fzf-git.sh/fzf-git.sh
-# source <(sk --shell zsh)
-
-# Broot
-[ -f ~/.config/broot/launcher/bash/br ] && source ~/.config/broot/launcher/bash/br
 
 # atuin
 [ -f "$HOME/.atuin/bin/env" ] && source "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh)"
-
-# mise
-# eval "$(mise activate zsh)"
-
-# direnv
-eval "$(direnv hook zsh)"
 
 # uv
 source "$HOME/.config/local/share/../bin/env"
@@ -76,8 +66,8 @@ zinit light atuinsh/atuin
 zinit light Aloxaf/fzf-tab
 # zinit light wfxr/forgit
 
-zinit ice wait"0" atinit"unalias zi zini zpl zplg"
-zinit snippet /dev/null
+# zinit ice wait"0" atinit"unalias zi zini zpl zplg"
+# zinit snippet /dev/null
 
 ### End of Zinit's installer chunk
 
