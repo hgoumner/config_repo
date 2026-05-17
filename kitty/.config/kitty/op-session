@@ -1,0 +1,6 @@
+launch --title "main"
+
+new_tab monitor
+launch /home/hristo/.cargo/bin/btm
+
+focus_tab 0
