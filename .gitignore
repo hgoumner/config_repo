@@ -24,3 +24,6 @@ zsh/.config/zsh/.zsh_history
 # keys
 llm/.config/io.datasette.llm/keys.json
 lla/.config/lla/jump.json
+
+# Yazi
+/yazi/.config/yazi/bookmark
