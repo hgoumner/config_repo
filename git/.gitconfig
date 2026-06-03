@@ -22,7 +22,6 @@
 
 [core]
     pager = delta
-    sshCommand = "ssh -i ~/.ssh/Lenovo"
 
 [delta]
     dark = true
