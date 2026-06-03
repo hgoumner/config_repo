@@ -6,6 +6,7 @@ cheat/.config/cheat/cheatsheets/community
 i3/.i3blocks/blocklets/i3blocks-contrib
 nvim/.config/nvim/plugin
 nvim/.config/nvim/plugin/packer_compiled.lua
+/television/.config/television/cable
 vim/.vim/vim-plugged
 zsh/.config/zsh/plugins
 yazi/.config/yazi/plugins
