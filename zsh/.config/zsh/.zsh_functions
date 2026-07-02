@@ -125,3 +125,41 @@ function debase() {
 function mega_dl() {
     cd /xps-other/ && /bin/mega-get "$1"
 }
+
+function upapps() {
+    echo "What would you like to update?"
+    echo "  1) dnf"
+    echo "  2) zinit"
+    echo "  3) cargo"
+    echo "  4) all"
+    echo ""
+    read -r "choice?Enter choice [1-4]: " 2>/dev/null || read -r choice
+
+    case "$choice" in
+        1)
+            echo "\n→ Updating dnf..."
+            sudo dnf update
+            ;;
+        2)
+            echo "\n→ Updating zinit..."
+            zinit update
+            ;;
+        3)
+            echo "\n→ Updating cargo packages..."
+            cargo install-update --all
+            ;;
+        4)
+            echo "\n→ Updating dnf..."
+            sudo dnf update
+            echo "\n→ Updating zinit..."
+            zinit update
+            echo "\n→ Updating cargo packages..."
+            cargo install-update --all
+            ;;
+        *)
+            echo "Invalid choice: '$choice'. Please enter 1, 2, 3, or 4."
+            return 1
+            ;;
+    esac
+
+}
