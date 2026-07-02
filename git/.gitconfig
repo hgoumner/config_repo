@@ -1,7 +1,7 @@
 [user]
     email = hgoumnerov@tuta.io
     name = Hristo Goumnerov
-	signingkey = 3A3D6C7748FF2568
+    signingkey = 3A3D6C7748FF2568
 
 [alias]
     bl = blame -w --
