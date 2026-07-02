@@ -32,11 +32,6 @@ export VISUAL="$EDITOR"
 # PYTHON
 # -----------------------------------------------------------------
 
-# pyenv
-[ -d "$HOME/.pyenv" ] && export PYENV_ROOT="$HOME/.pyenv"
-[ -d $PYENV_ROOT/bin ] && export PATH="$PYENV_ROOT/bin:$PATH"
-[ -d "$HOME/.pyenv" ] && eval "$(pyenv init -)"
-
 # -----------------------------------------------------------------
 # FZF
 # -----------------------------------------------------------------
