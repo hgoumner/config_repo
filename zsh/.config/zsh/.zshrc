@@ -22,12 +22,6 @@ SAVEHIST=10000                   # Maximum events in history file
 [ -f "$HOME/.atuin/bin/env" ] && source "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh)"
 
-# uv
-source "$HOME/.local/share/../bin/env"
-
-# tv
-# eval "$(tv init zsh)"
-
 # Normal files to source
 zsh_add_file ".zsh_completions"
 
@@ -64,10 +58,6 @@ zinit light zsh-users/zsh-completions
 zinit light hlissner/zsh-autopair
 zinit light atuinsh/atuin
 zinit light Aloxaf/fzf-tab
-# zinit light wfxr/forgit
-
-# zinit ice wait"0" atinit"unalias zi zini zpl zplg"
-# zinit snippet /dev/null
 
 ### End of Zinit's installer chunk
 
