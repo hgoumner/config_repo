@@ -44,7 +44,7 @@ zmodload zsh/complist
 eval "$(zoxide init --cmd z zsh)"
 
 # gonzo
-source <(gonzo completion zsh)
+source <(gonzo completion zsh 2>/dev/null)
 
 # style settings
 zstyle ':completion:*' menu no
