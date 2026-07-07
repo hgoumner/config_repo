@@ -138,7 +138,6 @@ prepend_fetchers = [
     { group = "git", url = "*", run = "git" },
     { group = "git", url = "*/", run = "git" },
 ]
-append_previewers = [{ url = "*", run = "hexyl" }]
 fetchers = [
     # Mimetype
     { group = "mime", url = "*/", run = "mime.dir", prio = "high" },
