@@ -63,12 +63,6 @@ export DOCKER_CONTENT_TRUST=0
 # -------- AI Settings --------
 # ----------------------------------
 
-export OPENROUTER_API_KEY=$(cat /xps-other/Personal/Keys/api/openrouter_lenovo_api)
-export GEMINI_API_KEY=$(cat /xps-other/Personal/Keys/api/gemini_key)
-export GOOGLE_AI_API_KEY=$(cat /xps-other/Personal/Keys/api/gemini_key)
-export OPENML_API_KEY=$(cat /xps-other/Personal/Keys/api/openml_key)
-export GITHUB_PAT=$(cat /xps-other/Personal/Keys/api/github_anythingllm_pat)
-
 # ----------------------------------
 # -------- Export variables --------
 # ----------------------------------
