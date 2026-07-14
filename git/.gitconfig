@@ -1,76 +1,71 @@
 [user]
-    email = hgoumnerov@tuta.io
-    name = Hristo Goumnerov
-    signingkey = 3A3D6C7748FF2568
+  email = hristo.goumnerov@kbc.com
+  name = JF82788
 
 [alias]
-    bl = blame -w --
-    br = branch
-    cm = commit
-    lg = log --graph --oneline --abbrev-commit --decorate --pretty=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
-    lga = lg-specific --all
-    lg-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aI%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
-    log = log --follow
-    logd = "-c diff.external=difft log -p --ext-diff"
-    rh = reset --hard
-    st = status
+  bl = blame -w --
+  br = branch
+  cm = commit
+  lg = log --graph --oneline --abbrev-commit --decorate --pretty=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
+  lga = lg-specific --all
+  lg-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aI%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+  log = log --follow
+  logd = "-c diff.external=difft log -p --ext-diff"
+  rh = reset --hard
+  st = status
 
 [branch]
-    sort = -committerdate
-
-[commit]
-	gpgsign = true
+  sort = -committerdate
 
 [core]
-    pager = delta
+  pager = delta
 
 [delta]
-    dark = true
-    navigate = true
-    side-by-side = false
-    line-numbers = true
+  dark = true
+  navigate = true
+  side-by-side = false
+  line-numbers = true
 
 [diff]
-    colorMoved = default
-    tool = difft
-    external = difft
+  colorMoved = default
+  tool = difft
+  external = difft
 
 [difftool]
-    prompt = false
+  prompt = false
 
 [difftool "difftastic"]
-    cmd = difft "$LOCAL" "$REMOTE"
+  cmd = difft "$LOCAL" "$REMOTE"
 
 [commit]
-    verbose = true
+  verbose = true
 
 [fetch]
-    prune = true
-    pruneTags = true
-    all = true
+  prune = true
+  pruneTags = true
+  all = true
 
 [interactive]
-    diffFilter = delta --color-only
+  diffFilter = delta --color-only
 
 [merge]
-	conflictStyle = zdiff3
+  conflictStyle = zdiff3
 
 [pull]
-    rebase = true
+  rebase = true
 
 [push]
-    default = simple
-    autoSetupRemote = true
-    followTags = true
+  default = simple
+  autoSetupRemote = true
+  followTags = true
 
 [pager]
-    difftool = true
+  difftool = true
 
 [rebase]
-    autoSquash = true
-    autoStash = true
-    updateRefs = true
+  autoSquash = true
+  autoStash = true
+  updateRefs = true
 
 [tag]
-	gpgSign = true
-    sort = version:refname
+  sort = version:refname
