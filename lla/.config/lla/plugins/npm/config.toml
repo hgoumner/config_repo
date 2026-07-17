@@ -1,0 +1,11 @@
+favorites = []
+registry = "https://registry.npmjs.org"
+package_manager = "npm"
+
+[colors]
+success = "bright_green"
+info = "bright_cyan"
+warning = "bright_yellow"
+version = "bright_magenta"
+error = "bright_red"
+package = "bright_blue"

@@ -1,0 +1,7 @@
+[colors]
+success = "bright_green"
+warning = "bright_yellow"
+pid = "bright_magenta"
+process_name = "bright_cyan"
+info = "bright_blue"
+error = "bright_red"
