@@ -9,6 +9,7 @@
 # : Flavor {{{
 
 [flavor]
-dark = "monokai"
+dark  = "monokai"
+# light = ""
 
 # : }}}
