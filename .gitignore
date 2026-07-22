@@ -1,13 +1,14 @@
 lazygit/.config/lazygit/state.yml
 nvim/.config/nvim/lazy-lock.json
 
-# Plugin directories
+# Plugin directories and files
 nvim/.config/nvim/plugin
 nvim/.config/nvim/plugin/packer_compiled.lua
 /television/.config/television/cable
 zsh/.config/zsh/plugins
 yazi/.config/yazi/plugins
 yazi/.config/yazi/package.toml
+/lazynvim/.config/nvim/lazy-lock.json
 
 # ZSH
 zsh/.config/cache
