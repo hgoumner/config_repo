@@ -69,3 +69,6 @@
 
 [tag]
   sort = version:refname
+
+[credential]
+	helper = store
