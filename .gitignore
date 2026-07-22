@@ -29,3 +29,4 @@ lla/.config/lla/jump.json
 # Yazi
 /yazi/.config/yazi/bookmark
 /lla/.config/lla/themes
+/yazi/.config/yazi/flavors/*
