@@ -7,3 +7,6 @@ vim.g.lazyvim_python_lsp = "basedpyright"
 
 -- Use the native ruff server (not the deprecated ruff_lsp)
 vim.g.lazyvim_python_ruff = "ruff"
+
+vim.g.clipboard = "osc52"
+vim.opt.clipboard = "unnamedplus"
