@@ -6,7 +6,15 @@
 on = [ "g", "l" ]
 run = '''
 shell --block '
-git lg -- "$0" | less
+git -c color.ui=always lg -- "$0" | less -R
+'
+'''
+
+[[mgr.prepend_keymap]]
+on = [ "g", "L" ]
+run = '''
+shell --block '
+git -c color.ui=always logd -- "$0"
 '
 '''
 
