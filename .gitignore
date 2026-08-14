@@ -2,6 +2,8 @@ lazygit/.config/lazygit/state.yml
 nvim/.config/nvim/lazy-lock.json
 
 # Plugin directories and files
+/lla/.config/lla/themes
+/lla/.config/lla/plugins
 nvim/.config/nvim/plugin
 nvim/.config/nvim/plugin/packer_compiled.lua
 /television/.config/television/cable
@@ -25,6 +27,4 @@ lla/.config/lla/jump.json
 
 # Yazi
 /yazi/.config/yazi/bookmark
-/lla/.config/lla/themes
-/lla/.config/lla/plugins
 /yazi/.config/yazi/flavors/*
