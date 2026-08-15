@@ -1,0 +1,95 @@
+
+XXX --- *** ### |||
+set python version
+XXX --- *** ### |||
+
+# ==============================================================================
+# 1. RUFF: Formatting, Quick Linting, and Clean Imports
+# ==============================================================================
+
+[tool.ruff]
+line-length = 120            # Clean Code: Keeps lines scannable on small screens
+target-version = "py311"
+include = ["src/main/python/**/*.py", "src/main/python/**/*.pyi"]
+exclude = ["*test*"]
+
+[tool.ruff.lint]
+# E/W = PEP8 style, F = Pyflakes bug finder, I = Import sorting, PL = Pylint rules
+select = [
+  "B",  # flake8-bugbear
+  "D",
+  "E",  # pycodestyle
+  "F",  # Pyflakes
+  "I",  # isort
+  "PL",
+  "SIM",  # flake8-simplify
+  "UP",  # pyupgrade
+  "W"
+]
+ignore = [
+  "PLR0913", # Handled with custom limits below
+  "E203",
+  "D104",
+  "D200",
+  "D203",
+  "D212",
+]
+
+[tool.ruff.lint.pylint]
+max-args = 3                # Clean Code: Ideally 0-2 arguments
+max-returns = 2             # Keeps methods structured and predictable
+max-statements = 25         # Clean Code: Functions should be small (~20 lines)
+max-branches = 6            # Flags high cyclomatic complexity (nested loops/ifs)
+
+[tool.ruff.lint.per-file-ignores]
+"**/{dags,docs,tests}/*" = ["B018"]
+
+# ==============================================================================
+# 2. PYLINT: Deep Semantic Analysis & Class/Architectural Design Smells
+# ==============================================================================
+
+[tool.pylint.MAIN]
+py-version = "3.11"
+fail-under = 0.0  	    # Displays all code smells, but always exits with success (0)
+
+[tool.pylint.DESIGN]
+max-locals = 5              # Prevents cluttered functions with too much state
+max-attributes = 5          # Keeps classes focused on a single responsibility
+max-public-methods = 10     # Flags oversized, bloated classes
+max-parents = 3             # Clean Code: Prefers composition to deep inheritance
+
+[tool.pylint."MESSAGES CONTROL"]
+# Disable rules that Ruff already checks instantly to keep Pylint fast
+disable = [
+  "line-too-long",
+  "missing-function-docstring",
+  "missing-module-docstring",
+  "unused-import",
+  "import-error"
+]
+
+# ==============================================================================
+# 3. Basedpyright
+# ==============================================================================
+
+[tool.basedpyright]
+pythonVersion = "3.11"
+typeCheckingMode = "strict"
+
+exclude = [
+  ".mypy_cache",
+  "**/__pycache__",
+  "tests",
+  "dist",
+  "**/*.yaml",
+]
+
+reportMissingImports = false
+reportMissingModuleSource = true
+reportUnknownArgumentType = false
+reportUnknownMemberType = false
+reportUnknownParameterType = false
+reportUnknownVariableType = false
+reportUnnecessaryTypeIgnoreComment = true
+reportUntypedBaseClass = false
+strictParameterNoneValue = true
