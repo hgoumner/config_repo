@@ -29,13 +29,13 @@
 [diff]
   colorMoved = default
   tool = difft
-  external = difft
+  external = difft --display inline 
 
 [difftool]
   prompt = false
 
 [difftool "difftastic"]
-  cmd = difft "$LOCAL" "$REMOTE"
+  cmd = difft --display inline "$LOCAL" "$REMOTE"
 
 [commit]
   verbose = true
