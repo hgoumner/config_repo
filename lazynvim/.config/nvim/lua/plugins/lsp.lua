@@ -4,20 +4,12 @@ return {
     opts = {
       servers = {
         basedpyright = {
-          settings = {
-            basedpyright = {
-              typeCheckingMode = "strict",
-              analysis = {
-                autoImportCompletions = true,
-                disableOrganizeImports = true,
-              },
-            },
-            python = {
-              pythonPath = vim.fn.getcwd() .. "/.venv/bin/python",
-            },
-          },
+          mason = false,
+          cmd = { vim.fn.exepath("basedpyright-langserver"), "--stdio" },
         },
         ruff = {
+          mason = false,
+          cmd = { vim.fn.exepath("ruff"), "server" },
           init_options = {
             settings = {
               fixAll = true,
@@ -26,6 +18,7 @@ return {
             },
           },
         },
+        eslint = { enabled = false },
       },
     },
   },
@@ -41,16 +34,6 @@ return {
         typescriptreact = { "biome" },
         json = { "biome" },
         jsonc = { "biome" },
-      },
-    },
-  },
-
-  -- Disable prettier/eslint for the filetypes biome covers
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        eslint = { enabled = false },
       },
     },
   },
