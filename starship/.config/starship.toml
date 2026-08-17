@@ -6,6 +6,7 @@ $directory\
 $git_branch\
 $git_status\
 $python\
+$conda\
 $docker_context\
 $fill\
 $hostname\
@@ -146,6 +147,11 @@ format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 symbol = ""
 style = "color_orange"
 format = '[[ $symbol( $version) ](fg:color_orange bg:color_bg1) $virtualenv]($style)'
+
+[conda]
+symbol = " "
+format = '[$symbol$environment](color_orange) '
+ignore_base = false
 
 [docker_context]
 symbol = ""
