@@ -8,3 +8,8 @@ map("n", "n", "nzz", { desc = "Center next match" })
 map("n", "N", "Nzz", { desc = "Center previous match" })
 map("n", "*", "*zz", { desc = "Center next match of current word" })
 map("n", "#", "#zz", { desc = "Center previous match of current word" })
+
+vim.keymap.set("n", "<leader>uv", function()
+  local config = vim.diagnostic.config
+  config({ virtual_text = not config().virtual_text })
+end, { desc = "Toggle diagnostics virtual_text" })
