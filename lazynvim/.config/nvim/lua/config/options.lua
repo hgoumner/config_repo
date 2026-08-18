@@ -10,3 +10,19 @@ vim.g.lazyvim_python_ruff = "ruff"
 
 vim.g.clipboard = "osc52"
 vim.opt.clipboard = "unnamedplus"
+
+vim.diagnostic.config({
+  virtual_text = {
+    -- Change format if you want to keep standard spacing
+    spacing = 4,
+    source = "if_many", -- Only shows the source name if multiple sources exist
+    -- Custom function to dynamic generate the prefix based on diagnostic data
+    prefix = function(diagnostic)
+      -- Check if a source (ruff, pylint, etc.) exists
+      if diagnostic.source then
+        return string.format("● [%s] ", diagnostic.source)
+      end
+      return "● "
+    end,
+  },
+})
