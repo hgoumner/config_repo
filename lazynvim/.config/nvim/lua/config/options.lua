@@ -11,6 +11,10 @@ vim.g.lazyvim_python_ruff = "ruff"
 vim.g.clipboard = "osc52"
 vim.opt.clipboard = "unnamedplus"
 
+-- disable auto-format on save
+vim.g.autoformat = false -- globally
+vim.b.autoformat = false -- buffer-local
+
 vim.diagnostic.config({
   virtual_text = {
     -- Change format if you want to keep standard spacing
