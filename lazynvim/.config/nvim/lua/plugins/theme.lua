@@ -1,10 +1,17 @@
 return {
-  { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
+  {
+    "folke/tokyonight.nvim",
+    lazy = true,
+    opts = {
+      style = "night",
+    },
+  },
 
+  -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "tokyonight",
     },
   },
 }
