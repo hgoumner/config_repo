@@ -18,10 +18,6 @@ SAVEHIST=10000                   # Maximum events in history file
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/fzf-git.sh/fzf-git.sh ] && source ~/fzf-git.sh/fzf-git.sh
 
-# atuin
-[ -f "$HOME/.atuin/bin/env" ] && source "$HOME/.atuin/bin/env"
-eval "$(atuin init zsh)"
-
 # Normal files to source
 zsh_add_file ".zsh_completions"
 
@@ -68,3 +64,20 @@ zinit light Aloxaf/fzf-tab
 eval "$(starship init zsh)"
 
 tput cup $LINES 0
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/dev/miniforge3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/dev/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/home/dev/miniforge3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/dev/miniforge3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+. "$HOME/.cargo/env"
