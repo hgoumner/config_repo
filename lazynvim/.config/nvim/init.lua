@@ -28,30 +28,30 @@ local airflow_log_group = vim.api.nvim_create_augroup("AirflowLogViewer", {
   clear = true,
 })
 
-vim.api.nvim_create_autocmd("BufReadPost", {
-  group = airflow_log_group,
-  pattern = "*.log",
-  callback = function(args)
-    -- Avoid processing special or temporary buffers.
-    if vim.bo[args.buf].buftype ~= "" then
-      return
-    end
-
-    -- Schedule creation of the viewer until Neovim has
-    -- completed opening the original log buffer.
-    vim.schedule(function()
-      if not vim.api.nvim_buf_is_valid(args.buf) then
-        return
-      end
-
-      -- Do not open another viewer if the user moved to
-      -- a different buffer before the callback executed.
-      if vim.api.nvim_get_current_buf() ~= args.buf then
-        return
-      end
-
-      require("airflow_log").open()
-    end)
-  end,
-  desc = "Automatically open .log files in the Airflow log viewer",
-})
+-- vim.api.nvim_create_autocmd("BufReadPost", {
+--   group = airflow_log_group,
+--   pattern = "*.log",
+--   callback = function(args)
+--     -- Avoid processing special or temporary buffers.
+--     if vim.bo[args.buf].buftype ~= "" then
+--       return
+--     end
+--
+--     -- Schedule creation of the viewer until Neovim has
+--     -- completed opening the original log buffer.
+--     vim.schedule(function()
+--       if not vim.api.nvim_buf_is_valid(args.buf) then
+--         return
+--       end
+--
+--       -- Do not open another viewer if the user moved to
+--       -- a different buffer before the callback executed.
+--       if vim.api.nvim_get_current_buf() ~= args.buf then
+--         return
+--       end
+--
+--       require("airflow_log").open()
+--     end)
+--   end,
+--   desc = "Automatically open .log files in the Airflow log viewer",
+-- })
