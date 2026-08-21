@@ -14,7 +14,7 @@ layout_uv() {
     export VIRTUAL_ENV
 }
 
-layout_anaconda() {
+layout_conda() {
   local env_name="$1"
   if [ -f "$(conda info --base)/etc/profile.d/conda.sh" ]; then
     source "$(conda info --base)/etc/profile.d/conda.sh"
