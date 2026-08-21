@@ -119,19 +119,6 @@ prepend_previewers = [
     { mime = "application/x-7z-compressed", run = "ouch" },
     { mime = "application/x-rar", run = "ouch" },
     { mime = "application/x-xz", run = "ouch" },
-    { url = "*.md", run = "rich-preview" },                 # for markdown (.md) files
-    { url = "*.ipynb", run = "rich-preview" },              # for jupyter notebooks (.ipynb)
-    { url = "*.csv", run = "rich-preview" },
-    { url = "*.tsv", run = "rich-preview" },
-]
-prepend_preloaders = [
-    { url = "*.csv", run = "rich-preview", multi = false },
-    { url = "*.tsv", run = "rich-preview", multi = false },
-    { url = "*.json", run = "rich-preview", multi = false },
-]
-prepend_fetchers = [
-    { group = "git", url = "*", run = "git" },
-    { group = "git", url = "*/", run = "git" },
 ]
 fetchers = [
     # Mimetype
