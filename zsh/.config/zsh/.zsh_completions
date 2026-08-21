@@ -3,48 +3,31 @@
 # Load completions
 fpath=($ZDOTDIR/plugins/zsh-completions/src $fpath)
 
-# docker
-if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_docker ]; then
-    if [ ! -d $ZDOTDIR/plugins/zsh-completions/src ]; then
-        mkdir -p $ZDOTDIR/plugins/zsh-completions/src
-    fi
-    curl -L https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker -o $ZDOTDIR/plugins/zsh-completions/src/_docker
-fi
-
-# docker-compose
-if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_docker-compose ]; then
-    if [ ! -d $ZDOTDIR/plugins/zsh-completions/src ]; then
-        mkdir -p $ZDOTDIR/plugins/zsh-completions/src
-    fi
-    curl -L https://raw.githubusercontent.com/docker/compose/1.26.0/contrib/completion/zsh/_docker-compose -o $ZDOTDIR/plugins/zsh-completions/src/_docker-compose
-fi
-
-# tldr
-if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_tldr ]; then
-    if [ ! -d $ZDOTDIR/plugins/zsh-completions/src ]; then
-        mkdir -p $ZDOTDIR/plugins/zsh-completions/src
-    fi
-    curl -L https://raw.githubusercontent.com/tldr-pages/tldr-node-client/master/bin/completion/zsh/_tldr -o $ZDOTDIR/plugins/zsh-completions/src/_tldr
-fi
-
-# zellij
-if [ ! -f $ZDOTDIR/plugins/zsh-completions/src/_zellij ]; then
-    if [ ! -d $ZDOTDIR/plugins/zsh-completions/src ]; then
-        mkdir -p $ZDOTDIR/plugins/zsh-completions/src
-    fi
-    zellij setup --generate-completion zsh > $ZDOTDIR/plugins/zsh-completions/src/_zellij
-fi
-
 # completions
 autoload -U +X bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 zmodload zsh/complist
 
+# atuin
+[ -f "$HOME/.atuin/bin/env" ] && source "$HOME/.atuin/bin/env"
+if command -v atuin >/dev/null 2>&1; then
+  eval "$(atuin init zsh)"
+fi
+
+# uv
+if command -v uv >/dev/null 2>&1; then
+  eval "$(uv generate-shell-completion zsh)"
+fi
+
 # zoxide
-eval "$(zoxide init --cmd z zsh)"
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init --cmd z zsh)"
+fi
 
 # gonzo
-source <(gonzo completion zsh 2>/dev/null)
+if command -v gonzo >/dev/null 2>&1; then
+  source <(gonzo completion zsh 2>/dev/null)
+fi
 
 # style settings
 zstyle ':completion:*' menu no
