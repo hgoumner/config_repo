@@ -19,6 +19,18 @@ return {
           },
         },
         eslint = { enabled = false },
+        taplo = {
+          settings = {
+            taplo = {
+              schema = {
+                associations = {
+                  ["pyproject.toml"] =
+                    "https://json.schemastore.org/pyproject.json",
+                },
+              }
+            }
+          }
+        }
       },
     },
   },
