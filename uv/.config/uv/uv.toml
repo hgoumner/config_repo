@@ -4,8 +4,12 @@ url = "https://anexus3.kbc.be:6087/nexus/repository/public-python-group/simple"
 default = true
 
 [[index]]
-name = "dbu"
-url = "https://anexus3.kbc.be:6087/nexus/repository/dbu-python/simple"
+name = "eab"
+url = "https://anexus3.kbc.be:6087/nexus/repository/eab-python/simple"
+
+[[index]]
+name = "cfh"
+url = "https://anexus3.kbc.be:6087/nexus/repository/cfh-python/simple"
 
 [[index]]
 name = "pypi"
