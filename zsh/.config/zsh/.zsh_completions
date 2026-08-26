@@ -29,6 +29,15 @@ if command -v gonzo >/dev/null 2>&1; then
   source <(gonzo completion zsh 2>/dev/null)
 fi
 
+if type fd > /dev/null; then
+  # source <(fd --gen-completions)
+  curl -fsSL https://raw.githubusercontent.com/sharkdp/fd/refs/heads/master/contrib/completion/_fd -o $ZDOTDIR/plugins/completions/_fd
+fi
+
+if type rg > /dev/null; then
+  source <(rg --generate complete-zsh)
+fi
+
 # style settings
 zstyle ':completion:*' menu no
 zstyle ':completion:*' file-list all
