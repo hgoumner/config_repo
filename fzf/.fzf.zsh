@@ -1,9 +1,9 @@
 # Key bindings
 # ------------
-export FZF_CTRL_T_COMMAND='fd --type f --hidden --no-ignore-vcs --follow --exclude BraveSoftware --exclude .git --exclude .venv'
+export FZF_CTRL_T_COMMAND='fd --type f --hidden --no-ignore-vcs --follow --exclude BraveSoftware --exclude .git'
 export FZF_CTRL_T_OPTS='--preview "bat --style=numbers --color=always --line-range :500 {}"'
 
-export FZF_ALT_C_COMMAND='fd --type d --hidden --no-ignore-vcs --follow --exclude BraveSoftware --exclude .git --exclude .venv'
+export FZF_ALT_C_COMMAND='fd --type d --hidden --no-ignore-vcs --follow --exclude BraveSoftware --exclude .git'
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
 export FZF_DEFAULT_OPTS='
