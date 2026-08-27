@@ -30,8 +30,7 @@ if command -v gonzo >/dev/null 2>&1; then
 fi
 
 if type fd > /dev/null; then
-  # source <(fd --gen-completions)
-  curl -fsSL https://raw.githubusercontent.com/sharkdp/fd/refs/heads/master/contrib/completion/_fd -o $ZDOTDIR/plugins/completions/_fd
+  source <(command fd --gen-completions zsh)
 fi
 
 if type rg > /dev/null; then
