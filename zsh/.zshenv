@@ -48,3 +48,5 @@ export PATH="$HOME/.local/bin":$PATH
 export MANWIDTH=999
 
 export ATUIN_NOBIND="true"
+
+export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/.ripgreprc"

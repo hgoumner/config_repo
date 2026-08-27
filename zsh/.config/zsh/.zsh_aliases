@@ -30,7 +30,7 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 # ripgrep
-alias rg='rg --hyperlink-format=kitty --hidden --follow --glob "!.git"'
+# alias rg='rg --hyperlink-format=kitty --hidden --follow --glob "!.git"'
 
 # find
 alias fd='fd --hidden --no-ignore-vcs --follow --exclude ".git"'
