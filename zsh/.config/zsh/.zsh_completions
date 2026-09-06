@@ -24,9 +24,19 @@ if command -v zoxide >/dev/null 2>&1; then
   eval "$(zoxide init --cmd z zsh)"
 fi
 
+# tv
+if command -v tv >/dev/null 2>&1; then
+  eval "$(tv init zsh)"
+fi
+
 # gonzo
 if command -v gonzo >/dev/null 2>&1; then
   source <(gonzo completion zsh 2>/dev/null)
+fi
+
+# direnv
+if command -v direnv >/dev/null 2>&1; then
+  eval "$(direnv hook zsh)"
 fi
 
 if type fd > /dev/null; then

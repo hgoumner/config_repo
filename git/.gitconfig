@@ -29,7 +29,7 @@
 [diff]
   colorMoved = default
   tool = difft
-  external = difft --display inline 
+  external = difft --display inline
 
 [difftool]
   prompt = false
