@@ -15,3 +15,8 @@ vim.opt.clipboard = "unnamedplus"
 vim.g.autoformat = false -- globally
 vim.b.autoformat = false -- buffer-local
 
+vim.g.root_spec = {
+  { ".git", "pyproject.toml" },
+  "cwd",
+  "lsp"
+}
