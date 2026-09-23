@@ -15,18 +15,3 @@ vim.opt.clipboard = "unnamedplus"
 vim.g.autoformat = false -- globally
 vim.b.autoformat = false -- buffer-local
 
-vim.diagnostic.config({
-  virtual_text = {
-    -- Change format if you want to keep standard spacing
-    spacing = 4,
-    source = "if_many", -- Only shows the source name if multiple sources exist
-    -- Custom function to dynamic generate the prefix based on diagnostic data
-    prefix = function(diagnostic)
-      -- Check if a source (ruff, pylint, etc.) exists
-      if diagnostic.source then
-        return string.format("● [%s] ", diagnostic.source)
-      end
-      return "● "
-    end,
-  },
-})

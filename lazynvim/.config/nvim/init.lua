@@ -1,8 +1,6 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 
-vim.diagnostic.enable(false)
-
 vim.api.nvim_create_user_command("AirflowView", function()
   require("airflow_log").open()
 end, {
