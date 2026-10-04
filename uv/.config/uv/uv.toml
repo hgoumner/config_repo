@@ -1,9 +1,4 @@
 [[index]]
-name = "public"
-url = "https://anexus3.kbc.be:6087/nexus/repository/public-python-group/simple"
-default = true
-
-[[index]]
 name = "eab"
 url = "https://anexus3.kbc.be:6087/nexus/repository/eab-python/simple"
 
@@ -12,12 +7,14 @@ name = "cfh"
 url = "https://anexus3.kbc.be:6087/nexus/repository/cfh-python/simple"
 
 [[index]]
-name = "pypi"
-url = "https://pypi.org/simple"
+name = "public"
+url = "https://anexus3.kbc.be:6087/nexus/repository/public-python-group/simple"
+default = true
 
 [pip]
 index-url = "https://anexus3.kbc.be:6087/nexus/repository/eab-python/simple"
 extra-index-url = [
-  "https://anexus3.kbc.be:6087/nexus/repository/public-python-group/simple"
+  "https://anexus3.kbc.be:6087/nexus/repository/cfh-python/simple",
+  "https://anexus3.kbc.be:6087/nexus/repository/public-python-group/simple",
 ]
 
