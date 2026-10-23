@@ -79,3 +79,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+test -e "${ZDOTDIR}/.iterm2_shell_integration.zsh" && source "${ZDOTDIR}/.iterm2_shell_integration.zsh" || true
+
