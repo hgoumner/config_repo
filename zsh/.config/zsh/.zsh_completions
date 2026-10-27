@@ -25,9 +25,9 @@ if command -v zoxide >/dev/null 2>&1; then
 fi
 
 # tv
-if command -v tv >/dev/null 2>&1; then
-  eval "$(tv init zsh)"
-fi
+# if command -v tv >/dev/null 2>&1; then
+#   eval "$(tv init zsh)"
+# fi
 
 # gonzo
 if command -v gonzo >/dev/null 2>&1; then
