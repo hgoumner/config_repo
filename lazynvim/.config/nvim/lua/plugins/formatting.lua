@@ -8,6 +8,7 @@ return {
           "ruff_organize_imports", -- sort imports
           "ruff_format", -- format
         },
+        yaml = { "yamlfmt" },
       },
       format_on_save = {
         timeout_ms = 3000,
