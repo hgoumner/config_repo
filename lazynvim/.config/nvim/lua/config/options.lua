@@ -20,3 +20,5 @@ vim.g.root_spec = {
   "cwd",
   "lsp"
 }
+
+vim.g.autochdir = true
