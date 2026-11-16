@@ -10,7 +10,7 @@
   lga = lg-specific --all
   lg-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aI%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
   log = log --follow
-  logd = "-c diff.external=difft log -p --ext-diff"
+  logd = "-c diff.external='difft --display inline' log -p --ext-diff"
   rh = reset --hard
   st = status
 
