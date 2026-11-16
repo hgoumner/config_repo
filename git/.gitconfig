@@ -13,6 +13,7 @@
   logd = "-c diff.external='difft --display inline' log -p --ext-diff"
   rh = reset --hard
   st = status
+	sync-all = "!sh -c '\n  git fetch --all --prune &&\n  git pull --ff-only &&\n  current=$(git branch --show-current) &&\n  git for-each-ref --format=\"%(refname:short) %(upstream:short)\" refs/heads | while read local remote; do\n    if [ -n \"$remote\" ] && [ \"$local\" != \"$current\" ]; then\n      if git merge-base --is-ancestor \"$local\" \"$remote\"; then\n        git branch -f \"$local\" \"$remote\"\n      fi\n    fi\n  done\n'"
 
 [branch]
   sort = -committerdate

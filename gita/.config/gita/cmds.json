@@ -1,0 +1,8 @@
+{
+  "pull-all": {
+    "cmd": " git sync-all",
+    "allow_all": true,
+    "help": "Fetch all remotes and fast-forward all local tracking branches"
+  }
+}
+
