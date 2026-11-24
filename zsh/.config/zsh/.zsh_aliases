@@ -96,3 +96,5 @@ alias dcu="docker compose up --detach"
 ###################################
 
 alias mg='mega-get -q'
+
+alias sudop="sudo env PATH=$PATH"
