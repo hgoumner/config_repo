@@ -76,9 +76,6 @@ export PATH=$PATH:'/home/hristo/Apps/'
 # bookmarks
 [ -d "$HOME/.bookmarks" ] && export CDPATH=.:~/.bookmarks
 
-# bat theme
-export BAT_THEME=gruvbox-dark
-
 # keytimeout
 export KEYTIMEOUT=50
 
